@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import slide1 from '../assets/slides/cell_1_slide_1.jpg';
 import slide2 from '../assets/slides/nucleus_1_slide_1.jpg';
 import slide3 from '../assets/slides/cytoskeleton_1_slide_1.jpg';
+
+import audio1 from '../assets/audios/slides/cell_full.mp3';
+import audio2 from '../assets/audios/slides/nucleus_full.mp3';
+import audio3 from '../assets/audios/slides/cytoskeleton_full.mp3';
 
 const intervals = {
   image: null,
@@ -15,11 +19,29 @@ const slides = [
   slide3
 ];
 
+const audios = [
+  null,
+  null,
+  null
+]
+
 export default function ClickTracker() {
   const [clicks, setClicks] = useState({ button: 0, image: [0, 0, 0], text: [0, 0, 0], figure: 0 });
   const [hovers, setHovers] = useState({ button: 0, image: [0, 0, 0], text: [0, 0, 0], figure: [] });
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [startedTest, setStartedTest] = useState(false);
   const [finishTest, setFinishTest] = useState(false);
+
+  const audioRef1 = useRef(null);
+  const audioRef2 = useRef(null);
+  const audioRef3 = useRef(null);
+  
+
+  useEffect(() => {
+    audios[0] = audioRef1;
+    audios[1] = audioRef2;
+    audios[2] = audioRef3;
+  }, []);
 
   const handleClick = (element) => {
     if (element === "image") {
@@ -35,7 +57,13 @@ export default function ClickTracker() {
   };
 
   const handleNextClick = () => {
+    audios.forEach(x => x.current.pause());
+
     if (currentSlide < slides.length - 1) {
+      setTimeout(() => {
+        audios[currentSlide+1].current.play().catch(error => console.log("Reproducción bloqueada:", error));
+      },1000);
+      
       setCurrentSlide(currentSlide + 1);
     }
     else {
@@ -64,9 +92,32 @@ export default function ClickTracker() {
     clearInterval(intervals[element]);
   };
 
+  const handleStartClick = () => {
+    setStartedTest(true);
+    setTimeout(() => {
+      audioRef1.current.play();
+    },1000);
+    
+    // audios[0].play().catch(error => console.log("Reproducción bloqueada:", error));
+  }
+
+  const handleRestartClick = () => {
+    window.location.reload();
+  }
+
   return (
     <div className="" style={styles.container}>
-      {!finishTest ?
+      <audio ref={audioRef1} src={audio1} />
+      <audio ref={audioRef2} src={audio2} />
+      <audio ref={audioRef3} src={audio3} />
+      {
+        !startedTest && <div style={styles.startContainer}>
+          <h1>START TEST</h1>
+          <button onClick={handleStartClick}>Start</button>
+        </div>
+      }
+      {
+        !finishTest && startedTest &&
         <div style={styles.subcontainer}>
           <img
             style={styles.image}
@@ -78,7 +129,9 @@ export default function ClickTracker() {
           <p style={styles.textCount}>Text count: {clicks.text[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time: {(parseFloat(hovers.text[currentSlide]) * 0.1).toFixed(1)}</p>
           <p style={styles.imageCount}>Image count: {clicks.image[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time: {(parseFloat(hovers.image[currentSlide]) * 0.1).toFixed(1)}</p>
         </div>
-        :
+      }
+      {
+        finishTest &&
         <div style={styles.results}>
           <h1>Your Results are:</h1>
           <h2>Slide 1</h2>
@@ -90,11 +143,12 @@ export default function ClickTracker() {
           <h2>Slide 3</h2>
           <h4>Time seeing text: {(parseFloat(hovers.text[2]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.text[2]}</h4>
           <h4>Time seeing image: {(parseFloat(hovers.image[2]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.image[2]}</h4>
+          <button onClick={handleRestartClick}>Restart</button>
         </div>
       }
 
       {
-        !finishTest &&
+        !finishTest && startedTest &&
         <>
           <button
             style={styles.textTarget[currentSlide]}
@@ -215,5 +269,8 @@ const styles = {
   },
   results: {
     color: "#333",
+  },
+  startContainer: {
+    color: "#333"
   }
 };
