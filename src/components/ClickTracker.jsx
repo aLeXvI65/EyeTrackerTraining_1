@@ -31,6 +31,7 @@ export default function ClickTracker() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [startedTest, setStartedTest] = useState(false);
   const [finishTest, setFinishTest] = useState(false);
+  const [seeInfo, setSeeInfo] = useState(false);
 
   const audioRef1 = useRef(null);
   const audioRef2 = useRef(null);
@@ -105,6 +106,10 @@ export default function ClickTracker() {
     window.location.reload();
   }
 
+  const handleSeeInfoClick = () => {
+    setSeeInfo(!seeInfo);
+  }
+
   return (
     <div className="" style={styles.container}>
       <audio ref={audioRef1} src={audio1} />
@@ -119,6 +124,7 @@ export default function ClickTracker() {
       {
         !finishTest && startedTest &&
         <div style={styles.subcontainer}>
+          <button style={styles.seeInfo} onClick={handleSeeInfoClick}>{seeInfo ? "Hide Info": "See Info"}</button>
           <img
             style={styles.image}
             src={slides[currentSlide]}
@@ -126,8 +132,8 @@ export default function ClickTracker() {
             className="cursor-pointer border-2 border-gray-300 rounded-lg"
 
           />
-          <p style={styles.textCount}>Text count: {clicks.text[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time: {(parseFloat(hovers.text[currentSlide]) * 0.1).toFixed(1)}</p>
-          <p style={styles.imageCount}>Image count: {clicks.image[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time: {(parseFloat(hovers.image[currentSlide]) * 0.1).toFixed(1)}</p>
+          {seeInfo && <p style={styles.textCount}>Text count: {clicks.text[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time: {(parseFloat(hovers.text[currentSlide]) * 0.1).toFixed(1)}</p>}
+          {seeInfo && <p style={styles.imageCount}>Image count: {clicks.image[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time: {(parseFloat(hovers.image[currentSlide]) * 0.1).toFixed(1)}</p>}
         </div>
       }
       {
@@ -151,13 +157,13 @@ export default function ClickTracker() {
         !finishTest && startedTest &&
         <>
           <button
-            style={styles.textTarget[currentSlide]}
+            style={Object.assign({},styles.textTarget[currentSlide],(!seeInfo ? styles.hideTarget : {}))}
             onClick={() => handleClick("text")}
             onMouseEnter={() => handleHover("text")}
             onMouseLeave={() => handleHoverOut("text")}
           ></button>
           <button
-            style={styles.imageTarget[currentSlide]}
+            style={Object.assign({},styles.imageTarget[currentSlide],(!seeInfo ? styles.hideTarget : {}))}
             onClick={() => handleClick("image")}
             onMouseEnter={() => handleHover("image")}
             onMouseLeave={() => handleHoverOut("image")}
@@ -213,6 +219,12 @@ const styles = {
     left: "53vw",
     top: "0px",
     color: "#333",
+  },
+  showTarget: {
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  hideTarget: {
+    backgroundColor: "rgba(0,0,0,0)"
   },
   textTarget: [{
     position: "absolute",
@@ -272,5 +284,13 @@ const styles = {
   },
   startContainer: {
     color: "#333"
+  },
+  seeInfo: {
+    position: "absolute",
+    top: "5px",
+    left: "5px",
+    width: "90px",
+    height: "30px",
+    fontSize: "12px"
   }
 };
