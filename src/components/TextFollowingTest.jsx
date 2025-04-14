@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import slide1_1 from '../assets/slides/TextFollow/cell_1_slide_1_1.jpg';
 import slide1_2 from '../assets/slides/TextFollow/cell_1_slide_1_2.jpg';
@@ -15,8 +15,9 @@ import audio3 from '../assets/audios/slides/nucleus/nucleus_trim_1.mp3';
 import audio4 from '../assets/audios/slides/nucleus/nucleus_trim_2.mp3';
 import audio5 from '../assets/audios/slides/cytoskeleton/cytoskeleton_trim_1.mp3';
 import audio6 from '../assets/audios/slides/cytoskeleton/cytoskeleton_trim_2.mp3';
+import { UserContext } from "../context/UserContext";
 
-const isDebug = true;
+const isDebug = false;
 
 const intervals = {
     image: null,
@@ -52,28 +53,28 @@ const audios = [
 
 const readingData = [
     [
-        { maskTop: 0, height: "19vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 0.5 }, // 8.5
+        { maskTop: 0, height: "19vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 8.5 }, // 8.5
         { maskTop: 19, height: "22vh", imgTop: 15, imgLeft: 15, imgWidth: "15vh", imgHeight: "15vh", time: 10.0 },
         { maskTop: 41, height: "43vh", imgTop: 25, imgLeft: 25, imgWidth: "15vh", imgHeight: "15vh", time: 30.0 },
     ],
     [
-        { maskTop: 0, height: "28.5vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 0.5 }, // 10.5
+        { maskTop: 0, height: "28.5vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 10.5 }, // 10.5
         { maskTop: 29, height: "55vh", imgTop: 15, imgLeft: 15, imgWidth: "15vh", imgHeight: "15vh", time: 10.0 },
     ],
     [
-        { maskTop: 0, height: "44vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 0.5 }, // 24.5
+        { maskTop: 0, height: "44vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 24.5 }, // 24.5
         { maskTop: 44, height: "41vh", imgTop: 15, imgLeft: 15, imgWidth: "15vh", imgHeight: "15vh", time: 10.0 },
     ],
     [
-        { maskTop: 0, height: "52vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 0.5 }, // 23
+        { maskTop: 0, height: "52vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 23 }, // 23
         { maskTop: 52, height: "33vh", imgTop: 15, imgLeft: 15, imgWidth: "15vh", imgHeight: "15vh", time: 10.0 },
     ],
     [
-        { maskTop: 0, height: "34vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 0.5 }, // 12
+        { maskTop: 0, height: "34vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 12 }, // 12
         { maskTop: 35, height: "49vh", imgTop: 15, imgLeft: 15, imgWidth: "15vh", imgHeight: "15vh", time: 10.0 },
     ],
     [
-        { maskTop: 0, height: "42vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 0.5 }, // 30.5
+        { maskTop: 0, height: "42vh", imgTop: 5, imgLeft: 5, imgWidth: "15vh", imgHeight: "15vh", time: 30.5 }, // 30.5
         { maskTop: 42, height: "42vh", imgTop: 15, imgLeft: 15, imgWidth: "15vh", imgHeight: "15vh", time: 10.0 },
     ],
 ];
@@ -118,13 +119,17 @@ const offsets = [
 ];
 
 const numSlides = 6;
+const trainingId = 11;
 
 export default function TextFollowingTest() {
+    const { userId, setUserId } = useContext(UserContext);
+
     const [clicks, setClicks] = useState({ button: 0, image: Array(numSlides).fill(0), text: Array(numSlides).fill(0), figure: 0 });
     const [hovers, setHovers] = useState({ button: 0, image: Array(numSlides).fill(0), text: Array(numSlides).fill(0), figure: [] });
     const [highligtedClicks, setHighlightedClicks] = useState({ button: 0, image: Array(numSlides).fill(0), text: Array(numSlides).fill(0), figure: 0 });
     const [highLightedHovers, setHighlightedHovers] = useState({ button: 0, image: Array(numSlides).fill(0), text: Array(numSlides).fill(0), figure: [] });
     const [step, setStep] = useState(0);
+    const [sendReportSuccess, setSendReportSuccess] = useState(false);
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [finishTest, setFinishTest] = useState(false);
@@ -273,7 +278,50 @@ export default function TextFollowingTest() {
     }
 
     const handleSendResultsClick = () => {
-        
+
+        const date = new Date();
+        const reportPercentage = "0.00";
+
+        console.log("Sending data...");
+        console.log("UserId: " + userId);
+        console.log("TrainingId: " + trainingId);
+        console.log("Date: " + date);
+        console.log("ReportPerc: " + reportPercentage);
+
+        const formData = new FormData();
+        formData.append("user", parseInt(userId));
+        formData.append("training", trainingId);
+        formData.append("date", date);
+        formData.append("reportPercentage", reportPercentage);
+
+        for (let i = 0; i < hovers.text.length; i++) {
+            formData.append("data" + i, "[" + hovers.text[i] + "," + hovers.image[i] + "," + highLightedHovers.text[i] + "," + highLightedHovers.image[i] + "]");
+            formData.append("data2_" + i, "[0-" + (hovers.text[i] * .1) + ",0-" + (hovers.image[i] * 0.1) + ",0-" + (highLightedHovers.text[i] * 0.1) + ",0-" + (highLightedHovers.image[i] * 0.1) + "]");
+            formData.append("data3_" + i, "" + (i + 1));
+            formData.append("data4_" + i, "" + 0);
+            formData.append("data5_" + i, null);
+            formData.append("percentage_" + i, "" + 50);
+        }
+        console.log(JSON.stringify(formData));
+
+        fetch('https://eyetrackingtraining.com/corporate/appInsertTraining.php', {
+            method: 'POST',
+            body: formData, // enviamos como JSON
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Server response error ' + JSON.stringify(response));
+                }
+                return response.text(); // si el PHP hace un echo simple
+                // o usar .json() si devuelve JSON
+            })
+            .then(data => {
+                console.log('Respuesta del servidor:', data);
+                setSendReportSuccess(true);
+            })
+            .catch(error => {
+                console.error('Error en la petición:', error);
+            });
     }
 
     const handleSeeInfoClick = () => {
@@ -316,7 +364,7 @@ export default function TextFollowingTest() {
                 </div>
             }
             {
-                finishTest &&
+                finishTest && !sendReportSuccess &&
                 <div style={styles.results}>
                     <h1>Your Results are:</h1>
                     <table style={{ borderCollapse: "collapse", width: "100%", marginBottom: "1em" }}>
@@ -337,17 +385,16 @@ export default function TextFollowingTest() {
                             }
                         </tbody>
                     </table>
-                    {/* <h2>Slide 1</h2>
-                    <h4>Time seeing text: {(parseFloat(hovers.text[0]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.text[0]}</h4>
-                    <h4>Time seeing image: {(parseFloat(hovers.image[0]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.image[0]}</h4>
-                    <h2>Slide 2</h2>
-                    <h4>Time seeing text: {(parseFloat(hovers.text[1]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.text[1]}</h4>
-                    <h4>Time seeing image: {(parseFloat(hovers.image[1]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.image[1]}</h4>
-                    <h2>Slide 3</h2>
-                    <h4>Time seeing text: {(parseFloat(hovers.text[2]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.text[2]}</h4>
-                    <h4>Time seeing image: {(parseFloat(hovers.image[2]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.image[2]}</h4> */}
                     <button onClick={handleSendResultsClick}>Send Results</button>
                     {/* <button onClick={handleRestartClick}>Restart</button> */}
+                </div>
+            }
+            {
+                sendReportSuccess && 
+                <div style={styles.results}>
+                    <h1>Report sent succesfully:</h1>
+                    
+                    <button onClick={handleRestartClick}>Restart Experiment</button>
                 </div>
             }
 

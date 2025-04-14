@@ -25,6 +25,9 @@ const audios = [
   null
 ]
 
+const numSlides = 3;
+const trainingId = 10;
+
 export default function NormalTest() {
   const [clicks, setClicks] = useState({ button: 0, image: [0, 0, 0], text: [0, 0, 0], figure: 0 });
   const [hovers, setHovers] = useState({ button: 0, image: [0, 0, 0], text: [0, 0, 0], figure: [] });
