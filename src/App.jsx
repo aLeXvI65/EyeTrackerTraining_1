@@ -14,6 +14,7 @@ function App() {
   const [startTest, setStartTest] = useState(false);
   const [hasLogin, setHasLogin] = useState(false);
   const [selectedTest, setSelectedTest] = useState("none");
+  const [loginError, setLoginError] = useState("");
 
   const handleLogin = (username, pass) => {
     const name = username.current.value;
@@ -30,8 +31,13 @@ function App() {
       })
       .then(data => {
         console.log("Respuesta del PHP:", data);
-        setUserId(data);
-        setHasLogin(true);
+        if (data === "Login failed") {
+          setLoginError("The user name or password are wrong, please try again!");
+        }
+        else {
+          setUserId(data);
+          setHasLogin(true);
+        }
       })
       .catch(error => {
         console.error("Request error:", error);
@@ -46,7 +52,7 @@ function App() {
 
   return (
     <>
-      {!hasLogin && <Login onLogin={handleLogin} />}
+      {!hasLogin && <Login onLogin={handleLogin} error={loginError} />}
       {
         !startTest && hasLogin && <StartMenu onStart={handleStart} />
       }

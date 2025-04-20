@@ -1,17 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Login({ onLogin }) {
-    const username = useRef();
-    const pass = useRef();
+export default function Login({ onLogin, error }) {
+  const username = useRef();
+  const pass = useRef();
+
+  const keyHandle = (e) => {
+    if (e.key === "Enter") {
+      onLogin(username, pass);
+    }
+  }
 
   return (
     <div className="" style={styles.container}>
-        <h1>LOGIN</h1>
-        <div style={styles.startContainer}>
-          <input style={styles.input} ref={username}  type="text" placeholder="Username" /><br/>
-          <input style={styles.input} ref={pass} type="password" placeholder="Password" /><br />
-          <button style={styles.startButton} onClick={() => onLogin(username, pass)}>Login</button>
-        </div>
+      <h1>LOGIN</h1>
+      <div style={styles.startContainer}>
+        <input style={styles.input} ref={username} type="text" placeholder="Username" onKeyDown={(e) => keyHandle(e)} /><br />
+        <input style={styles.input} ref={pass} type="password" placeholder="Password" onKeyDown={(e) => keyHandle(e)} /><br />
+        <button style={styles.startButton} onClick={() => onLogin(username, pass)}>Login</button>
+        { error && <div style={styles.errorMessage}><span>{error}</span></div>}
+      </div>
     </div>
   );
 }
@@ -40,5 +47,8 @@ const styles = {
     height: "2.5em",
     borderRadius: "8px",
     color: "#121212",
+  },
+  errorMessage: {
+    color: "red"
   }
 };
