@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import slide1 from '../assets/slides/cell_1_slide_1.jpg';
 import slide2 from '../assets/slides/nucleus_1_slide_1.jpg';
@@ -7,6 +7,7 @@ import slide3 from '../assets/slides/cytoskeleton_1_slide_1.jpg';
 import audio1 from '../assets/audios/slides/cell/cell_full.mp3';
 import audio2 from '../assets/audios/slides/nucleus/nucleus_full.mp3';
 import audio3 from '../assets/audios/slides/cytoskeleton/cytoskeleton_full.mp3';
+import { UserContext } from "../context/UserContext";
 
 const intervals = {
   image: null,
@@ -29,16 +30,19 @@ const numSlides = 3;
 const trainingId = 10;
 
 export default function NormalTest() {
+  const { userId, setUserId } = useContext(UserContext);
+
   const [clicks, setClicks] = useState({ button: 0, image: [0, 0, 0], text: [0, 0, 0], figure: 0 });
   const [hovers, setHovers] = useState({ button: 0, image: [0, 0, 0], text: [0, 0, 0], figure: [] });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [finishTest, setFinishTest] = useState(false);
   const [seeInfo, setSeeInfo] = useState(false);
+  const [sendReportSuccess, setSendReportSuccess] = useState(false);
 
   const audioRef1 = useRef(null);
   const audioRef2 = useRef(null);
   const audioRef3 = useRef(null);
-  
+
 
   useEffect(() => {
     audios[0] = audioRef1;
@@ -65,9 +69,9 @@ export default function NormalTest() {
 
     if (currentSlide < slides.length - 1) {
       setTimeout(() => {
-        audios[currentSlide+1].current.play().catch(error => console.log("Reproducción bloqueada:", error));
-      },1000);
-      
+        audios[currentSlide + 1].current.play().catch(error => console.log("Reproducción bloqueada:", error));
+      }, 1000);
+
       setCurrentSlide(currentSlide + 1);
     }
     else {
@@ -97,11 +101,11 @@ export default function NormalTest() {
   };
 
   const startTest = () => {
-    
+
     setTimeout(() => {
       audioRef1.current.play();
-    },1000);
-    
+    }, 1000);
+
     // audios[0].play().catch(error => console.log("Reproducción bloqueada:", error));
   }
 
@@ -113,6 +117,54 @@ export default function NormalTest() {
     setSeeInfo(!seeInfo);
   }
 
+
+  const handleSendResultsClick = () => {
+
+    const date = new Date();
+    const reportPercentage = "0.00";
+
+    console.log("Sending data...");
+    console.log("UserId: " + userId);
+    console.log("TrainingId: " + trainingId);
+    console.log("Date: " + date);
+    console.log("ReportPerc: " + reportPercentage);
+
+    const formData = new FormData();
+    formData.append("user", parseInt(userId));
+    formData.append("training", trainingId);
+    formData.append("date", date);
+    formData.append("reportPercentage", reportPercentage);
+
+    for (let i = 0; i < hovers.text.length; i++) {
+      formData.append("data" + i, "[" + hovers.text[i] + "," + hovers.image[i] + "," + 0 + "," + 0 + "]");
+      formData.append("data2_" + i, "[0-" + (hovers.text[i] * .1) + ",0-" + (hovers.image[i] * 0.1) + ",0-" + (0) + ",0-" + (0) + "]");
+      formData.append("data3_" + i, "" + (i + 1));
+      formData.append("data4_" + i, "" + 0);
+      formData.append("data5_" + i, null);
+      formData.append("percentage_" + i, "" + 50);
+    }
+    console.log(JSON.stringify(formData));
+
+    fetch('https://eyetrackingtraining.com/corporate/appInsertTraining.php', {
+      method: 'POST',
+      body: formData, // enviamos como JSON
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Server response error ' + JSON.stringify(response));
+        }
+        return response.text(); // si el PHP hace un echo simple
+        // o usar .json() si devuelve JSON
+      })
+      .then(data => {
+        console.log('Respuesta del servidor:', data);
+        setSendReportSuccess(true);
+      })
+      .catch(error => {
+        console.error('Error en la petición:', error);
+      });
+  }
+
   return (
     <div className="" style={styles.container}>
       <audio ref={audioRef1} src={audio1} />
@@ -121,7 +173,7 @@ export default function NormalTest() {
       {
         !finishTest &&
         <div style={styles.subcontainer}>
-          <button style={styles.seeInfo} onClick={handleSeeInfoClick}>{seeInfo ? "Hide Info": "See Info"}</button>
+          <button style={styles.seeInfo} onClick={handleSeeInfoClick}>{seeInfo ? "Hide Info" : "See Info"}</button>
           <img
             style={styles.image}
             src={slides[currentSlide]}
@@ -134,19 +186,37 @@ export default function NormalTest() {
         </div>
       }
       {
-        finishTest &&
+        finishTest && !sendReportSuccess &&
         <div style={styles.results}>
           <h1>Your Results are:</h1>
-          <h2>Slide 1</h2>
-          <h4>Time seeing text: {(parseFloat(hovers.text[0]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.text[0]}</h4>
-          <h4>Time seeing image: {(parseFloat(hovers.image[0]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.image[0]}</h4>
-          <h2>Slide 2</h2>
-          <h4>Time seeing text: {(parseFloat(hovers.text[1]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.text[1]}</h4>
-          <h4>Time seeing image: {(parseFloat(hovers.image[1]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.image[1]}</h4>
-          <h2>Slide 3</h2>
-          <h4>Time seeing text: {(parseFloat(hovers.text[2]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.text[2]}</h4>
-          <h4>Time seeing image: {(parseFloat(hovers.image[2]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp; Count: {clicks.image[2]}</h4>
-          <button onClick={handleRestartClick}>Restart</button>
+          <table style={{ borderCollapse: "collapse", width: "100%", marginBottom: "1em" }}>
+            <thead>
+              <th style={styles.tableTH}>Slide</th>
+              <th style={styles.tableTH}>Time Seeing text</th>
+              <th style={styles.tableTH}>Time Seeing image</th>
+            </thead>
+            <tbody>
+              {
+                hovers.text.length > 0 && hovers.text.map((item, index) =>
+                  <tr key={index}>
+                    <td style={styles.tableTD}>{index + 1}</td>
+                    <td style={styles.tableTD}>{(parseFloat(hovers.text[index]) * 0.1).toFixed(1)}</td>
+                    <td style={styles.tableTD}>{(parseFloat(hovers.image[index]) * 0.1).toFixed(1)}</td>
+                  </tr>
+                )
+              }
+            </tbody>
+          </table>
+          <button onClick={handleSendResultsClick}>Send Results</button>
+          {/* <button onClick={handleRestartClick}>Restart</button> */}
+        </div>
+      }
+      {
+        sendReportSuccess &&
+        <div style={styles.results}>
+          <h1>Report sent succesfully:</h1>
+
+          <button onClick={handleRestartClick}>Restart Experiment</button>
         </div>
       }
 
@@ -154,13 +224,13 @@ export default function NormalTest() {
         !finishTest &&
         <>
           <button
-            style={Object.assign({},styles.textTarget[currentSlide],(!seeInfo ? styles.hideTarget : {}))}
+            style={Object.assign({}, styles.textTarget[currentSlide], (!seeInfo ? styles.hideTarget : {}))}
             onClick={() => handleClick("text")}
             onMouseEnter={() => handleHover("text")}
             onMouseLeave={() => handleHoverOut("text")}
           ></button>
           <button
-            style={Object.assign({},styles.imageTarget[currentSlide],(!seeInfo ? styles.hideTarget : {}))}
+            style={Object.assign({}, styles.imageTarget[currentSlide], (!seeInfo ? styles.hideTarget : {}))}
             onClick={() => handleClick("image")}
             onMouseEnter={() => handleHover("image")}
             onMouseLeave={() => handleHoverOut("image")}
