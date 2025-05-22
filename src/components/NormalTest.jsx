@@ -1,12 +1,47 @@
 import { useContext, useEffect, useRef, useState } from "react";
 
-import slide1 from '../assets/slides/cell_1_slide_1.jpg';
-import slide2 from '../assets/slides/nucleus_1_slide_1.jpg';
-import slide3 from '../assets/slides/cytoskeleton_1_slide_1.jpg';
+import slide1 from '../assets/slides/1_cell/cell.jpg';
+import slide2 from '../assets/slides/2_nucleus/nucleus_1.jpg';
+import slide3 from '../assets/slides/2_nucleus/nucleus_2.jpg';
+import slide4 from '../assets/slides/3_cytoskeleton/cytoskeleton.jpg';
+import slide5 from '../assets/slides/4_membrane/membrane.jpg';
+import slide6 from '../assets/slides/6_endoplasmic/endoplasmit_reticulum.jpg';
+import slide7 from '../assets/slides/7_mitochondria/mitochondria.jpg';
+import slide8 from '../assets/slides/8_energy/energy_production.jpg';
+import slide9 from '../assets/slides/9_dynamics/dynamics_cell_growth.jpg';
+import slide10 from '../assets/slides/10_nose/nose_pharynx.jpg';
+import slide11 from '../assets/slides/11_larynx/larynx_epiglotis.jpg';
+import slide12 from '../assets/slides/12_trachea/trachea_bronchi.jpg';
+import slide13 from '../assets/slides/13_bronchioles/bronchioles_alveoli.jpg';
+import slide14 from '../assets/slides/14_lungs/lungs_pleural_membrane.jpg';
+import slide15 from '../assets/slides/15_myocardial/myocardial_contraction.jpg';
+import slide16 from '../assets/slides/15_myocardial/myocardial_contraction_2.jpg';
+import slide17 from '../assets/slides/17_ion_distribution/ion_distribution.jpg';
+import slide18 from '../assets/slides/17_ion_distribution/ion_distribution_2.jpg';
+import slide19 from '../assets/slides/19_systemic/systemic_pulmonary_circulation.jpg';
+import slide20 from '../assets/slides/20_various/various_types_bone.jpg';
 
-import audio1 from '../assets/audios/slides/cell/cell_full.mp3';
-import audio2 from '../assets/audios/slides/nucleus/nucleus_full.mp3';
-import audio3 from '../assets/audios/slides/cytoskeleton/cytoskeleton_full.mp3';
+import audio1 from '../assets/audios/slides/1_cell.mp3';
+import audio2 from '../assets/audios/slides/2_nucleus_1.mp3';
+import audio3 from '../assets/audios/slides/3_nucleus_2.mp3';
+import audio4 from '../assets/audios/slides/4_cytoskeleton.mp3';
+import audio5 from '../assets/audios/slides/5_membraine.mp3';
+import audio6 from '../assets/audios/slides/6_endoplasmic_reticulum.mp3';
+import audio7 from '../assets/audios/slides/7_mitochondria.mp3';
+import audio8 from '../assets/audios/slides/8_energy_production.mp3';
+import audio9 from '../assets/audios/slides/9_dynamic_cell_growth.mp3';
+import audio10 from '../assets/audios/slides/10_nose_pharynx.mp3';
+import audio11 from '../assets/audios/slides/11_larynx_epiglotis.mp3';
+import audio12 from '../assets/audios/slides/12_trachea_bronchi.mp3';
+import audio13 from '../assets/audios/slides/13_bronchioles_alveolly.mp3';
+import audio14 from '../assets/audios/slides/14_lungs_pleural.mp3';
+import audio15 from '../assets/audios/slides/15_myocardial_contraction.mp3';
+import audio16 from '../assets/audios/slides/16_myocardial_contraction_2.mp3';
+import audio17 from '../assets/audios/slides/17_ion_distribution.mp3';
+import audio18 from '../assets/audios/slides/18_ion_distribution_2.mp3';
+import audio19 from '../assets/audios/slides/19_systemic_pulmonary.mp3';
+import audio20 from '../assets/audios/slides/20_various_bones.mp3.mp3';
+
 import { UserContext } from "../context/UserContext";
 
 const intervals = {
@@ -17,23 +52,57 @@ const intervals = {
 const slides = [
   slide1,
   slide2,
-  slide3
+  slide3,
+  slide4,
+  slide5,
+  slide6,
+  slide7,
+  slide8,
+  slide9,
+  slide10,
+  slide11,
+  slide12,
+  slide13,
+  slide14,
+  slide15,
+  slide16,
+  slide17,
+  slide18,
+  slide19,
+  slide20,
 ];
 
 const audios = [
   null,
   null,
-  null
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
 ]
 
-const numSlides = 3;
+const numSlides = 20;
 const trainingId = 10;
 
 export default function NormalTest() {
   const { userId, setUserId } = useContext(UserContext);
 
-  const [clicks, setClicks] = useState({ button: 0, image: [0, 0, 0], text: [0, 0, 0], figure: 0 });
-  const [hovers, setHovers] = useState({ button: 0, image: [0, 0, 0], text: [0, 0, 0], figure: [] });
+  const [clicks, setClicks] = useState({ button: 0, image: new Array(numSlides).fill(0), text: new Array(numSlides).fill(0), figure: 0 });
+  const [hovers, setHovers] = useState({ button: 0, image: new Array(numSlides).fill(0), text: new Array(numSlides).fill(0), figure: [] });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [finishTest, setFinishTest] = useState(false);
   const [seeInfo, setSeeInfo] = useState(false);
@@ -42,12 +111,46 @@ export default function NormalTest() {
   const audioRef1 = useRef(null);
   const audioRef2 = useRef(null);
   const audioRef3 = useRef(null);
+  const audioRef4 = useRef(null);
+  const audioRef5 = useRef(null);
+  const audioRef6 = useRef(null);
+  const audioRef7 = useRef(null);
+  const audioRef8 = useRef(null);
+  const audioRef9 = useRef(null);
+  const audioRef10 = useRef(null);
+  const audioRef11 = useRef(null);
+  const audioRef12 = useRef(null);
+  const audioRef13 = useRef(null);
+  const audioRef14 = useRef(null);
+  const audioRef15 = useRef(null);
+  const audioRef16 = useRef(null);
+  const audioRef17 = useRef(null);
+  const audioRef18 = useRef(null);
+  const audioRef19 = useRef(null);
+  const audioRef20 = useRef(null);
 
 
   useEffect(() => {
     audios[0] = audioRef1;
     audios[1] = audioRef2;
     audios[2] = audioRef3;
+    audios[3] = audioRef4;
+    audios[4] = audioRef5;
+    audios[5] = audioRef6;
+    audios[6] = audioRef7;
+    audios[7] = audioRef8;
+    audios[8] = audioRef9;
+    audios[9] = audioRef10;
+    audios[10] = audioRef11;
+    audios[11] = audioRef12;
+    audios[12] = audioRef13;
+    audios[13] = audioRef14;
+    audios[14] = audioRef15;
+    audios[15] = audioRef16;
+    audios[16] = audioRef17;
+    audios[17] = audioRef18;
+    audios[18] = audioRef19;
+    audios[19] = audioRef20;
     startTest();
   }, []);
 
@@ -170,6 +273,23 @@ export default function NormalTest() {
       <audio ref={audioRef1} src={audio1} />
       <audio ref={audioRef2} src={audio2} />
       <audio ref={audioRef3} src={audio3} />
+      <audio ref={audioRef4} src={audio4} />
+      <audio ref={audioRef5} src={audio5} />
+      <audio ref={audioRef6} src={audio6} />
+      <audio ref={audioRef7} src={audio7} />
+      <audio ref={audioRef8} src={audio8} />
+      <audio ref={audioRef9} src={audio9} />
+      <audio ref={audioRef10} src={audio10} />
+      <audio ref={audioRef11} src={audio11} />
+      <audio ref={audioRef12} src={audio12} />
+      <audio ref={audioRef13} src={audio13} />
+      <audio ref={audioRef14} src={audio14} />
+      <audio ref={audioRef15} src={audio15} />
+      <audio ref={audioRef16} src={audio16} />
+      <audio ref={audioRef17} src={audio17} />
+      <audio ref={audioRef18} src={audio18} />
+      <audio ref={audioRef19} src={audio19} />
+      <audio ref={audioRef20} src={audio20} />
       {
         !finishTest &&
         <div style={styles.subcontainer}>
@@ -296,51 +416,329 @@ const styles = {
   textTarget: [{
     position: "absolute",
     left: "10vw",
-    top: "7.5vh",
+    top: "18vh",
+    width: "38vw",
+    height: "73vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "10vw",
+    top: "28vh",
+    width: "40vw",
+    height: "51vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "10vw",
+    top: "24vh",
     width: "41vw",
-    height: "84vh",
+    height: "68vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "7vw",
+    top: "19vh",
+    width: "40vw",
+    height: "76vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
     left: "9vw",
-    top: "7.5vh",
-    width: "41.5vw",
-    height: "84vh",
+    top: "14vh",
+    width: "37vw",
+    height: "78vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "7.5vw",
-    top: "7.5vh",
-    width: "41vw",
-    height: "84vh",
+    left: "10vw",
+    top: "15vh",
+    width: "40vw",
+    height: "78vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "8vw",
+    top: "14vh",
+    width: "40vw",
+    height: "78vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "6.5vw",
+    top: "24vh",
+    width: "34.5vw",
+    height: "62vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "6vw",
+    top: "14vh",
+    width: "39vw",
+    height: "79vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "6vw",
+    top: "17vh",
+    width: "37.3vw",
+    height: "79vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "6vw",
+    top: "15.5vh",
+    width: "38.5vw",
+    height: "79vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "8vw",
+    top: "13vh",
+    width: "42vw",
+    height: "81vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "8vw",
+    top: "15vh",
+    width: "38.5vw",
+    height: "79vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "8vw",
+    top: "12vh",
+    width: "39vw",
+    height: "79vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "11.5vw",
+    top: "17.5vh",
+    width: "39vw",
+    height: "73vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "8vw",
+    top: "11.5vh",
+    width: "37vw",
+    height: "79vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "9vw",
+    top: "12.5vh",
+    width: "34vw",
+    height: "80vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "9.5vw",
+    top: "16.5vh",
+    width: "40vw",
+    height: "75vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "11vw",
+    top: "16.5vh",
+    width: "40vw",
+    height: "73vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "9vw",
+    top: "8.5vh",
+    width: "46vw",
+    height: "85vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   }],
+  // Image Target
+
+
   imageTarget: [{
     position: "absolute",
-    left: "53.5vw",
-    top: "8vh",
-    width: "37.5vw",
-    height: "84vh",
+    left: "49vw",
+    top: "16vh",
+    width: "41vw",
+    height: "77vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "55.5vw",
-    top: "8vh",
-    width: "36.5vw",
-    height: "84vh",
+    left: "52.5vw",
+    top: "18vh",
+    width: "38vw",
+    height: "75vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "52vw",
+    top: "18vh",
+    width: "37vw",
+    height: "72vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "48vw",
+    top: "20vh",
+    width: "45vw",
+    height: "72vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "46vw",
+    top: "27vh",
+    width: "48vw",
+    height: "50vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "52vw",
+    top: "11vh",
+    width: "39vw",
+    height: "81vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "49vw",
+    top: "18.5vh",
+    width: "42.5vw",
+    height: "75vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "45vw",
+    top: "17vh",
+    width: "47.5vw",
+    height: "75vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "45.5vw",
+    top: "24vh",
+    width: "43.5vw",
+    height: "55vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "43.5vw",
+    top: "6vh",
+    width: "46.5vw",
+    height: "88vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "48vw",
+    top: "5vh",
+    width: "39vw",
+    height: "92vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
     left: "50vw",
+    top: "3vh",
+    width: "42vw",
+    height: "90vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "48vw",
+    top: "2vh",
+    width: "40.5vw",
+    height: "92vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "47.5vw",
+    top: "6.5vh",
+    width: "43.5vw",
+    height: "90vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "56vw",
+    top: "17vh",
+    width: "33.5vw",
+    height: "72vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "45.1vw",
+    top: "24vh",
+    width: "47.5vw",
+    height: "50vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "43vw",
     top: "21vh",
-    width: "44vw",
-    height: "55vh",
+    width: "49vw",
+    height: "52vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "50vw",
+    top: "9vh",
+    width: "38.5vw",
+    height: "84vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "57vw",
+    top: "8.5vh",
+    width: "34vw",
+    height: "80vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "57vw",
+    top: "3.5vh",
+    width: "33vw",
+    height: "92vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   }],
+  // End targets
+
+
   nextButton: {
     position: "absolute",
     right: "1vw",

@@ -1,20 +1,19 @@
 import { useContext, useEffect, useRef, useState } from "react";
 
-import slide1_1 from '../assets/slides/TextFollow/cell_1_slide_1_1.jpg';
-import slide1_2 from '../assets/slides/TextFollow/cell_1_slide_1_2.jpg';
-import slide2_1 from '../assets/slides/TextFollow/nucleus_1_slide_1_1.jpg';
-import slide2_2 from '../assets/slides/TextFollow/nucleus_1_slide_1_2.jpg';
-import slide3_1 from '../assets/slides/TextFollow/cytoskeleton_1_slide_1_1.jpg';
-import slide3_2 from '../assets/slides/TextFollow/cytoskeleton_1_slide_1_2.jpg';
+import slide1_1 from '../assets/slides/1_cell/cell.jpg';
+import slide2_1 from '../assets/slides/2_nucleus/nucleus_1.jpg';
+import slide3_1 from '../assets/slides/2_nucleus/nucleus_2.jpg';
+import slide1_2 from '../assets/slides/1_cell/cell.jpg';
+import slide2_2 from '../assets/slides/2_nucleus/nucleus_1.jpg';
+import slide3_2 from '../assets/slides/2_nucleus/nucleus_2.jpg';
 
-//import mask from '../assets/images/transparent_background.png';
+import audio1 from '../assets/audios/slides/1_cell.mp3';
+import audio2 from '../assets/audios/slides/2_nucleus_1.mp3';
+import audio3 from '../assets/audios/slides/3_nucleus_2.mp3';
+import audio4 from '../assets/audios/slides/1_cell.mp3';
+import audio5 from '../assets/audios/slides/2_nucleus_1.mp3';
+import audio6 from '../assets/audios/slides/3_nucleus_2.mp3';
 
-import audio1 from '../assets/audios/slides/cell/cell_trim_1.wav';
-import audio2 from '../assets/audios/slides/cell/cell_trim_2.wav';
-import audio3 from '../assets/audios/slides/nucleus/nucleus_trim_1.mp3';
-import audio4 from '../assets/audios/slides/nucleus/nucleus_trim_2.mp3';
-import audio5 from '../assets/audios/slides/cytoskeleton/cytoskeleton_trim_1.mp3';
-import audio6 from '../assets/audios/slides/cytoskeleton/cytoskeleton_trim_2.mp3';
 import { UserContext } from "../context/UserContext";
 
 const isDebug = false;
