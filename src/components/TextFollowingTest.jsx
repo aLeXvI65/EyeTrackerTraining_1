@@ -206,8 +206,7 @@ const readingData = [
         { maskTop: 37, height: "9vh", imgTop: 25, imgLeft: 32, imgWidth: "38vh", imgHeight: "11vh", time: 3 },
         { maskTop: 46, height: "10vh", imgTop: 38, imgLeft: 0, imgWidth: "38vh", imgHeight: "11vh", time: 3 },
         { maskTop: 56, height: "17vh", imgTop: 43, imgLeft: 4, imgWidth: "50vh", imgHeight: "29vh", time: 3 },
-    ]
-    ,
+    ],
     [
         { maskTop: 0, height: "15vh", imgTop: 0, imgLeft: 0, imgWidth: "17vh", imgHeight: "50vh", time: 3 },
         { maskTop: 15, height: "13vh", imgTop: 0, imgLeft: 17, imgWidth: "13vh", imgHeight: "50vh", time: 3 },
@@ -215,7 +214,20 @@ const readingData = [
         { maskTop: 41, height: "13vh", imgTop: 0, imgLeft: 45, imgWidth: "16vh", imgHeight: "50vh", time: 3 },
         { maskTop: 54, height: "13vh", imgTop: 0, imgLeft: 61, imgWidth: "38vh", imgHeight: "50vh", time: 3 },
         { maskTop: 67, height: "13vh", imgTop: 0, imgLeft: 61, imgWidth: "38vh", imgHeight: "50vh", time: 3 },
-    ]
+    ],
+    [
+        { maskTop: 0, height: "22vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 3 },
+        { maskTop: 22, height: "22vh", imgTop: 15, imgLeft: 28, imgWidth: "25vh", imgHeight: "23vh", time: 3 },
+        { maskTop: 44, height: "16vh", imgTop: 3, imgLeft: 58, imgWidth: "29vh", imgHeight: "23vh", time: 3 },
+        { maskTop: 60, height: "20vh", imgTop: 3, imgLeft: 32, imgWidth: "26vh", imgHeight: "23vh", time: 3 },
+    ],
+    [
+        { maskTop: 0, height: "23vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 3 },
+        { maskTop: 23, height: "12vh", imgTop: 28, imgLeft: 7, imgWidth: "18vh", imgHeight: "35vh", time: 3 },
+        { maskTop: 35, height: "9vh", imgTop: 16, imgLeft: 1, imgWidth: "28vh", imgHeight: "14vh", time: 3 },
+        { maskTop: 44, height: "8vh", imgTop: 16, imgLeft: 26, imgWidth: "15vh", imgHeight: "18vh", time: 3 },
+        { maskTop: 52, height: "8vh", imgTop: 26, imgLeft: 42, imgWidth: "38vh", imgHeight: "30vh", time: 3 },
+    ]     
 ];
 
 const offsets = [
@@ -314,6 +326,18 @@ const offsets = [
         textTop: 11.5,
         imgLeft: 93.5,
         imgTop: 24
+    },
+    {
+        textLeft: 0,
+        textTop: 12.5,
+        imgLeft: 89.5,
+        imgTop: 21
+    },
+    {
+        textLeft: 0,
+        textTop: 16.5,
+        imgLeft: 104,
+        imgTop: 9
     }
 ];
 
@@ -330,7 +354,7 @@ export default function TextFollowingTest() {
     const [step, setStep] = useState(0);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
 
-    const [currentSlide, setCurrentSlide] = useState(15);
+    const [currentSlide, setCurrentSlide] = useState(17);
     const [finishTest, setFinishTest] = useState(false);
     const [seeInfo, setSeeInfo] = useState(false);
     const [readingTimeOut, setReadingTimeOut] = useState(null);
