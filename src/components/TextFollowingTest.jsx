@@ -115,7 +115,7 @@ const readingData = [
         { maskTop: 59, height: "15vh", imgTop: 33, imgLeft: 0, imgWidth: "38vh", imgHeight: "45vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "18vh", imgTop: 5, imgLeft: 5, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 10.2 },
+        { maskTop: 0, height: "18vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 10.2 },
         { maskTop: 18, height: "11vh", imgTop: 3, imgLeft: 38, imgWidth: "41vh", imgHeight: "25vh", time: 3.2 },
         { maskTop: 30, height: "22vh", imgTop: 18, imgLeft: 0, imgWidth: "48vh", imgHeight: "58vh", time: 3.2 }, 
     ],
@@ -125,13 +125,13 @@ const readingData = [
         { maskTop: 42, height: "26vh", imgTop: 36, imgLeft: 0, imgWidth: "77vh", imgHeight: "36vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "14vh", imgTop: 5, imgLeft: 5, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 13.2 },
+        { maskTop: 0, height: "14vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.2 },
         { maskTop: 14, height: "29vh", imgTop: 0, imgLeft: 0, imgWidth: "94vh", imgHeight: "25vh", time: 22.8 },
         { maskTop: 43, height: "20vh", imgTop: 25, imgLeft: 0, imgWidth: "94vh", imgHeight: "21vh", time: 17.1 },
         { maskTop: 63, height: "14vh", imgTop: 46, imgLeft: 0, imgWidth: "94vh", imgHeight: "26vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "19vh", imgTop: 5, imgLeft: 5, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 13.4 },
+        { maskTop: 0, height: "19vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.4 },
         { maskTop: 19, height: "21vh", imgTop: 0, imgLeft: 0, imgWidth: "28vh", imgHeight: "50vh", time: 6.2 },
         { maskTop: 19, height: "21vh", imgTop: 0, imgLeft: 63, imgWidth: "37vh", imgHeight: "25vh", time: 6 },
         { maskTop: 40, height: "14vh", imgTop: 17, imgLeft: 45, imgWidth: "55vh", imgHeight: "33vh", time: 9 },
@@ -139,7 +139,7 @@ const readingData = [
         { maskTop: 68, height: "14vh", imgTop: 0, imgLeft: 29, imgWidth: "33vh", imgHeight: "18vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "13vh", imgTop: 5, imgLeft: 5, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 11.7 },
+        { maskTop: 0, height: "13vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 11.7 },
         { maskTop: 13, height: "15vh", imgTop: 9, imgLeft: 0, imgWidth: "28vh", imgHeight: "26vh", time: 7.7 },  
         { maskTop: 28, height: "10vh", imgTop: 55, imgLeft: 30, imgWidth: "34vh", imgHeight: "26vh", time: 5.9 }, 
         { maskTop: 38, height: "12vh", imgTop: 11, imgLeft: 43, imgWidth: "38vh", imgHeight: "22vh", time: 9.5 }, 
@@ -147,8 +147,8 @@ const readingData = [
         { maskTop: 62, height: "16vh", imgTop: 58, imgLeft: 60, imgWidth: "21vh", imgHeight: "23vh", time: 3 }, 
     ],
     [
-        { maskTop: 0, height: "19vh", imgTop: 5, imgLeft: 5, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 10.7 },
-        { maskTop: 19, height: "10vh", imgTop: 5, imgLeft: 5, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 5.4 },
+        { maskTop: 0, height: "19vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 10.7 },
+        { maskTop: 19, height: "10vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 5.4 },
         { maskTop: 29, height: "10vh", imgTop: 7, imgLeft: 69, imgWidth: "20vh", imgHeight: "27vh", time: 4.2 },
         { maskTop: 39, height: "18vh", imgTop: 0, imgLeft: 0, imgWidth: "24vh", imgHeight: "31vh", time: 9.1 },
         { maskTop: 57, height: "10vh", imgTop: 8, imgLeft: 22, imgWidth: "32vh", imgHeight: "23vh", time: 3.5 },
@@ -166,7 +166,7 @@ const readingData = [
         { maskTop: 72, height: "10vh", imgTop: 0, imgLeft: 69, imgWidth: "21.5vh", imgHeight: "55vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "12vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 8.8 },
+        { maskTop: 0, height: "12vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 8.8 },
         { maskTop: 12, height: "18vh", imgTop: 0, imgLeft: 0, imgWidth: "97vh", imgHeight: "40vh", time: 13.9 },
         { maskTop: 30, height: "12vh", imgTop: 0, imgLeft: 0, imgWidth: "97vh", imgHeight: "40vh", time: 6 },
         { maskTop: 42, height: "14vh", imgTop: 40, imgLeft: 0, imgWidth: "97vh", imgHeight: "20vh", time: 7.8 },
@@ -192,7 +192,7 @@ const readingData = [
         { maskTop: 39, height: "40vh", imgTop: 44, imgLeft: 35, imgWidth: "49vh", imgHeight: "48vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "27vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 14.8 },
+        { maskTop: 0, height: "27vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 14.8 },
         { maskTop: 27, height: "6vh", imgTop: 0, imgLeft: 42, imgWidth: "26vh", imgHeight: "44vh", time: 2.4 },
         { maskTop: 33, height: "14vh", imgTop: 0, imgLeft: 68, imgWidth: "23vh", imgHeight: "44vh", time: 6.5 },
         { maskTop: 47, height: "10vh", imgTop: 0, imgLeft: 68, imgWidth: "23vh", imgHeight: "44vh", time: 4.4 },
@@ -201,7 +201,7 @@ const readingData = [
         { maskTop: 72, height: "7vh", imgTop: 65, imgLeft: 0, imgWidth: "91vh", imgHeight: "25vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "17vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 14 },
+        { maskTop: 0, height: "17vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 14 },
         { maskTop: 17, height: "20vh", imgTop: 25, imgLeft: 0, imgWidth: "35vh", imgHeight: "15vh", time: 10.2 },
         { maskTop: 37, height: "9vh", imgTop: 25, imgLeft: 32, imgWidth: "38vh", imgHeight: "11vh", time: 4 },
         { maskTop: 46, height: "10vh", imgTop: 38, imgLeft: 0, imgWidth: "38vh", imgHeight: "11vh", time: 6.4 },
@@ -216,21 +216,21 @@ const readingData = [
         { maskTop: 67, height: "13vh", imgTop: 0, imgLeft: 61, imgWidth: "38vh", imgHeight: "50vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "22vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 13.5 },
+        { maskTop: 0, height: "22vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.5 },
         { maskTop: 22, height: "22vh", imgTop: 15, imgLeft: 28, imgWidth: "25vh", imgHeight: "23vh", time: 12.5 },
         { maskTop: 44, height: "16vh", imgTop: 3, imgLeft: 58, imgWidth: "29vh", imgHeight: "23vh", time: 8.1 },
         { maskTop: 60, height: "20vh", imgTop: 3, imgLeft: 32, imgWidth: "26vh", imgHeight: "23vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "23vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 12.2 },
+        { maskTop: 0, height: "23vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 12.2 },
         { maskTop: 23, height: "12vh", imgTop: 28, imgLeft: 7, imgWidth: "18vh", imgHeight: "35vh", time: 7.5 },
         { maskTop: 35, height: "9vh", imgTop: 16, imgLeft: 1, imgWidth: "28vh", imgHeight: "14vh", time: 6.6 },
         { maskTop: 44, height: "8vh", imgTop: 16, imgLeft: 26, imgWidth: "15vh", imgHeight: "18vh", time: 4.4 },
         { maskTop: 52, height: "8vh", imgTop: 26, imgLeft: 42, imgWidth: "38vh", imgHeight: "30vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "7vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 8.6 },
-        { maskTop: 7, height: "9vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 9.1 },
+        { maskTop: 0, height: "7vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 8.6 },
+        { maskTop: 7, height: "9vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 9.1 },
         { maskTop: 16, height: "12vh", imgTop: 0, imgLeft: 0, imgWidth: "72vh", imgHeight: "42vh", time: 7.2 },
         { maskTop: 28, height: "10vh", imgTop: 10, imgLeft: 0, imgWidth: "20vh", imgHeight: "32vh", time: 10.3 },
         { maskTop: 38, height: "8vh", imgTop: 22, imgLeft: 44, imgWidth: "24vh", imgHeight: "20vh", time: 6.5 },
@@ -239,7 +239,7 @@ const readingData = [
         { maskTop: 66, height: "7vh", imgTop: 42, imgLeft: 22, imgWidth: "14vh", imgHeight: "38vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "13vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 9.2 },
+        { maskTop: 0, height: "13vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 9.2 },
         { maskTop: 13, height: "13vh", imgTop: 0, imgLeft: 0, imgWidth: "70vh", imgHeight: "46vh", time: 6 },
         { maskTop: 26, height: "16vh", imgTop: 19, imgLeft: 40, imgWidth: "16vh", imgHeight: "26vh", time: 7.3 },
         { maskTop: 42, height: "8vh", imgTop: 46, imgLeft: 0, imgWidth: "70vh", imgHeight: "46vh", time: 7 },
@@ -1203,7 +1203,7 @@ const styles = {
         right: "5px",
         width: "90px",
         height: "30px",
-        fontSize: "14px",
+        fontSize: "18px",
         color: "#111",
     },
     maskButton: {
