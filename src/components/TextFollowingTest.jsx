@@ -44,7 +44,7 @@ import audio20 from '../assets/audios/slides/20_various_bones.mp3.mp3';
 
 import { UserContext } from "../context/UserContext";
 
-const isDebug = true;
+const isDebug = false;
 
 const intervals = {
     image: null,
@@ -174,60 +174,79 @@ const readingData = [
         { maskTop: 68, height: "12vh", imgTop: 70, imgLeft: 0, imgWidth: "97vh", imgHeight: "18vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "18vh", imgTop: 0, imgLeft: 0, imgWidth: "81vh", imgHeight: "58vh", time: 3 },
-        { maskTop: 18, height: "28vh", imgTop: 58, imgLeft: 32, imgWidth: "49vh", imgHeight: "21vh", time: 3 },
+        { maskTop: 0, height: "18vh", imgTop: 0, imgLeft: 0, imgWidth: "81vh", imgHeight: "58vh", time: 12.8 },
+        { maskTop: 18, height: "28vh", imgTop: 58, imgLeft: 32, imgWidth: "49vh", imgHeight: "21vh", time: 18 },
         { maskTop: 46, height: "33vh", imgTop: 53, imgLeft: 0, imgWidth: "40vh", imgHeight: "39vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "27vh", imgTop: 32, imgLeft: 30, imgWidth: "57.5vh", imgHeight: "14vh", time: 3 },
-        { maskTop: 27, height: "15vh", imgTop: 0, imgLeft: 19, imgWidth: "42vh", imgHeight: "33vh", time: 3 },
-        { maskTop: 42, height: "10vh", imgTop: 0, imgLeft: 19, imgWidth: "42vh", imgHeight: "33vh", time: 3 },
-        { maskTop: 52, height: "12vh", imgTop: 45, imgLeft: 0, imgWidth: "56vh", imgHeight: "10vh", time: 3 },
-        { maskTop: 64, height: "8vh", imgTop: 55, imgLeft: 0, imgWidth: "87vh", imgHeight: "16vh", time: 3 },
+        { maskTop: 0, height: "27vh", imgTop: 32, imgLeft: 30, imgWidth: "57.5vh", imgHeight: "14vh", time: 19.1 },
+        { maskTop: 27, height: "15vh", imgTop: 0, imgLeft: 19, imgWidth: "42vh", imgHeight: "33vh", time: 10 },
+        { maskTop: 42, height: "10vh", imgTop: 0, imgLeft: 19, imgWidth: "42vh", imgHeight: "33vh", time: 7.7 },
+        { maskTop: 52, height: "12vh", imgTop: 45, imgLeft: 0, imgWidth: "56vh", imgHeight: "10vh", time: 4.7 },
+        { maskTop: 64, height: "8vh", imgTop: 55, imgLeft: 0, imgWidth: "87vh", imgHeight: "16vh", time: 4.7 },
         { maskTop: 72, height: "10vh", imgTop: 45, imgLeft: 50, imgWidth: "37.5vh", imgHeight: "14vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "14vh", imgTop: 0, imgLeft: 0, imgWidth: "84vh", imgHeight: "44vh", time: 3 },
-        { maskTop: 14, height: "25vh", imgTop: 44, imgLeft: 0, imgWidth: "35vh", imgHeight: "50vh", time: 3 },
+        { maskTop: 0, height: "14vh", imgTop: 0, imgLeft: 0, imgWidth: "84vh", imgHeight: "44vh", time: 10.2 },
+        { maskTop: 14, height: "25vh", imgTop: 44, imgLeft: 0, imgWidth: "35vh", imgHeight: "50vh", time: 16 },
         { maskTop: 39, height: "40vh", imgTop: 44, imgLeft: 35, imgWidth: "49vh", imgHeight: "48vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "27vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 3 },
-        { maskTop: 27, height: "6vh", imgTop: 0, imgLeft: 42, imgWidth: "26vh", imgHeight: "44vh", time: 3 },
-        { maskTop: 33, height: "14vh", imgTop: 0, imgLeft: 68, imgWidth: "23vh", imgHeight: "44vh", time: 3 },
-        { maskTop: 47, height: "10vh", imgTop: 0, imgLeft: 68, imgWidth: "23vh", imgHeight: "44vh", time: 3 },
+        { maskTop: 0, height: "27vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 14.8 },
+        { maskTop: 27, height: "6vh", imgTop: 0, imgLeft: 42, imgWidth: "26vh", imgHeight: "44vh", time: 2.4 },
+        { maskTop: 33, height: "14vh", imgTop: 0, imgLeft: 68, imgWidth: "23vh", imgHeight: "44vh", time: 6.5 },
+        { maskTop: 47, height: "10vh", imgTop: 0, imgLeft: 68, imgWidth: "23vh", imgHeight: "44vh", time: 4.4 },
         { maskTop: 57, height: "5vh", imgTop: 44, imgLeft: 0, imgWidth: "91vh", imgHeight: "13vh", time: 3 },
         { maskTop: 62, height: "10vh", imgTop: 57, imgLeft: 0, imgWidth: "91vh", imgHeight: "8vh", time: 3 },
         { maskTop: 72, height: "7vh", imgTop: 65, imgLeft: 0, imgWidth: "91vh", imgHeight: "25vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "17vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 3 },
-        { maskTop: 17, height: "20vh", imgTop: 25, imgLeft: 0, imgWidth: "35vh", imgHeight: "15vh", time: 3 },
-        { maskTop: 37, height: "9vh", imgTop: 25, imgLeft: 32, imgWidth: "38vh", imgHeight: "11vh", time: 3 },
-        { maskTop: 46, height: "10vh", imgTop: 38, imgLeft: 0, imgWidth: "38vh", imgHeight: "11vh", time: 3 },
+        { maskTop: 0, height: "17vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 14 },
+        { maskTop: 17, height: "20vh", imgTop: 25, imgLeft: 0, imgWidth: "35vh", imgHeight: "15vh", time: 10.2 },
+        { maskTop: 37, height: "9vh", imgTop: 25, imgLeft: 32, imgWidth: "38vh", imgHeight: "11vh", time: 4 },
+        { maskTop: 46, height: "10vh", imgTop: 38, imgLeft: 0, imgWidth: "38vh", imgHeight: "11vh", time: 6.4 },
         { maskTop: 56, height: "17vh", imgTop: 43, imgLeft: 4, imgWidth: "50vh", imgHeight: "29vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "15vh", imgTop: 0, imgLeft: 0, imgWidth: "17vh", imgHeight: "50vh", time: 3 },
-        { maskTop: 15, height: "13vh", imgTop: 0, imgLeft: 17, imgWidth: "13vh", imgHeight: "50vh", time: 3 },
-        { maskTop: 28, height: "13vh", imgTop: 0, imgLeft: 30, imgWidth: "15vh", imgHeight: "50vh", time: 3 },
-        { maskTop: 41, height: "13vh", imgTop: 0, imgLeft: 45, imgWidth: "16vh", imgHeight: "50vh", time: 3 },
-        { maskTop: 54, height: "13vh", imgTop: 0, imgLeft: 61, imgWidth: "38vh", imgHeight: "50vh", time: 3 },
+        { maskTop: 0, height: "15vh", imgTop: 0, imgLeft: 0, imgWidth: "17vh", imgHeight: "50vh", time: 7.2 },
+        { maskTop: 15, height: "13vh", imgTop: 0, imgLeft: 17, imgWidth: "13vh", imgHeight: "50vh", time: 5.5 },
+        { maskTop: 28, height: "13vh", imgTop: 0, imgLeft: 30, imgWidth: "15vh", imgHeight: "50vh", time: 7.9 },
+        { maskTop: 41, height: "13vh", imgTop: 0, imgLeft: 45, imgWidth: "16vh", imgHeight: "50vh", time: 5.9 },
+        { maskTop: 54, height: "13vh", imgTop: 0, imgLeft: 61, imgWidth: "38vh", imgHeight: "50vh", time: 5.7 },
         { maskTop: 67, height: "13vh", imgTop: 0, imgLeft: 61, imgWidth: "38vh", imgHeight: "50vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "22vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 3 },
-        { maskTop: 22, height: "22vh", imgTop: 15, imgLeft: 28, imgWidth: "25vh", imgHeight: "23vh", time: 3 },
-        { maskTop: 44, height: "16vh", imgTop: 3, imgLeft: 58, imgWidth: "29vh", imgHeight: "23vh", time: 3 },
+        { maskTop: 0, height: "22vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 13.5 },
+        { maskTop: 22, height: "22vh", imgTop: 15, imgLeft: 28, imgWidth: "25vh", imgHeight: "23vh", time: 12.5 },
+        { maskTop: 44, height: "16vh", imgTop: 3, imgLeft: 58, imgWidth: "29vh", imgHeight: "23vh", time: 8.1 },
         { maskTop: 60, height: "20vh", imgTop: 3, imgLeft: 32, imgWidth: "26vh", imgHeight: "23vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "23vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 3 },
-        { maskTop: 23, height: "12vh", imgTop: 28, imgLeft: 7, imgWidth: "18vh", imgHeight: "35vh", time: 3 },
-        { maskTop: 35, height: "9vh", imgTop: 16, imgLeft: 1, imgWidth: "28vh", imgHeight: "14vh", time: 3 },
-        { maskTop: 44, height: "8vh", imgTop: 16, imgLeft: 26, imgWidth: "15vh", imgHeight: "18vh", time: 3 },
+        { maskTop: 0, height: "23vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 12.2 },
+        { maskTop: 23, height: "12vh", imgTop: 28, imgLeft: 7, imgWidth: "18vh", imgHeight: "35vh", time: 7.5 },
+        { maskTop: 35, height: "9vh", imgTop: 16, imgLeft: 1, imgWidth: "28vh", imgHeight: "14vh", time: 6.6 },
+        { maskTop: 44, height: "8vh", imgTop: 16, imgLeft: 26, imgWidth: "15vh", imgHeight: "18vh", time: 4.4 },
         { maskTop: 52, height: "8vh", imgTop: 26, imgLeft: 42, imgWidth: "38vh", imgHeight: "30vh", time: 3 },
-    ]     
+    ],
+    [
+        { maskTop: 0, height: "7vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 8.6 },
+        { maskTop: 7, height: "9vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 9.1 },
+        { maskTop: 16, height: "12vh", imgTop: 0, imgLeft: 0, imgWidth: "72vh", imgHeight: "42vh", time: 7.2 },
+        { maskTop: 28, height: "10vh", imgTop: 10, imgLeft: 0, imgWidth: "20vh", imgHeight: "32vh", time: 10.3 },
+        { maskTop: 38, height: "8vh", imgTop: 22, imgLeft: 44, imgWidth: "24vh", imgHeight: "20vh", time: 6.5 },
+        { maskTop: 46, height: "10vh", imgTop: 42, imgLeft: 0, imgWidth: "72vh", imgHeight: "38vh", time: 6 },
+        { maskTop: 56, height: "10vh", imgTop: 42, imgLeft: 0, imgWidth: "22vh", imgHeight: "38vh", time: 6.8 },
+        { maskTop: 66, height: "7vh", imgTop: 42, imgLeft: 22, imgWidth: "14vh", imgHeight: "38vh", time: 3 },
+    ],
+    [
+        { maskTop: 0, height: "13vh", imgTop: 0, imgLeft: 0, imgWidth: "0.5vh", imgHeight: "0.5vh", time: 9.2 },
+        { maskTop: 13, height: "13vh", imgTop: 0, imgLeft: 0, imgWidth: "70vh", imgHeight: "46vh", time: 6 },
+        { maskTop: 26, height: "16vh", imgTop: 19, imgLeft: 40, imgWidth: "16vh", imgHeight: "26vh", time: 7.3 },
+        { maskTop: 42, height: "8vh", imgTop: 46, imgLeft: 0, imgWidth: "70vh", imgHeight: "46vh", time: 7 },
+        { maskTop: 50, height: "8vh", imgTop: 46, imgLeft: 0, imgWidth: "30vh", imgHeight: "30vh", time: 4.3 },
+        { maskTop: 58, height: "17vh", imgTop: 4, imgLeft: 1, imgWidth: "35vh", imgHeight: "20vh", time: 9.9 },
+        { maskTop: 75, height: "12vh", imgTop: 23, imgLeft: 1, imgWidth: "35vh", imgHeight: "14vh", time: 3 },
+    ]
 ];
 
 const offsets = [
@@ -338,6 +357,18 @@ const offsets = [
         textTop: 16.5,
         imgLeft: 104,
         imgTop: 9
+    },
+    {
+        textLeft: 0,
+        textTop: 16.5,
+        imgLeft: 119,
+        imgTop: 8.5
+    },
+    {
+        textLeft: 0,
+        textTop: 8.5,
+        imgLeft: 119,
+        imgTop: 3.5
     }
 ];
 
@@ -354,7 +385,7 @@ export default function TextFollowingTest() {
     const [step, setStep] = useState(0);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
 
-    const [currentSlide, setCurrentSlide] = useState(17);
+    const [currentSlide, setCurrentSlide] = useState(0);
     const [finishTest, setFinishTest] = useState(false);
     const [seeInfo, setSeeInfo] = useState(false);
     const [readingTimeOut, setReadingTimeOut] = useState(null);
@@ -606,6 +637,7 @@ export default function TextFollowingTest() {
                 !finishTest &&
                 <div style={styles.subcontainer}>
                     <button style={styles.seeInfo} onClick={handleSeeInfoClick}>{seeInfo ? "Hide Info" : "See Info"}</button>
+                    <span style={styles.slidesInfo}>{currentSlide+1} / {numSlides}</span>
                     <img
                         style={styles.image}
                         src={slides[currentSlide]}
@@ -921,7 +953,7 @@ const styles = {
         top: "15vh",
         width: "38.5vw",
         height: "79vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -929,7 +961,7 @@ const styles = {
         top: "12vh",
         width: "39vw",
         height: "79vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -937,7 +969,7 @@ const styles = {
         top: "17.5vh",
         width: "39vw",
         height: "73vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -945,7 +977,7 @@ const styles = {
         top: "11.5vh",
         width: "37vw",
         height: "79vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -953,7 +985,7 @@ const styles = {
         top: "12.5vh",
         width: "34vw",
         height: "80vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -961,7 +993,7 @@ const styles = {
         top: "16.5vh",
         width: "40vw",
         height: "75vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -969,7 +1001,7 @@ const styles = {
         top: "16.5vh",
         width: "40vw",
         height: "73vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -977,7 +1009,7 @@ const styles = {
         top: "8.5vh",
         width: "46vw",
         height: "85vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     }],
     // Image targets
 
@@ -1086,7 +1118,7 @@ const styles = {
         top: "2vh",
         width: "40.5vw",
         height: "92vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -1094,7 +1126,7 @@ const styles = {
         top: "6.5vh",
         width: "43.5vw",
         height: "90vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -1102,7 +1134,7 @@ const styles = {
         top: "17vh",
         width: "33.5vw",
         height: "72vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -1110,7 +1142,7 @@ const styles = {
         top: "24vh",
         width: "47.5vw",
         height: "50vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -1118,7 +1150,7 @@ const styles = {
         top: "21vh",
         width: "49vw",
         height: "52vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -1126,7 +1158,7 @@ const styles = {
         top: "9vh",
         width: "38.5vw",
         height: "84vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -1134,7 +1166,7 @@ const styles = {
         top: "8.5vh",
         width: "34vw",
         height: "80vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
@@ -1142,7 +1174,7 @@ const styles = {
         top: "3.5vh",
         width: "33vw",
         height: "92vh",
-        backgroundColor: "rgba(0,0,0,0.5)"
+        backgroundColor: "rgba(0,0,0,0)"
     }],
     // End targets
 
@@ -1165,6 +1197,15 @@ const styles = {
         height: "30px",
         fontSize: "12px"
     },
+    slidesInfo: {
+        position: "absolute",
+        top: "5px",
+        right: "5px",
+        width: "90px",
+        height: "30px",
+        fontSize: "14px",
+        color: "#111",
+    },
     maskButton: {
         maskImage: 'url("/mask.png")',
         webkitMaskImage: 'url("/mask.png")',
@@ -1181,6 +1222,6 @@ const styles = {
     },
     tableTD: {
         border: "1px solid #ccc",
-        padding: "8px",
+        padding: "0px",
     }
 };
