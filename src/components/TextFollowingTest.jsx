@@ -391,7 +391,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
     const [step, setStep] = useState(0);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
 
-    const [currentSlide, setCurrentSlide] = useState(3);
+    const [currentSlide, setCurrentSlide] = useState(0);
     const [finishTest, setFinishTest] = useState(false);
     const [seeInfo, setSeeInfo] = useState(false);
     const [readingTimeOut, setReadingTimeOut] = useState(null);
