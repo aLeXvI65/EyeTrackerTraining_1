@@ -57,7 +57,7 @@ function App() {
         !startTest && hasLogin && <StartMenu onStart={handleStart} />
       }
       {
-        startTest && hasLogin && (selectedTest !== "TextFollowing" ? <NormalTest /> : <TextFollowingTest />)
+        startTest && hasLogin && (selectedTest !== "TextFollowing" ? <TextFollowingTest isTextFollowing={false} /> : <TextFollowingTest />)
       }
     </>
   )

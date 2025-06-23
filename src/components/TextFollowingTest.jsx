@@ -21,7 +21,7 @@ import slide18 from '../assets/slides/17_ion_distribution/ion_distribution_2.jpg
 import slide19 from '../assets/slides/19_systemic/systemic_pulmonary_circulation.jpg';
 import slide20 from '../assets/slides/20_various/various_types_bone.jpg';
 
-import audio1 from '../assets/audios/slides/1_cell.mp3';
+import audio1 from '../assets/audios/slides/1_cell2.mp3';
 import audio2 from '../assets/audios/slides/2_nucleus_1.mp3';
 import audio3 from '../assets/audios/slides/3_nucleus_2.mp3';
 import audio4 from '../assets/audios/slides/4_cytoskeleton.mp3';
@@ -39,7 +39,7 @@ import audio15 from '../assets/audios/slides/15_myocardial_contraction.mp3';
 import audio16 from '../assets/audios/slides/16_myocardial_contraction_2.mp3';
 import audio17 from '../assets/audios/slides/17_ion_distribution.mp3';
 import audio18 from '../assets/audios/slides/18_ion_distribution_2.mp3';
-import audio19 from '../assets/audios/slides/19_systemic_pulmonary.mp3';
+import audio19 from '../assets/audios/slides/19_systemic_pulmonary2.mp3';
 import audio20 from '../assets/audios/slides/20_various_bones.mp3.mp3';
 
 import { UserContext } from "../context/UserContext";
@@ -108,11 +108,12 @@ const audios = [
 
 const readingData = [
     [
-        { maskTop: 0, height: "11vh", imgTop: 47, imgLeft: 39, imgWidth: "22vh", imgHeight: "30vh", time: 8.2 },
-        { maskTop: 13, height: "29vh", imgTop: 26, imgLeft: 28, imgWidth: "25vh", imgHeight: "18vh", time: 16 },
-        { maskTop: 43, height: "8vh", imgTop: 42, imgLeft: 40, imgWidth: "45vh", imgHeight: "15vh", time: 5.3 },
-        { maskTop: 51, height: "8vh", imgTop: 28, imgLeft: 54, imgWidth: "15vh", imgHeight: "15vh", time: 4.5 },
-        { maskTop: 59, height: "15vh", imgTop: 33, imgLeft: 0, imgWidth: "38vh", imgHeight: "45vh", time: 3 },
+        { maskTop: 0, height: "15vh", imgTop: 22, imgLeft: 0, imgWidth: "32vh", imgHeight: "7vh", time: 8.8 },
+        { maskTop: 15, height: "11vh", imgTop: 22, imgLeft: 0, imgWidth: "32vh", imgHeight: "7vh", time: 5.8 },
+        { maskTop: 26, height: "19vh", imgTop: 0, imgLeft: 42, imgWidth: "60vh", imgHeight: "15vh", time: 7.9 },
+        { maskTop: 45, height: "15vh", imgTop: 32, imgLeft: 49, imgWidth: "61vh", imgHeight: "7vh", time: 5.5 },
+        { maskTop: 60, height: "7vh", imgTop: 29, imgLeft: 0, imgWidth: "36vh", imgHeight: "6vh", time: 3.6 },
+        { maskTop: 67, height: "20vh", imgTop: 18, imgLeft: 34, imgWidth: "76vh", imgHeight: "10vh", time: 3 },
     ],
     [
         { maskTop: 0, height: "18vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 10.2 },
@@ -131,13 +132,13 @@ const readingData = [
         { maskTop: 63, height: "14vh", imgTop: 46, imgLeft: 0, imgWidth: "94vh", imgHeight: "26vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "19vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.4 },
-        { maskTop: 19, height: "21vh", imgTop: 0, imgLeft: 0, imgWidth: "28vh", imgHeight: "50vh", time: 6.2 },
-        { maskTop: 19, height: "21vh", imgTop: 0, imgLeft: 63, imgWidth: "37vh", imgHeight: "25vh", time: 6 },
-        { maskTop: 40, height: "14vh", imgTop: 17, imgLeft: 45, imgWidth: "55vh", imgHeight: "33vh", time: 9 },
-        { maskTop: 54, height: "14vh", imgTop: 19, imgLeft: 30, imgWidth: "15vh", imgHeight: "31vh", time: 6.6 },
-        { maskTop: 68, height: "14vh", imgTop: 0, imgLeft: 29, imgWidth: "33vh", imgHeight: "18vh", time: 3 },
+        { maskTop: 0, height: "20vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.4 },
+        { maskTop: 20, height: "21vh", imgTop: 21, imgLeft: 77, imgWidth: "28vh", imgHeight: "12vh", time: 12.8 },
+        { maskTop: 41, height: "16vh", imgTop: 21, imgLeft: 0, imgWidth: "45vh", imgHeight: "30vh", time: 9 },
+        { maskTop: 57, height: "14vh", imgTop: 24, imgLeft: 16, imgWidth: "16vh", imgHeight: "20vh", time: 6 },
+        { maskTop: 71, height: "14vh", imgTop: 0, imgLeft: 18, imgWidth: "24vh", imgHeight: "20vh", time: 3 },
     ],
+    // Slides 6-10
     [
         { maskTop: 0, height: "13vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 11.7 },
         { maskTop: 13, height: "15vh", imgTop: 9, imgLeft: 0, imgWidth: "28vh", imgHeight: "26vh", time: 7.7 },  
@@ -166,13 +167,14 @@ const readingData = [
         { maskTop: 72, height: "10vh", imgTop: 0, imgLeft: 69, imgWidth: "21.5vh", imgHeight: "55vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "12vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 8.8 },
-        { maskTop: 12, height: "18vh", imgTop: 0, imgLeft: 0, imgWidth: "97vh", imgHeight: "40vh", time: 13.9 },
-        { maskTop: 30, height: "12vh", imgTop: 0, imgLeft: 0, imgWidth: "97vh", imgHeight: "40vh", time: 6 },
-        { maskTop: 42, height: "14vh", imgTop: 40, imgLeft: 0, imgWidth: "97vh", imgHeight: "20vh", time: 7.8 },
-        { maskTop: 56, height: "12vh", imgTop: 60, imgLeft: 0, imgWidth: "97vh", imgHeight: "10vh", time: 7 },
-        { maskTop: 68, height: "12vh", imgTop: 70, imgLeft: 0, imgWidth: "97vh", imgHeight: "18vh", time: 3 },
+        { maskTop: 0, height: "11vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 8.8 },
+        { maskTop: 11, height: "18vh", imgTop: 0, imgLeft: 13, imgWidth: "52vh", imgHeight: "35vh", time: 13.9 },
+        { maskTop: 29, height: "10vh", imgTop: 0, imgLeft: 13, imgWidth: "52vh", imgHeight: "35vh", time: 6 },
+        { maskTop: 39, height: "14vh", imgTop: 35, imgLeft: 0, imgWidth: "92vh", imgHeight: "19vh", time: 7.8 },
+        { maskTop: 53, height: "10vh", imgTop: 54, imgLeft: 0, imgWidth: "92vh", imgHeight: "8vh", time: 7 },
+        { maskTop: 63, height: "12vh", imgTop: 62, imgLeft: 0, imgWidth: "92vh", imgHeight: "18vh", time: 3 },
     ],
+    // Slides 11-15
     [
         { maskTop: 0, height: "18vh", imgTop: 0, imgLeft: 0, imgWidth: "81vh", imgHeight: "58vh", time: 12.8 },
         { maskTop: 18, height: "28vh", imgTop: 58, imgLeft: 32, imgWidth: "49vh", imgHeight: "21vh", time: 18 },
@@ -207,13 +209,15 @@ const readingData = [
         { maskTop: 46, height: "10vh", imgTop: 38, imgLeft: 0, imgWidth: "38vh", imgHeight: "11vh", time: 6.4 },
         { maskTop: 56, height: "17vh", imgTop: 43, imgLeft: 4, imgWidth: "50vh", imgHeight: "29vh", time: 3 },
     ],
+    // Slide 16-20
     [
-        { maskTop: 0, height: "15vh", imgTop: 0, imgLeft: 0, imgWidth: "17vh", imgHeight: "50vh", time: 7.2 },
-        { maskTop: 15, height: "13vh", imgTop: 0, imgLeft: 17, imgWidth: "13vh", imgHeight: "50vh", time: 5.5 },
-        { maskTop: 28, height: "13vh", imgTop: 0, imgLeft: 30, imgWidth: "15vh", imgHeight: "50vh", time: 7.9 },
-        { maskTop: 41, height: "13vh", imgTop: 0, imgLeft: 45, imgWidth: "16vh", imgHeight: "50vh", time: 5.9 },
-        { maskTop: 54, height: "13vh", imgTop: 0, imgLeft: 61, imgWidth: "38vh", imgHeight: "50vh", time: 5.7 },
-        { maskTop: 67, height: "13vh", imgTop: 0, imgLeft: 61, imgWidth: "38vh", imgHeight: "50vh", time: 3 },
+        { maskTop: 0, height: "5vh", imgTop: 0, imgLeft: 0, imgWidth: "17vh", imgHeight: "50vh", time: 4 },
+        { maskTop: 5, height: "8vh", imgTop: 0, imgLeft: 11, imgWidth: "18vh", imgHeight: "40vh", time: 3.2 },
+        { maskTop: 13, height: "13vh", imgTop: 0, imgLeft: 30, imgWidth: "16vh", imgHeight: "53vh", time: 5.5 },
+        { maskTop: 26, height: "12vh", imgTop: 30, imgLeft: 45, imgWidth: "10vh", imgHeight: "12vh", time: 7.9 },
+        { maskTop: 38, height: "12vh", imgTop: 0, imgLeft: 50, imgWidth: "31vh", imgHeight: "36vh", time: 5.9 },
+        { maskTop: 50, height: "13vh", imgTop: 55, imgLeft: 30, imgWidth: "44vh", imgHeight: "10vh", time: 5.1 },
+        { maskTop: 63, height: "17vh", imgTop: 0, imgLeft: 0, imgWidth: "82vh", imgHeight: "66vh", time: 3 },
     ],
     [
         { maskTop: 0, height: "22vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.5 },
@@ -229,14 +233,13 @@ const readingData = [
         { maskTop: 52, height: "8vh", imgTop: 26, imgLeft: 42, imgWidth: "38vh", imgHeight: "30vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "7vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 8.6 },
-        { maskTop: 7, height: "9vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 9.1 },
-        { maskTop: 16, height: "12vh", imgTop: 0, imgLeft: 0, imgWidth: "72vh", imgHeight: "42vh", time: 7.2 },
-        { maskTop: 28, height: "10vh", imgTop: 10, imgLeft: 0, imgWidth: "20vh", imgHeight: "32vh", time: 10.3 },
-        { maskTop: 38, height: "8vh", imgTop: 22, imgLeft: 44, imgWidth: "24vh", imgHeight: "20vh", time: 6.5 },
-        { maskTop: 46, height: "10vh", imgTop: 42, imgLeft: 0, imgWidth: "72vh", imgHeight: "38vh", time: 6 },
-        { maskTop: 56, height: "10vh", imgTop: 42, imgLeft: 0, imgWidth: "22vh", imgHeight: "38vh", time: 6.8 },
-        { maskTop: 66, height: "7vh", imgTop: 42, imgLeft: 22, imgWidth: "14vh", imgHeight: "38vh", time: 3 },
+        { maskTop: 0, height: "8vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 7.8 },
+        { maskTop: 8, height: "16vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 11.3 },
+        { maskTop: 24, height: "15vh", imgTop: 0, imgLeft: 0, imgWidth: "31vh", imgHeight: "38vh", time: 10.5 },
+        { maskTop: 39, height: "10vh", imgTop: 38, imgLeft: 0, imgWidth: "66vh", imgHeight: "16vh", time: 7.3 },
+        { maskTop: 49, height: "8vh", imgTop: 38, imgLeft: 0, imgWidth: "66vh", imgHeight: "16vh", time: 5.3 },
+        { maskTop: 57, height: "10vh", imgTop: 0, imgLeft: 64, imgWidth: "20vh", imgHeight: "54vh", time: 5.9 },
+        { maskTop: 67, height: "10vh", imgTop: 0, imgLeft: 84, imgWidth: "18vh", imgHeight: "54vh", time: 3 },
     ],
     [
         { maskTop: 0, height: "13vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 9.2 },
@@ -252,9 +255,9 @@ const readingData = [
 const offsets = [
     {
         textLeft: 0,
-        textTop: 18,
-        imgLeft: 101.7,
-        imgTop: 16
+        textTop: 10,
+        imgLeft: 80,
+        imgTop: 26
     },
     {
         textLeft: 0,
@@ -276,10 +279,11 @@ const offsets = [
     },
     {
         textLeft: 0,
-        textTop: 14,
-        imgLeft: 95.5,
-        imgTop: 27
+        textTop: 12,
+        imgLeft: 85,
+        imgTop: 30
     },
+    // Slides 6-10
     {
         textLeft: 0,
         textTop: 15,
@@ -306,10 +310,11 @@ const offsets = [
     },
     {
         textLeft: 0,
-        textTop: 17,
-        imgLeft: 90.5,
-        imgTop: 6
+        textTop: 23,
+        imgLeft: 95.5,
+        imgTop: 15
     },
+    // Slides 11-15
     {
         textLeft: 0,
         textTop: 15.5,
@@ -340,11 +345,12 @@ const offsets = [
         imgLeft: 116.5,
         imgTop: 17
     },
+    // Slide 16-20
     {
         textLeft: 0,
-        textTop: 11.5,
-        imgLeft: 93.5,
-        imgTop: 24
+        textTop: 18,
+        imgLeft: 102.5,
+        imgTop: 22.5
     },
     {
         textLeft: 0,
@@ -360,9 +366,9 @@ const offsets = [
     },
     {
         textLeft: 0,
-        textTop: 16.5,
-        imgLeft: 119,
-        imgTop: 8.5
+        textTop: 20,
+        imgLeft: 86.2,
+        imgTop: 31
     },
     {
         textLeft: 0,
@@ -375,7 +381,7 @@ const offsets = [
 const numSlides = 20;
 const trainingId = 11;
 
-export default function TextFollowingTest() {
+export default function TextFollowingTest({ isTextFollowing = true }) {
     const { userId, setUserId } = useContext(UserContext);
 
     const [clicks, setClicks] = useState({ button: 0, image: Array(numSlides).fill(0), text: Array(numSlides).fill(0), figure: 0 });
@@ -714,7 +720,7 @@ export default function TextFollowingTest() {
                                 style={{
                                     width: "100%",
                                     height: "100%",
-                                    backgroundColor: "rgba(0,0,0,0.5)",
+                                    backgroundColor: isTextFollowing ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)",
                                     fontSize: "18px",
                                     border: "none",
                                     padding: "0",
@@ -757,7 +763,7 @@ export default function TextFollowingTest() {
                                 style={{
                                     width: "100%",
                                     height: "100%",
-                                    backgroundColor: "rgba(0,0,0,0.5)",
+                                    backgroundColor: isTextFollowing ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)",
                                     fontSize: "18px",
                                     border: "none",
                                     padding: "0",
@@ -851,12 +857,12 @@ const styles = {
     hideTarget: {
         backgroundColor: "rgba(0,0,0,0)"
     },
-    textTarget: [{
+    textTarget: [{ // Slides 1-5
         position: "absolute",
         left: "10vw",
-        top: "18vh",
-        width: "38vw",
-        height: "73vh",
+        top: "10vh",
+        width: "28.5vw",
+        height: "86vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
@@ -885,12 +891,13 @@ const styles = {
     },
     {
         position: "absolute",
-        left: "9vw",
-        top: "14vh",
-        width: "37vw",
-        height: "78vh",
+        left: "10vw",
+        top: "12vh",
+        width: "31vw",
+        height: "83vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
+    // Slides 6-10
     {
         position: "absolute",
         left: "10vw",
@@ -925,12 +932,13 @@ const styles = {
     },
     {
         position: "absolute",
-        left: "6vw",
-        top: "17vh",
-        width: "37.3vw",
-        height: "79vh",
+        left: "11.5vw",
+        top: "23vh",
+        width: "34.5vw",
+        height: "75vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
+    // Slides 11-15
     {
         position: "absolute",
         left: "6vw",
@@ -971,12 +979,13 @@ const styles = {
         height: "73vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
+    // Slide 16-20
     {
         position: "absolute",
-        left: "8vw",
-        top: "11.5vh",
-        width: "37vw",
-        height: "79vh",
+        left: "11vw",
+        top: "18vh",
+        width: "35vw",
+        height: "80vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
@@ -997,10 +1006,10 @@ const styles = {
     },
     {
         position: "absolute",
-        left: "11vw",
-        top: "16.5vh",
-        width: "40vw",
-        height: "73vh",
+        left: "11.5vw",
+        top: "20vh",
+        width: "30vw",
+        height: "75vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
@@ -1016,12 +1025,12 @@ const styles = {
 
 
 
-    imageTarget: [{
+    imageTarget: [{ // Slides 1-5
         position: "absolute",
-        left: "49vw",
-        top: "16vh",
-        width: "41vw",
-        height: "77vh",
+        left: "38.5vw",
+        top: "26vh",
+        width: "53vw",
+        height: "52vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
@@ -1050,12 +1059,13 @@ const styles = {
     },
     {
         position: "absolute",
-        left: "46vw",
-        top: "27vh",
-        width: "48vw",
+        left: "41vw",
+        top: "30vh",
+        width: "50vw",
         height: "50vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
+    // Slides 6-10
     {
         position: "absolute",
         left: "52vw",
@@ -1090,12 +1100,13 @@ const styles = {
     },
     {
         position: "absolute",
-        left: "43.5vw",
-        top: "6vh",
-        width: "46.5vw",
-        height: "88vh",
+        left: "46vw",
+        top: "15vh",
+        width: "44vw",
+        height: "80vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
+    // Slides 11-15
     {
         position: "absolute",
         left: "48vw",
@@ -1136,12 +1147,13 @@ const styles = {
         height: "72vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
+    // Slide 16-20
     {
         position: "absolute",
-        left: "45.1vw",
-        top: "24vh",
-        width: "47.5vw",
-        height: "50vh",
+        left: "49.5vw",
+        top: "22.5vh",
+        width: "39vw",
+        height: "65vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
@@ -1162,10 +1174,10 @@ const styles = {
     },
     {
         position: "absolute",
-        left: "57vw",
-        top: "8.5vh",
-        width: "34vw",
-        height: "80vh",
+        left: "41.5vw",
+        top: "31vh",
+        width: "49vw",
+        height: "54vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
