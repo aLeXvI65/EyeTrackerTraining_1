@@ -126,10 +126,10 @@ const readingData = [
         { maskTop: 42, height: "26vh", imgTop: 36, imgLeft: 0, imgWidth: "77vh", imgHeight: "36vh", time: 3 },
     ],
     [
-        { maskTop: 0, height: "14vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.2 },
-        { maskTop: 14, height: "29vh", imgTop: 0, imgLeft: 0, imgWidth: "94vh", imgHeight: "25vh", time: 22.8 },
-        { maskTop: 43, height: "20vh", imgTop: 25, imgLeft: 0, imgWidth: "94vh", imgHeight: "21vh", time: 17.1 },
-        { maskTop: 63, height: "14vh", imgTop: 46, imgLeft: 0, imgWidth: "94vh", imgHeight: "26vh", time: 3 },
+        { maskTop: 0, height: "14vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.2},
+        { maskTop: 14, height: "29vh", imgTop: 46, imgLeft: 0, imgWidth: "94vh", imgHeight: "26vh", time: 22.8 },
+        { maskTop: 43, height: "20vh", imgTop: 0, imgLeft: 0, imgWidth: "94vh", imgHeight: "25vh", time: 17.1 },
+        { maskTop: 63, height: "14vh", imgTop: 25, imgLeft: 0, imgWidth: "94vh", imgHeight: "21vh", time: 3 },
     ],
     [
         { maskTop: 0, height: "20vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.4 },
@@ -391,7 +391,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
     const [step, setStep] = useState(0);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(3);
     const [finishTest, setFinishTest] = useState(false);
     const [seeInfo, setSeeInfo] = useState(false);
     const [readingTimeOut, setReadingTimeOut] = useState(null);
