@@ -21,7 +21,7 @@ import slide18 from '../assets/slides/17_ion_distribution/ion_distribution_2.jpg
 import slide19 from '../assets/slides/19_systemic/systemic_pulmonary_circulation.jpg';
 import slide20 from '../assets/slides/20_various/various_types_bone.jpg';
 
-import audio1 from '../assets/audios/slides/1_cell2.mp3';
+import audio1 from '../assets/audios/slides/1_cell3.mp3';
 import audio2 from '../assets/audios/slides/2_nucleus_1.mp3';
 import audio3 from '../assets/audios/slides/3_nucleus_2.mp3';
 import audio4 from '../assets/audios/slides/4_cytoskeleton.mp3';
@@ -109,7 +109,7 @@ const audios = [
 const readingData = [
     [
         { maskTop: 0, height: "15vh", imgTop: 22, imgLeft: 0, imgWidth: "32vh", imgHeight: "7vh", time: 8.8 },
-        { maskTop: 15, height: "11vh", imgTop: 22, imgLeft: 0, imgWidth: "32vh", imgHeight: "7vh", time: 5.8 },
+        { maskTop: 15, height: "11vh", imgTop: 22, imgLeft: 0, imgWidth: "32vh", imgHeight: "7vh", time: 5.4 },
         { maskTop: 26, height: "19vh", imgTop: 0, imgLeft: 42, imgWidth: "60vh", imgHeight: "15vh", time: 7.9 },
         { maskTop: 45, height: "15vh", imgTop: 32, imgLeft: 49, imgWidth: "61vh", imgHeight: "7vh", time: 5.5 },
         { maskTop: 60, height: "7vh", imgTop: 29, imgLeft: 0, imgWidth: "36vh", imgHeight: "6vh", time: 3.6 },
@@ -378,7 +378,7 @@ const offsets = [
     }
 ];
 
-const numSlides = 20;
+const numSlides = 9;
 const trainingId = 11;
 
 export default function TextFollowingTest({ isTextFollowing = true }) {
@@ -452,7 +452,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
         else {
             setNextButtonEnabled(false);
         }
-
+        
         let reading = setTimeout(() => {
             //console.log("change step");
             if (step < readingData[currentSlide].length - 1) {
@@ -495,7 +495,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
         // clearTimeout(readingTimeOut);
         // setReadingTimeOut(null);
 
-        if (currentSlide < slides.length - 1) {
+        if (currentSlide < slides.length - 1 && currentSlide < numSlides - 1) {
             setTimeout(() => {
                 audios[currentSlide + 1].current.play().catch(error => console.log("Reproducción bloqueada:", error));
             }, 1000);
