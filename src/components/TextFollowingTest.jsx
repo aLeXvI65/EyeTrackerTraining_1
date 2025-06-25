@@ -720,7 +720,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                                 style={{
                                     width: "100%",
                                     height: "100%",
-                                    backgroundColor: isTextFollowing ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)",
+                                    backgroundColor: isTextFollowing ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.5)",
                                     fontSize: "18px",
                                     border: "none",
                                     padding: "0",
