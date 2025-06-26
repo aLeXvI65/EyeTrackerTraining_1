@@ -380,6 +380,7 @@ const offsets = [
 
 const numSlides = 9;
 const trainingId = 11;
+const version = "0.2.1";
 
 export default function TextFollowingTest({ isTextFollowing = true }) {
     const { userId, setUserId } = useContext(UserContext);
@@ -651,6 +652,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                         className="cursor-pointer border-2 border-gray-300 rounded-lg"
 
                     />
+                    {seeInfo && <span style={styles.versionInfo}>Version: {version}</span>}
                     {seeInfo &&
                         <p style={styles.textCount}>
                             Text count: {clicks.text[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -715,7 +717,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                             </mask>
                         </defs>
 
-                        <foreignObject width="100%" height="100%" mask="url(#mask-custom)">
+                        {/* <foreignObject width="100%" height="100%" mask="url(#mask-custom)">
                             <button
                                 style={{
                                     width: "100%",
@@ -730,7 +732,16 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                                 onMouseLeave={() => handleHoverOut("text")}
                             >
                             </button>
-                        </foreignObject>
+                        </foreignObject> */}
+                        <rect 
+                            width="100%"
+                            height="100%"
+                            fill={isTextFollowing ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)"}
+                            onClick={() => handleClick("text")}
+                            onMouseEnter={() => handleHover("text")}
+                            onMouseLeave={() => handleHoverOut("text")}
+                            mask="url(#mask-custom)"
+                        />
                     </svg>
                     <div
                         onClick={() => handleClick("text_highligted")}
@@ -758,7 +769,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                             </mask>
                         </defs>
 
-                        <foreignObject width="100%" height="100%" mask="url(#mask-custom-image)">
+                        {/* <foreignObject width="100%" height="100%" mask="url(#mask-custom-image)">
                             <button
                                 style={{
                                     width: "100%",
@@ -773,7 +784,16 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                                 onMouseLeave={() => handleHoverOut("image")}
                             >
                             </button>
-                        </foreignObject>
+                        </foreignObject> */}
+                        <rect 
+                            width="100%"
+                            height="100%"
+                            fill={isTextFollowing ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)"}
+                            onClick={() => handleClick("image")}
+                            onMouseEnter={() => handleHover("image")}
+                            onMouseLeave={() => handleHoverOut("image")}
+                            mask="url(#mask-custom-image)"
+                        />
                     </svg>
                     <div
                         onClick={() => handleClick("image_highligted")}
@@ -1216,6 +1236,15 @@ const styles = {
         width: "90px",
         height: "30px",
         fontSize: "18px",
+        color: "#111",
+    },
+    versionInfo: {
+        position: "absolute",
+        top: "35px",
+        left: "5px",
+        width: "90px",
+        height: "30px",
+        fontSize: "12px",
         color: "#111",
     },
     maskButton: {
