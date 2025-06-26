@@ -44,7 +44,7 @@ import audio20 from '../assets/audios/slides/20_various_bones.mp3.mp3';
 
 import { UserContext } from "../context/UserContext";
 
-const isDebug = true;
+const isDebug = false;
 
 const intervals = {
     image: null,
