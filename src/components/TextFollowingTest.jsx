@@ -44,7 +44,7 @@ import audio20 from '../assets/audios/slides/20_various_bones.mp3.mp3';
 
 import { UserContext } from "../context/UserContext";
 
-const isDebug = false;
+const isDebug = true;
 
 const intervals = {
     image: null,
@@ -255,58 +255,58 @@ const readingData = [
 const offsets = [
     {
         textLeft: 0,
-        textTop: 10,
-        imgLeft: 80,
-        imgTop: 26
-    },
-    {
-        textLeft: 0,
-        textTop: 28,
-        imgLeft: 109,
-        imgTop: 18
-    },
-    {
-        textLeft: 0,
         textTop: 24,
-        imgLeft: 108,
-        imgTop: 18
+        imgLeft: 50,
+        imgTop: 35
     },
     {
         textLeft: 0,
-        textTop: 19,
-        imgLeft: 99.7,
-        imgTop: 20
+        textTop: 36,
+        imgLeft: 69.5,
+        imgTop: 29
     },
     {
         textLeft: 0,
-        textTop: 12,
-        imgLeft: 85,
-        imgTop: 30
+        textTop: 34,
+        imgLeft: 68.5,
+        imgTop: 29
+    },
+    {
+        textLeft: 0,
+        textTop: 30,
+        imgLeft: 64,
+        imgTop: 30.5
+    },
+    {
+        textLeft: 0,
+        textTop: 25,
+        imgLeft: 55,
+        imgTop: 37
     },
     // Slides 6-10
     {
         textLeft: 0,
-        textTop: 15,
-        imgLeft: 108,
-        imgTop: 11
+        textTop: 27.5,
+        imgLeft: 69,
+        imgTop: 25.5
     },
     {
         textLeft: 0,
-        textTop: 14,
-        imgLeft: 101.5,
-        imgTop: 18.5
+        textTop: 28,
+        imgLeft: 65,
+        imgTop: 30
     },
     {
         textLeft: 0,
-        textTop: 24,
-        imgLeft: 93.5,
-        imgTop: 17
+        textTop: 33.5,
+        imgLeft: 60,
+        imgTop: 30
     },
     {
         textLeft: 0,
-        textTop: 14,
-        imgLeft: 94.5,
-        imgTop: 24
+        textTop: 28,
+        imgLeft: 60.5,
+        imgTop: 33.5
     },
     {
         textLeft: 0,
@@ -381,6 +381,7 @@ const offsets = [
 const numSlides = 9;
 const trainingId = 11;
 const version = "0.2.1";
+const targetMultiplier = 0.642;
 
 export default function TextFollowingTest({ isTextFollowing = true }) {
     const { userId, setUserId } = useContext(UserContext);
@@ -490,6 +491,14 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
             setHighlightedClicks((prev) => ({ ...prev, image: newText }));
         }
     };
+
+    const multiplyVM = (value, isWidth = false) => {
+        const multiplicador = isWidth ? 1 : targetMultiplier;
+        const numero = parseFloat(value);
+        const unidad = value.replace(/[0-9.]/g, ''); // extrae solo la unidad
+        const resultado = numero * multiplicador;
+        return `${resultado}${unidad}`;
+    }
 
     const handleNextClick = () => {
         audios.forEach(x => x?.current.pause());
@@ -707,13 +716,13 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
             {
                 !finishTest &&
                 <>
-                    <svg style={styles.textTarget[currentSlide]} width={styles.textTarget[currentSlide].width} height={styles.textTarget[currentSlide].height}>
+                    <svg style={styles.textTarget[currentSlide]} width={styles.textTarget[currentSlide].width} height={multiplyVM(styles.textTarget[currentSlide].height)}>
                         <defs>
                             <mask id="mask-custom">
                                 {/* Fondo blanco = área visible */}
                                 <rect width="100%" height="100%" fill="white" />
                                 {/* Área negra = se oculta (la "máscara") */}
-                                <rect x="0" y={readingData[currentSlide][step].maskTop + "vh"} width="100%" height={readingData[currentSlide][step].height} fill="black" />
+                                <rect x="0" y={(readingData[currentSlide][step].maskTop * targetMultiplier) + "vh"} width="100%" height={multiplyVM(readingData[currentSlide][step].height)} fill="black" />
                             </mask>
                         </defs>
 
@@ -749,23 +758,23 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                         onMouseLeave={() => handleHoverOut("text_highligted")}
                         style={{
                             position: "absolute",
-                            top: `${readingData[currentSlide][step].maskTop + offsets[currentSlide].textTop}vh`,
+                            top: `${(readingData[currentSlide][step].maskTop * targetMultiplier + offsets[currentSlide].textTop)}vh`,
                             left: styles.textTarget[currentSlide].left,
                             width: styles.textTarget[currentSlide].width,
-                            height: readingData[currentSlide][step].height,
+                            height: multiplyVM(readingData[currentSlide][step].height),
                             backgroundColor: isDebug ? "rgba(255, 0, 0, 0.1)" : "rgba(255, 0, 0, 0)", // visible para debug, luego ponlo en 0
                             pointerEvents: "auto",
                             zIndex: 2,
                         }}
                     />
 
-                    <svg style={styles.imageTarget[currentSlide]} width={styles.imageTarget[currentSlide].width} height={styles.imageTarget[currentSlide].height}>
+                    <svg style={styles.imageTarget[currentSlide]} width={(styles.imageTarget[currentSlide].width)} height={multiplyVM(styles.imageTarget[currentSlide].height)}>
                         <defs>
                             <mask id="mask-custom-image">
                                 {/* Fondo blanco = área visible */}
                                 <rect width="100%" height="100%" fill="white" />
                                 {/* Área negra = se oculta (la "máscara") */}
-                                <rect x={readingData[currentSlide][step].imgLeft + "vh"} y={readingData[currentSlide][step].imgTop + "vh"} width={readingData[currentSlide][step].imgWidth} height={readingData[currentSlide][step].imgHeight} fill="black" />
+                                <rect x={(readingData[currentSlide][step].imgLeft * targetMultiplier) + "vh"} y={(readingData[currentSlide][step].imgTop * targetMultiplier) + "vh"} width={multiplyVM(readingData[currentSlide][step].imgWidth)} height={multiplyVM(readingData[currentSlide][step].imgHeight)} fill="black" />
                             </mask>
                         </defs>
 
@@ -801,10 +810,10 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                         onMouseLeave={() => handleHoverOut("image_highligted")}
                         style={{
                             position: "absolute",
-                            top: `${readingData[currentSlide][step].imgTop + offsets[currentSlide].imgTop}vh`,
-                            left: `${readingData[currentSlide][step].imgLeft + offsets[currentSlide].imgLeft}vh`,
-                            width: readingData[currentSlide][step].imgWidth,
-                            height: readingData[currentSlide][step].imgHeight,
+                            top: `${(readingData[currentSlide][step].imgTop * targetMultiplier + offsets[currentSlide].imgTop) }vh`,
+                            left: `${(readingData[currentSlide][step].imgLeft * targetMultiplier + offsets[currentSlide].imgLeft)}vh`,
+                            width: multiplyVM(readingData[currentSlide][step].imgWidth),
+                            height: multiplyVM(readingData[currentSlide][step].imgHeight),
                             backgroundColor: isDebug ? "rgba(255, 0, 0, 0.1)" : "rgba(255, 0, 0, 0)", // visible para debug, luego ponlo en 0
                             pointerEvents: "auto",
                             zIndex: 2,
@@ -880,74 +889,74 @@ const styles = {
     textTarget: [{ // Slides 1-5
         position: "absolute",
         left: "10vw",
-        top: "10vh",
-        width: "28.5vw",
-        height: "86vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "10vw",
-        top: "28vh",
-        width: "40vw",
-        height: "51vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "10vw",
         top: "24vh",
+        width: "28.5vw",
+        height: "55vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "10vw",
+        top: "36vh",
+        width: "40vw",
+        height: "32.7vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "10vw",
+        top: "34vh",
         width: "41vw",
-        height: "68vh",
+        height: "43.6vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "7vw",
-        top: "19vh",
+        top: "30vh",
         width: "40vw",
-        height: "76vh",
+        height: "49vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "10vw",
-        top: "12vh",
+        top: "25vh",
         width: "31vw",
-        height: "83vh",
+        height: "54vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     // Slides 6-10
     {
         position: "absolute",
         left: "10vw",
-        top: "15vh",
+        top: "27.5vh",
         width: "40vw",
-        height: "78vh",
+        height: "50vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "8vw",
-        top: "14vh",
+        top: "28vh",
         width: "40vw",
-        height: "78vh",
+        height: "50vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "6.5vw",
-        top: "24vh",
+        top: "33.5vh",
         width: "34.5vw",
-        height: "62vh",
+        height: "40vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "6vw",
-        top: "14vh",
+        top: "28vh",
         width: "39vw",
-        height: "79vh",
+        height: "50.5vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
@@ -1048,74 +1057,74 @@ const styles = {
     imageTarget: [{ // Slides 1-5
         position: "absolute",
         left: "38.5vw",
-        top: "26vh",
+        top: "35vh",
         width: "53vw",
-        height: "52vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "52.5vw",
-        top: "18vh",
-        width: "38vw",
-        height: "75vh",
+        height: "33.3vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "52vw",
-        top: "18vh",
+        top: "29.5vh",
+        width: "38vw",
+        height: "48vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "51.5vw",
+        top: "29vh",
         width: "37vw",
-        height: "72vh",
+        height: "46vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "48vw",
-        top: "20vh",
+        top: "30.5vh",
         width: "45vw",
-        height: "72vh",
+        height: "46vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "41vw",
-        top: "30vh",
+        top: "37vh",
         width: "50vw",
-        height: "50vh",
+        height: "32vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     // Slides 6-10
     {
         position: "absolute",
         left: "52vw",
-        top: "11vh",
+        top: "25.5vh",
         width: "39vw",
-        height: "81vh",
+        height: "52vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "49vw",
-        top: "18.5vh",
+        top: "30vh",
         width: "42.5vw",
-        height: "75vh",
+        height: "48vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "45vw",
-        top: "17vh",
+        top: "30vh",
         width: "47.5vw",
-        height: "75vh",
+        height: "48vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "45.5vw",
-        top: "24vh",
+        top: "33.5vh",
         width: "43.5vw",
-        height: "55vh",
+        height: "35vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
