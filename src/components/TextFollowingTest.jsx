@@ -449,6 +449,8 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
     useEffect(() => {
         console.log("step: " + step);
 
+        
+
         if (step > 0) {
             setNextButtonEnabled(true);
         }
