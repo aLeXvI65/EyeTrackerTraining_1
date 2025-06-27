@@ -379,8 +379,9 @@ const offsets = [
 ];
 
 const numSlides = 9;
-const trainingId = 11;
-const version = "0.2.1";
+const followTrainingId = 11;
+const noFolowTrainingId = 10;
+const version = "0.2.2";
 const targetMultiplier = 0.642;
 
 export default function TextFollowingTest({ isTextFollowing = true }) {
@@ -583,13 +584,13 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
 
         console.log("Sending data...");
         console.log("UserId: " + userId);
-        console.log("TrainingId: " + trainingId);
+        console.log("TrainingId: " + (isTextFollowing ? followTrainingId : noFolowTrainingId));
         console.log("Date: " + date);
         console.log("ReportPerc: " + reportPercentage);
 
         const formData = new FormData();
         formData.append("user", parseInt(userId));
-        formData.append("training", trainingId);
+        formData.append("training", (isTextFollowing ? followTrainingId : noFolowTrainingId));
         formData.append("date", date);
         formData.append("reportPercentage", reportPercentage);
 
@@ -685,8 +686,10 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                     <table style={{ borderCollapse: "collapse", width: "100%", marginBottom: "1em" }}>
                         <thead>
                             <th style={styles.tableTH}>Slide</th>
-                            <th style={styles.tableTH}>Time Seeing text</th>
-                            <th style={styles.tableTH}>Time Seeing image</th>
+                            <th style={styles.tableTH}>Time Seeing background text</th>
+                            <th style={styles.tableTH}>Time Seeing highlighted text</th>
+                            <th style={styles.tableTH}>Time Seeing background image</th>
+                            <th style={styles.tableTH}>Time Seeing highlighted image</th>
                         </thead>
                         <tbody>
                             {
@@ -694,7 +697,9 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                                     <tr key={index}>
                                         <td style={styles.tableTD}>{index + 1}</td>
                                         <td style={styles.tableTD}>{(parseFloat(hovers.text[index]) * 0.1).toFixed(1)}</td>
+                                        <td style={styles.tableTD}>{(parseFloat(highLightedHovers.text[index]) * 0.1).toFixed(1)}</td>
                                         <td style={styles.tableTD}>{(parseFloat(hovers.image[index]) * 0.1).toFixed(1)}</td>
+                                        <td style={styles.tableTD}>{(parseFloat(highLightedHovers.image[index]) * 0.1).toFixed(1)}</td>
                                     </tr>
                                 )
                             }
