@@ -686,20 +686,20 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
                     <table style={{ borderCollapse: "collapse", width: "100%", marginBottom: "1em" }}>
                         <thead>
                             <th style={styles.tableTH}>Slide</th>
-                            <th style={styles.tableTH}>Time Seeing background text</th>
                             <th style={styles.tableTH}>Time Seeing highlighted text</th>
-                            <th style={styles.tableTH}>Time Seeing background image</th>
                             <th style={styles.tableTH}>Time Seeing highlighted image</th>
+                            <th style={styles.tableTH}>Time Seeing background text</th>
+                            <th style={styles.tableTH}>Time Seeing background image</th>
                         </thead>
                         <tbody>
                             {
                                 hovers.text.length > 0 && hovers.text.map((item, index) =>
                                     <tr key={index}>
                                         <td style={styles.tableTD}>{index + 1}</td>
-                                        <td style={styles.tableTD}>{(parseFloat(hovers.text[index]) * 0.1).toFixed(1)}</td>
                                         <td style={styles.tableTD}>{(parseFloat(highLightedHovers.text[index]) * 0.1).toFixed(1)}</td>
-                                        <td style={styles.tableTD}>{(parseFloat(hovers.image[index]) * 0.1).toFixed(1)}</td>
                                         <td style={styles.tableTD}>{(parseFloat(highLightedHovers.image[index]) * 0.1).toFixed(1)}</td>
+                                        <td style={styles.tableTD}>{(parseFloat(hovers.text[index]) * 0.1).toFixed(1)}</td>
+                                        <td style={styles.tableTD}>{(parseFloat(hovers.image[index]) * 0.1).toFixed(1)}</td>
                                     </tr>
                                 )
                             }
