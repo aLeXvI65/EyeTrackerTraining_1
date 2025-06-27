@@ -7,6 +7,7 @@ import StartMenu from './components/StartMenu'
 import TextFollowingTest from './components/TextFollowingTest'
 import Login from './components/Login'
 import { UserContext } from './context/UserContext'
+import BioImagesNarrativeNoFollow from './components/BioImages/BioImagesNarrativeNoFollow'
 
 function App() {
   const { userId, setUserId } = useContext(UserContext);
@@ -50,6 +51,10 @@ function App() {
     console.log("start: " + value);
   }
 
+  let testComponent = <TextFollowingTest isTextFollowing={false} />;
+  if (selectedTest === "TextFollowing") testComponent = <TextFollowingTest />;
+  else if (selectedTest === "NarrativeNoFollow") testComponent = <BioImagesNarrativeNoFollow />;
+
   return (
     <>
       {!hasLogin && <Login onLogin={handleLogin} error={loginError} />}
@@ -57,7 +62,7 @@ function App() {
         !startTest && hasLogin && <StartMenu onStart={handleStart} />
       }
       {
-        startTest && hasLogin && (selectedTest !== "TextFollowing" ? <TextFollowingTest isTextFollowing={false} /> : <TextFollowingTest />)
+        startTest && hasLogin && testComponent
       }
     </>
   )

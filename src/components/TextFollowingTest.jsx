@@ -502,7 +502,7 @@ export default function TextFollowingTest({ isTextFollowing = true }) {
     }
 
     const handleNextClick = () => {
-        audios.forEach(x => x?.current.pause());
+        audios.forEach(x => { if (x && x.current !== null && x.current !== undefined) x.current.pause(); });
         // clearTimeout(readingTimeOut);
         // setReadingTimeOut(null);
 
