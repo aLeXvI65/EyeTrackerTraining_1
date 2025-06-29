@@ -384,7 +384,7 @@ const noFolowTrainingId = 10;
 const version = "0.2.2";
 const targetMultiplier = 0.642;
 
-export default function TextFollowingTest({ isTextFollowing = true }) {
+export default function TextFollowingTest({ isTextFollowing = true, trainingId }) {
     const { userId, setUserId } = useContext(UserContext);
 
     const [clicks, setClicks] = useState({ button: 0, image: Array(numSlides).fill(0), text: Array(numSlides).fill(0), figure: 0 });

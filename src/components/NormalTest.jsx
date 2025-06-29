@@ -96,9 +96,8 @@ const audios = [
 ]
 
 const numSlides = 20;
-const trainingId = 10;
 
-export default function NormalTest() {
+export default function NormalTest({ trainingId }) {
   const { userId, setUserId } = useContext(UserContext);
 
   const [clicks, setClicks] = useState({ button: 0, image: new Array(numSlides).fill(0), text: new Array(numSlides).fill(0), figure: 0 });
