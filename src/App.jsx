@@ -8,6 +8,7 @@ import TextFollowingTest from './components/TextFollowingTest'
 import Login from './components/Login'
 import { UserContext } from './context/UserContext'
 import BioImagesNarrativeNoFollow from './components/BioImages/BioImagesNarrativeNoFollow'
+import TargetTest from './components/TargetTest'
 
 const trainingIds = {
   Normal: 10,
@@ -20,6 +21,7 @@ function App() {
 
   const [startTest, setStartTest] = useState(false);
   const [hasLogin, setHasLogin] = useState(false);
+  const [hasFinishedTargetTest, setHasFinishedTargetTest] = useState(false);
   const [selectedTest, setSelectedTest] = useState("none");
   const [selectedTestId, setSelectedTestId] = useState(0);
   const [loginError, setLoginError] = useState("");
@@ -29,7 +31,7 @@ function App() {
     const password = pass.current.value;
     console.log(name + "," + password);
 
-    fetch("https://eyetrackingtraining.com/corporate/getTrainerLoginByName.php?name=" + name + "&pass=" + password+"&traingingId="+selectedTestId)
+    fetch("https://eyetrackingtraining.com/corporate/getTrainerLoginByName.php?name=" + name + "&pass=" + password+"&trainingId="+selectedTestId)
       .then(response => {
         if (!response.ok) {
           throw new Error('Server response error');
@@ -72,11 +74,18 @@ function App() {
         elem.msRequestFullscreen(); // IE/Edge
     }
 
-    setStartTest(true);
-    setSelectedTest(value);
-    //console.log(value+": "+trainingIds[value]);
-    setSelectedTestId(trainingIds[value]);
-    // console.log("start: " + value);
+    setTimeout(() => {
+      setStartTest(true);
+      setSelectedTest(value);
+      //console.log(value+": "+trainingIds[value]);
+      setSelectedTestId(trainingIds[value]);
+      // console.log("start: " + value);
+    }, 500);
+    
+  }
+
+  const handleFinish = () => {
+    setHasFinishedTargetTest(true);
   }
 
   let testComponent = <TextFollowingTest isTextFollowing={false} />;
@@ -85,9 +94,12 @@ function App() {
 
   return (
     <>
-      {!hasLogin && startTest && <Login onLogin={handleLogin} error={loginError} />}
+      {!hasLogin && startTest && hasFinishedTargetTest && <Login onLogin={handleLogin} error={loginError} />}
       {
-        !startTest && !hasLogin && <StartMenu onStart={handleStart} />
+        !startTest && !hasLogin  && !hasFinishedTargetTest && <StartMenu onStart={handleStart} />
+      }
+      {
+        startTest && !hasLogin  && !hasFinishedTargetTest && <TargetTest onFinish={handleFinish} />
       }
       {
         startTest && hasLogin && testComponent
