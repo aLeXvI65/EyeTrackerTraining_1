@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 
-import slide1 from '../assets/slides/1_cell/cell.jpg';
+import slide1 from '../assets/slides/1_cell/slide_new1.jpg';
 import slide2 from '../assets/slides/2_nucleus/nucleus_1.jpg';
 import slide3 from '../assets/slides/2_nucleus/nucleus_2.jpg';
 import slide4 from '../assets/slides/3_cytoskeleton/cytoskeleton.jpg';

@@ -94,12 +94,12 @@ function App() {
 
   return (
     <>
-      {!hasLogin && startTest && hasFinishedTargetTest && <Login onLogin={handleLogin} error={loginError} />}
+      {!hasLogin && startTest && <Login onLogin={handleLogin} error={loginError} />}
       {
-        !startTest && !hasLogin  && !hasFinishedTargetTest && <StartMenu onStart={handleStart} />
+        !startTest && !hasLogin  && <StartMenu onStart={handleStart} />
       }
       {
-        startTest && !hasLogin  && !hasFinishedTargetTest && <TargetTest onFinish={handleFinish} />
+        startTest && !hasLogin  && hasFinishedTargetTest && <TargetTest onFinish={handleFinish} />
       }
       {
         startTest && hasLogin && testComponent
