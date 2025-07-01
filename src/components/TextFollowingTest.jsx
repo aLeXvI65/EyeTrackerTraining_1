@@ -1230,6 +1230,7 @@ const styles = {
         position: "absolute",
         right: "1vw",
         bottom: "1vh",
+        color: "white"
     },
     results: {
         color: "#333",
@@ -1239,11 +1240,12 @@ const styles = {
     },
     seeInfo: {
         position: "absolute",
-        top: "5px",
+        bottom: "5px",
         left: "5px",
         width: "90px",
         height: "30px",
-        fontSize: "12px"
+        fontSize: "12px",
+        color: "white"
     },
     slidesInfo: {
         position: "absolute",
@@ -1256,7 +1258,7 @@ const styles = {
     },
     versionInfo: {
         position: "absolute",
-        top: "35px",
+        bottom: "35px",
         left: "5px",
         width: "90px",
         height: "30px",

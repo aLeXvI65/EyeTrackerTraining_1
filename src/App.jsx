@@ -8,7 +8,8 @@ import TextFollowingTest from './components/TextFollowingTest'
 import Login from './components/Login'
 import { UserContext } from './context/UserContext'
 import BioImagesNarrativeNoFollow from './components/BioImages/BioImagesNarrativeNoFollow'
-import TargetTest from './components/TargetTest'
+import TargetTest from './components/TargetTests/TargetTest'
+import TargetTest2 from './components/TargetTests/TargetTest2'
 
 const trainingIds = {
   Normal: 10,
@@ -99,7 +100,7 @@ function App() {
         !startTest && !hasLogin  && !hasFinishedTargetTest && <StartMenu onStart={handleStart} />
       }
       {
-        startTest && !hasLogin  && !hasFinishedTargetTest && <TargetTest onFinish={handleFinish} />
+        startTest && !hasLogin  && !hasFinishedTargetTest && <TargetTest2 onFinish={handleFinish} />
       }
       {
         startTest && hasLogin && testComponent

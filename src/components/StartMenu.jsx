@@ -21,11 +21,13 @@ const styles = {
     margin: "auto",
     textAlign: "center",
     maxHeight: "100vh",
+    color: "white"
   },
   startContainer: {
     color: "#333"
   },
   startButton: {
-    marginLeft: "2em"
+    marginLeft: "2em",
+    color: "white"
   }
 };

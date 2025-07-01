@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 
 // Load success audio (you must place 'success.mp3' inside /public folder)
-import successAudio from '../assets/audios/effects/success.wav';
+import successAudio from '../../assets/audios/effects/success.wav';
 
 // Total hover time required in milliseconds
 const ACTIVATION_TIME = 3000;
