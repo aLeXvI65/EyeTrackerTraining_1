@@ -23,6 +23,7 @@ function App() {
   const [startTest, setStartTest] = useState(false);
   const [hasLogin, setHasLogin] = useState(false);
   const [hasFinishedTargetTest, setHasFinishedTargetTest] = useState(false);
+  const [hasFinishedTargetTest2, setHasFinishedTargetTest2] = useState(false);
   const [selectedTest, setSelectedTest] = useState("none");
   const [selectedTestId, setSelectedTestId] = useState(0);
   const [loginError, setLoginError] = useState("");
@@ -89,18 +90,25 @@ function App() {
     setHasFinishedTargetTest(true);
   }
 
+  const handleFinish2 = () => {
+    setHasFinishedTargetTest2(true);
+  }
+
   let testComponent = <TextFollowingTest isTextFollowing={false} />;
   if (selectedTest === "TextFollowing") testComponent = <TextFollowingTest />;
   else if (selectedTest === "NarrativeNoFollow") testComponent = <BioImagesNarrativeNoFollow />;
 
   return (
     <>
-      {!hasLogin && startTest && hasFinishedTargetTest && <Login onLogin={handleLogin} error={loginError} />}
+      {!hasLogin && startTest && hasFinishedTargetTest && hasFinishedTargetTest2 && <Login onLogin={handleLogin} error={loginError} />}
       {
-        !startTest && !hasLogin  && !hasFinishedTargetTest && <StartMenu onStart={handleStart} />
+        !startTest && !hasLogin  && !hasFinishedTargetTest && !hasFinishedTargetTest2 && <StartMenu onStart={handleStart} />
       }
       {
-        startTest && !hasLogin  && !hasFinishedTargetTest && <TargetTest2 onFinish={handleFinish} />
+        startTest && !hasLogin  && !hasFinishedTargetTest && !hasFinishedTargetTest && <TargetTest onFinish={handleFinish} />
+      }
+      {
+        startTest && !hasLogin  && hasFinishedTargetTest && !hasFinishedTargetTest2 && <TargetTest2 onFinish={handleFinish2} />
       }
       {
         startTest && hasLogin && testComponent
