@@ -22,9 +22,9 @@ import slide9 from '../assets/slides/bioimages/slide9.jpg';
 // import slide20 from '../assets/slides/20_various/various_types_bone.jpg';
 
 import audio1 from '../assets/audios/slides/1_cell3.mp3';
-import audio2 from '../assets/audios/slides/2_nucleus_1.mp3';
+import audio2 from '../assets/audios/slides/2_nucleus_1_2.mp3';
 import audio3 from '../assets/audios/slides/3_nucleus_2.mp3';
-import audio4 from '../assets/audios/slides/4_cytoskeleton.mp3';
+import audio4 from '../assets/audios/slides/4_cytoskeleton2.mp3';
 import audio5 from '../assets/audios/slides/5_membraine.mp3';
 import audio6 from '../assets/audios/slides/6_endoplasmic_reticulum.mp3';
 import audio7 from '../assets/audios/slides/7_mitochondria.mp3';
@@ -116,8 +116,8 @@ const readingData = [
         { maskTop: 110, height: "31vh", imgTop: 40, imgLeft: 25, imgWidth: "94vh", imgHeight: "30vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "30vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 10.2 }, // 10.2
-        { maskTop: 35, height: "34vh", imgTop: 0, imgLeft: 53, imgWidth: "64vh", imgHeight: "50vh", time: 3.2 }, // 3.2
+        { maskTop: 0, height: "30vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 4.3 }, // 10.2
+        { maskTop: 35, height: "34vh", imgTop: 0, imgLeft: 53, imgWidth: "64vh", imgHeight: "50vh", time: 3.8 }, // 3.2
         { maskTop: 75, height: "62vh", imgTop: 35, imgLeft: 0, imgWidth: "50vh", imgHeight: "68vh", time: 3 }, //  3
     ],
     [
@@ -126,9 +126,9 @@ const readingData = [
         { maskTop: 92, height: "47vh", imgTop: 57, imgLeft: 0, imgWidth: "106vh", imgHeight: "43vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "35vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.2}, // 13.2
-        { maskTop: 37, height: "37vh", imgTop: 0, imgLeft: 0, imgWidth: "96vh", imgHeight: "31vh", time: 22.8 }, // 22.8
-        { maskTop: 76, height: "27vh", imgTop: 31, imgLeft: 0, imgWidth: "96vh", imgHeight: "36vh", time: 17.1 }, // 17.1
+        { maskTop: 0, height: "35vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 16.6}, // 13.2
+        { maskTop: 37, height: "37vh", imgTop: 0, imgLeft: 0, imgWidth: "96vh", imgHeight: "31vh", time: 16.8 }, // 22.8
+        { maskTop: 76, height: "27vh", imgTop: 31, imgLeft: 0, imgWidth: "96vh", imgHeight: "36vh", time: 9.5 }, // 17.1
         { maskTop: 105, height: "38vh", imgTop: 67, imgLeft: 0, imgWidth: "96vh", imgHeight: "45vh", time: 3 }, // 3
     ],
     [
@@ -148,21 +148,21 @@ const readingData = [
         { maskTop: 114, height: "26vh", imgTop: 74, imgLeft: 64, imgWidth: "30vh", imgHeight: "40vh", time: 3 },  // 3
     ],
     [
-        { maskTop: 0, height: "35vh", imgTop: 61, imgLeft: 1, imgWidth: "42vh", imgHeight: "21vh", time: 10.7 }, // 10.7
-        { maskTop: 37, height: "22vh", imgTop: 98, imgLeft: 52, imgWidth: "35vh", imgHeight: "25vh", time: 5.4 }, // 5.4
-        { maskTop: 61, height: "30vh", imgTop: 0, imgLeft: 48, imgWidth: "39vh", imgHeight: "28vh", time: 4.2 }, // 4.2
-        { maskTop: 93, height: "20vh", imgTop: 32, imgLeft: 46, imgWidth: "42vh", imgHeight: "34vh", time: 9.1 }, // 9.1
+        { maskTop: 0, height: "35vh", imgTop: 61, imgLeft: 1, imgWidth: "42vh", imgHeight: "21vh", time: 16.1 }, // 10.7
+        { maskTop: 37, height: "22vh", imgTop: 98, imgLeft: 52, imgWidth: "35vh", imgHeight: "25vh", time: 4.2 }, // 5.4
+        { maskTop: 61, height: "30vh", imgTop: 0, imgLeft: 48, imgWidth: "39vh", imgHeight: "28vh", time: 9.1 }, // 4.2
+        { maskTop: 93, height: "20vh", imgTop: 32, imgLeft: 46, imgWidth: "42vh", imgHeight: "34vh", time: 3.2 }, // 9.1
         { maskTop: 115, height: "25vh", imgTop: 70, imgLeft: 50, imgWidth: "38vh", imgHeight: "26vh", time: 3 }, // 3.5
     ],
     [
-        { maskTop: 0, height: "28vh", imgTop: 0, imgLeft: 0, imgWidth: "111vh", imgHeight: "39vh", time: 3.1 }, // 6.1
-        { maskTop: 34, height: "44vh", imgTop: 39, imgLeft: 0, imgWidth: "111vh", imgHeight: "44vh", time: 4.2 }, // 4.2
+        { maskTop: 0, height: "28vh", imgTop: 0, imgLeft: 0, imgWidth: "111vh", imgHeight: "39vh", time: 6.1 }, // 6.1
+        { maskTop: 34, height: "44vh", imgTop: 39, imgLeft: 0, imgWidth: "111vh", imgHeight: "44vh", time: 9.2 }, // 4.2
         { maskTop: 86, height: "39vh", imgTop: 83, imgLeft: 0, imgWidth: "111vh", imgHeight: "30vh", time: 3 }, // 3
     ],
     [
         { maskTop: 0, height: "45vh", imgTop: 0, imgLeft: 0, imgWidth: "21vh", imgHeight: "106vh", time: 19.6 }, // 19.6
-        { maskTop: 45, height: "45vh", imgTop: 0, imgLeft: 21, imgWidth: "22vh", imgHeight: "106vh", time: 7 }, // 17
-        { maskTop: 90, height: "22vh", imgTop: 0, imgLeft: 43, imgWidth: "31vh", imgHeight: "106vh", time: 7.7 }, // 7.7
+        { maskTop: 45, height: "45vh", imgTop: 0, imgLeft: 21, imgWidth: "22vh", imgHeight: "106vh", time: 16.8 }, // 17
+        { maskTop: 90, height: "22vh", imgTop: 0, imgLeft: 43, imgWidth: "31vh", imgHeight: "106vh", time: 7.8 }, // 7.7
         { maskTop: 116, height: "26vh", imgTop: 0, imgLeft: 74, imgWidth: "22vh", imgHeight: "106vh", time: 3 }, // 3
     ],
     [
@@ -393,7 +393,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
     const [step, setStep] = useState(0);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(3);
     const [finishTest, setFinishTest] = useState(false);
     const [seeInfo, setSeeInfo] = useState(false);
     const [readingTimeOut, setReadingTimeOut] = useState(null);
