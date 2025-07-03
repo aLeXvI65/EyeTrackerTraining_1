@@ -132,7 +132,7 @@ const readingData = [
         { maskTop: 105, height: "38vh", imgTop: 67, imgLeft: 0, imgWidth: "96vh", imgHeight: "45vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "34vh", imgTop: 0, imgLeft: 44, imgWidth: "35vh", imgHeight: "46vh", time: 13.4 }, // 13.4
+        { maskTop: 0, height: "34vh", imgTop: 0, imgLeft: 44, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.4 }, // 13.4
         { maskTop: 36, height: "30vh", imgTop: 53, imgLeft: 82, imgWidth: "33vh", imgHeight: "58vh", time: 12.8 }, // 12.8
         { maskTop: 66, height: "26vh", imgTop: 46, imgLeft: 4, imgWidth: "48vh", imgHeight: "56vh", time: 9 }, // 9
         { maskTop: 92, height: "26vh", imgTop: 52, imgLeft: 48, imgWidth: "25vh", imgHeight: "42vh", time: 6 }, // 6
@@ -393,7 +393,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
     const [step, setStep] = useState(0);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(4);
     const [finishTest, setFinishTest] = useState(false);
     const [seeInfo, setSeeInfo] = useState(false);
     const [readingTimeOut, setReadingTimeOut] = useState(null);
