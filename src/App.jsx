@@ -17,6 +17,9 @@ const trainingIds = {
   NarrativeNoFollow: 14
 }
 
+const skipTest1 = true;
+const skipTest2 = true;
+
 function App() {
   const { userId, setUserId } = useContext(UserContext);
 
@@ -105,10 +108,10 @@ function App() {
         !startTest && !hasLogin  && !hasFinishedTargetTest && !hasFinishedTargetTest2 && <StartMenu onStart={handleStart} />
       }
       {
-        startTest && !hasLogin  && !hasFinishedTargetTest && !hasFinishedTargetTest && <TargetTest onFinish={handleFinish} />
+        startTest && !hasLogin  && !hasFinishedTargetTest && !hasFinishedTargetTest && <TargetTest onFinish={handleFinish} skip={skipTest1} />
       }
       {
-        startTest && !hasLogin  && hasFinishedTargetTest && !hasFinishedTargetTest2 && <TargetTest2 onFinish={handleFinish2} />
+        startTest && !hasLogin  && hasFinishedTargetTest && !hasFinishedTargetTest2 && <TargetTest2 onFinish={handleFinish2} skip={skipTest2} />
       }
       {
         startTest && hasLogin && testComponent

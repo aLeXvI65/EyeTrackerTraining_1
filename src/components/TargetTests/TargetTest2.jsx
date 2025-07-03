@@ -4,7 +4,7 @@ const ACTIVATION_TIME = 3000; // in milliseconds
 const GRID_SIZE = 4; // 4x4 grid
 const CELL_COUNT = GRID_SIZE * GRID_SIZE;
 
-const TargetTest2 = ({onFinish}) => {
+const TargetTest2 = ({ onFinish, skip }) => {
   const [hoverTimes, setHoverTimes] = useState(Array(CELL_COUNT).fill(0));
   const [activated, setActivated] = useState(Array(CELL_COUNT).fill(false));
   const timers = useRef(Array(CELL_COUNT).fill(null));
@@ -39,6 +39,8 @@ const TargetTest2 = ({onFinish}) => {
 
   // Clear timers on unmount
   useEffect(() => {
+    if(skip) onFinish();
+    
     return () => {
       timers.current.forEach((t) => clearInterval(t));
     };

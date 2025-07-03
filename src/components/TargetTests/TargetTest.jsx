@@ -10,7 +10,7 @@ const ACTIVATION_TIME = 3000;
 const RECT_SIZE = 100;
 const OFFSET = 50;
 
-const TargetTest = ({onFinish}) => {
+const TargetTest = ({ onFinish, skip }) => {
     const audioRef = useRef(null);
 
   // Keep track of hover times and activation state
@@ -60,6 +60,8 @@ const TargetTest = ({onFinish}) => {
 
   // Clean up on unmount
   useEffect(() => {
+    if(skip) onFinish();
+    
     return () => {
       timers.current.forEach((t) => clearInterval(t));
     };

@@ -1,25 +1,25 @@
 import { useContext, useEffect, useRef, useState } from "react";
 
-import slide1 from '../assets/slides/1_cell/slide_new1.jpg';
-import slide2 from '../assets/slides/2_nucleus/nucleus_1.jpg';
-import slide3 from '../assets/slides/2_nucleus/nucleus_2.jpg';
-import slide4 from '../assets/slides/3_cytoskeleton/cytoskeleton.jpg';
-import slide5 from '../assets/slides/4_membrane/membrane.jpg';
-import slide6 from '../assets/slides/6_endoplasmic/endoplasmit_reticulum.jpg';
-import slide7 from '../assets/slides/7_mitochondria/mitochondria.jpg';
-import slide8 from '../assets/slides/8_energy/energy_production.jpg';
-import slide9 from '../assets/slides/9_dynamics/dynamics_cell_growth.jpg';
-import slide10 from '../assets/slides/10_nose/nose_pharynx.jpg';
-import slide11 from '../assets/slides/11_larynx/larynx_epiglotis.jpg';
-import slide12 from '../assets/slides/12_trachea/trachea_bronchi.jpg';
-import slide13 from '../assets/slides/13_bronchioles/bronchioles_alveoli.jpg';
-import slide14 from '../assets/slides/14_lungs/lungs_pleural_membrane.jpg';
-import slide15 from '../assets/slides/15_myocardial/myocardial_contraction.jpg';
-import slide16 from '../assets/slides/15_myocardial/myocardial_contraction_2.jpg';
-import slide17 from '../assets/slides/17_ion_distribution/ion_distribution.jpg';
-import slide18 from '../assets/slides/17_ion_distribution/ion_distribution_2.jpg';
-import slide19 from '../assets/slides/19_systemic/systemic_pulmonary_circulation.jpg';
-import slide20 from '../assets/slides/20_various/various_types_bone.jpg';
+import slide1 from '../assets/slides/bioimages/slide1.jpg';
+import slide2 from '../assets/slides/bioimages/slide2.jpg';
+import slide3 from '../assets/slides/bioimages/slide3.jpg';
+import slide4 from '../assets/slides/bioimages/slide4.jpg';
+import slide5 from '../assets/slides/bioimages/slide5.jpg';
+import slide6 from '../assets/slides/bioimages/slide6.jpg';
+import slide7 from '../assets/slides/bioimages/slide7.jpg';
+import slide8 from '../assets/slides/bioimages/slide8.jpg';
+import slide9 from '../assets/slides/bioimages/slide9.jpg';
+// import slide10 from '../assets/slides/10_nose/nose_pharynx.jpg';
+// import slide11 from '../assets/slides/11_larynx/larynx_epiglotis.jpg';
+// import slide12 from '../assets/slides/12_trachea/trachea_bronchi.jpg';
+// import slide13 from '../assets/slides/13_bronchioles/bronchioles_alveoli.jpg';
+// import slide14 from '../assets/slides/14_lungs/lungs_pleural_membrane.jpg';
+// import slide15 from '../assets/slides/15_myocardial/myocardial_contraction.jpg';
+// import slide16 from '../assets/slides/15_myocardial/myocardial_contraction_2.jpg';
+// import slide17 from '../assets/slides/17_ion_distribution/ion_distribution.jpg';
+// import slide18 from '../assets/slides/17_ion_distribution/ion_distribution_2.jpg';
+// import slide19 from '../assets/slides/19_systemic/systemic_pulmonary_circulation.jpg';
+// import slide20 from '../assets/slides/20_various/various_types_bone.jpg';
 
 import audio1 from '../assets/audios/slides/1_cell3.mp3';
 import audio2 from '../assets/audios/slides/2_nucleus_1.mp3';
@@ -30,21 +30,21 @@ import audio6 from '../assets/audios/slides/6_endoplasmic_reticulum.mp3';
 import audio7 from '../assets/audios/slides/7_mitochondria.mp3';
 import audio8 from '../assets/audios/slides/8_energy_production.mp3';
 import audio9 from '../assets/audios/slides/9_dynamic_cell_growth.mp3';
-import audio10 from '../assets/audios/slides/10_nose_pharynx.mp3';
-import audio11 from '../assets/audios/slides/11_larynx_epiglotis.mp3';
-import audio12 from '../assets/audios/slides/12_trachea_bronchi.mp3';
-import audio13 from '../assets/audios/slides/13_bronchioles_alveolly.mp3';
-import audio14 from '../assets/audios/slides/14_lungs_pleural.mp3';
-import audio15 from '../assets/audios/slides/15_myocardial_contraction.mp3';
-import audio16 from '../assets/audios/slides/16_myocardial_contraction_2.mp3';
-import audio17 from '../assets/audios/slides/17_ion_distribution.mp3';
-import audio18 from '../assets/audios/slides/18_ion_distribution_2.mp3';
-import audio19 from '../assets/audios/slides/19_systemic_pulmonary2.mp3';
-import audio20 from '../assets/audios/slides/20_various_bones.mp3.mp3';
+// import audio10 from '../assets/audios/slides/10_nose_pharynx.mp3';
+// import audio11 from '../assets/audios/slides/11_larynx_epiglotis.mp3';
+// import audio12 from '../assets/audios/slides/12_trachea_bronchi.mp3';
+// import audio13 from '../assets/audios/slides/13_bronchioles_alveolly.mp3';
+// import audio14 from '../assets/audios/slides/14_lungs_pleural.mp3';
+// import audio15 from '../assets/audios/slides/15_myocardial_contraction.mp3';
+// import audio16 from '../assets/audios/slides/16_myocardial_contraction_2.mp3';
+// import audio17 from '../assets/audios/slides/17_ion_distribution.mp3';
+// import audio18 from '../assets/audios/slides/18_ion_distribution_2.mp3';
+// import audio19 from '../assets/audios/slides/19_systemic_pulmonary2.mp3';
+// import audio20 from '../assets/audios/slides/20_various_bones.mp3.mp3';
 
 import { UserContext } from "../context/UserContext";
 
-const isDebug = false;
+const isDebug = true;
 
 const intervals = {
     image: null,
@@ -70,17 +70,17 @@ const slides = [
     slide7,
     slide8,
     slide9,
-    slide10,
-    slide11,
-    slide12,
-    slide13,
-    slide14,
-    slide15,
-    slide16,
-    slide17,
-    slide18,
-    slide19,
-    slide20,
+    // slide10,
+    // slide11,
+    // slide12,
+    // slide13,
+    // slide14,
+    // slide15,
+    // slide16,
+    // slide17,
+    // slide18,
+    // slide19,
+    // slide20,
 ];
 
 const audios = [
@@ -108,63 +108,62 @@ const audios = [
 
 const readingData = [
     [
-        { maskTop: 0, height: "15vh", imgTop: 22, imgLeft: 0, imgWidth: "32vh", imgHeight: "7vh", time: 8.8 },
-        { maskTop: 15, height: "11vh", imgTop: 22, imgLeft: 0, imgWidth: "32vh", imgHeight: "7vh", time: 5.4 },
-        { maskTop: 26, height: "19vh", imgTop: 0, imgLeft: 42, imgWidth: "60vh", imgHeight: "15vh", time: 7.9 },
-        { maskTop: 45, height: "15vh", imgTop: 32, imgLeft: 49, imgWidth: "61vh", imgHeight: "7vh", time: 5.5 },
-        { maskTop: 60, height: "7vh", imgTop: 29, imgLeft: 0, imgWidth: "36vh", imgHeight: "6vh", time: 3.6 },
-        { maskTop: 67, height: "20vh", imgTop: 18, imgLeft: 34, imgWidth: "76vh", imgHeight: "10vh", time: 3 },
+        { maskTop: 0, height: "20vh", imgTop: 22, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 8.8 }, // 8.8
+        { maskTop: 20, height: "20vh", imgTop: 22, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 5.4 }, // 5.4
+        { maskTop: 40, height: "27vh", imgTop: 0, imgLeft: 43.5, imgWidth: "75vh", imgHeight: "40vh", time: 7.9 }, // 7.9
+        { maskTop: 67, height: "24vh", imgTop: 65, imgLeft: 55, imgWidth: "63.5vh", imgHeight: "18vh", time: 5.5 }, // 5.5
+        { maskTop: 91, height: "19vh", imgTop: 51, imgLeft: 0, imgWidth: "29vh", imgHeight: "30vh", time: 3.6 }, // 3.6
+        { maskTop: 110, height: "31vh", imgTop: 40, imgLeft: 25, imgWidth: "94vh", imgHeight: "30vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "18vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 10.2 },
-        { maskTop: 18, height: "11vh", imgTop: 3, imgLeft: 38, imgWidth: "41vh", imgHeight: "25vh", time: 3.2 },
-        { maskTop: 30, height: "22vh", imgTop: 18, imgLeft: 0, imgWidth: "48vh", imgHeight: "58vh", time: 3.2 }, 
+        { maskTop: 0, height: "30vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 10.2 }, // 10.2
+        { maskTop: 35, height: "34vh", imgTop: 0, imgLeft: 53, imgWidth: "64vh", imgHeight: "50vh", time: 3.2 }, // 3.2
+        { maskTop: 75, height: "62vh", imgTop: 35, imgLeft: 0, imgWidth: "50vh", imgHeight: "68vh", time: 3 }, //  3
     ],
     [
-        { maskTop: 0, height: "25vh", imgTop: 0, imgLeft: 0, imgWidth: "77vh", imgHeight: "23vh", time: 15 },
-        { maskTop: 25, height: "17vh", imgTop: 23, imgLeft: 0, imgWidth: "77vh", imgHeight: "13vh", time: 8 },
-        { maskTop: 42, height: "26vh", imgTop: 36, imgLeft: 0, imgWidth: "77vh", imgHeight: "36vh", time: 3 },
+        { maskTop: 0, height: "45vh", imgTop: 0, imgLeft: 0, imgWidth: "106vh", imgHeight: "31vh", time: 15 }, // 15
+        { maskTop: 50, height: "38vh", imgTop: 31, imgLeft: 0, imgWidth: "106vh", imgHeight: "26vh", time: 8 }, // 8
+        { maskTop: 92, height: "47vh", imgTop: 57, imgLeft: 0, imgWidth: "106vh", imgHeight: "43vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "14vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.2},
-        { maskTop: 14, height: "29vh", imgTop: 46, imgLeft: 0, imgWidth: "94vh", imgHeight: "26vh", time: 22.8 },
-        { maskTop: 43, height: "20vh", imgTop: 0, imgLeft: 0, imgWidth: "94vh", imgHeight: "25vh", time: 17.1 },
-        { maskTop: 63, height: "14vh", imgTop: 25, imgLeft: 0, imgWidth: "94vh", imgHeight: "21vh", time: 3 },
+        { maskTop: 0, height: "35vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.2}, // 13.2
+        { maskTop: 37, height: "37vh", imgTop: 0, imgLeft: 0, imgWidth: "96vh", imgHeight: "31vh", time: 22.8 }, // 22.8
+        { maskTop: 76, height: "27vh", imgTop: 31, imgLeft: 0, imgWidth: "96vh", imgHeight: "36vh", time: 17.1 }, // 17.1
+        { maskTop: 105, height: "38vh", imgTop: 67, imgLeft: 0, imgWidth: "96vh", imgHeight: "45vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "20vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.4 },
-        { maskTop: 20, height: "21vh", imgTop: 21, imgLeft: 77, imgWidth: "28vh", imgHeight: "12vh", time: 12.8 },
-        { maskTop: 41, height: "16vh", imgTop: 21, imgLeft: 0, imgWidth: "45vh", imgHeight: "30vh", time: 9 },
-        { maskTop: 57, height: "14vh", imgTop: 24, imgLeft: 16, imgWidth: "16vh", imgHeight: "20vh", time: 6 },
-        { maskTop: 71, height: "14vh", imgTop: 0, imgLeft: 18, imgWidth: "24vh", imgHeight: "20vh", time: 3 },
+        { maskTop: 0, height: "34vh", imgTop: 0, imgLeft: 44, imgWidth: "35vh", imgHeight: "46vh", time: 13.4 }, // 13.4
+        { maskTop: 36, height: "30vh", imgTop: 53, imgLeft: 82, imgWidth: "33vh", imgHeight: "58vh", time: 12.8 }, // 12.8
+        { maskTop: 66, height: "26vh", imgTop: 46, imgLeft: 4, imgWidth: "48vh", imgHeight: "56vh", time: 9 }, // 9
+        { maskTop: 92, height: "26vh", imgTop: 52, imgLeft: 48, imgWidth: "25vh", imgHeight: "42vh", time: 6 }, // 6
+        { maskTop: 118, height: "22.5vh", imgTop: 0, imgLeft: 44, imgWidth: "35vh", imgHeight: "46vh", time: 3 }, // 3
     ],
     // Slides 6-10
     [
-        { maskTop: 0, height: "13vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 11.7 },
-        { maskTop: 13, height: "15vh", imgTop: 9, imgLeft: 0, imgWidth: "28vh", imgHeight: "26vh", time: 7.7 },  
-        { maskTop: 28, height: "10vh", imgTop: 55, imgLeft: 30, imgWidth: "34vh", imgHeight: "26vh", time: 5.9 }, 
-        { maskTop: 38, height: "12vh", imgTop: 11, imgLeft: 43, imgWidth: "38vh", imgHeight: "22vh", time: 9.5 }, 
-        { maskTop: 50, height: "12vh", imgTop: 50, imgLeft: 0, imgWidth: "45vh", imgHeight: "12vh", time: 7.4 }, 
-        { maskTop: 62, height: "16vh", imgTop: 58, imgLeft: 60, imgWidth: "21vh", imgHeight: "23vh", time: 3 }, 
+        { maskTop: 0, height: "26vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 11.7 }, // 11.7
+        { maskTop: 26, height: "21vh", imgTop: 0, imgLeft: 0, imgWidth: "50vh", imgHeight: "38vh", time: 7.7 }, //   7.7
+        { maskTop: 48, height: "22vh", imgTop: 58, imgLeft: 28, imgWidth: "42vh", imgHeight: "56vh", time: 5.9 }, //  5.9
+        { maskTop: 70, height: "22vh", imgTop: 0, imgLeft: 50, imgWidth: "44vh", imgHeight: "42vh", time: 9.5 }, //  9.5
+        { maskTop: 92, height: "22vh", imgTop: 58, imgLeft: 2, imgWidth: "54vh", imgHeight: "24vh", time: 7.4 }, //  7.4
+        { maskTop: 114, height: "26vh", imgTop: 74, imgLeft: 64, imgWidth: "30vh", imgHeight: "40vh", time: 3 },  // 3
     ],
     [
-        { maskTop: 0, height: "19vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 10.7 },
-        { maskTop: 19, height: "10vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 5.4 },
-        { maskTop: 29, height: "10vh", imgTop: 7, imgLeft: 69, imgWidth: "20vh", imgHeight: "27vh", time: 4.2 },
-        { maskTop: 39, height: "18vh", imgTop: 0, imgLeft: 0, imgWidth: "24vh", imgHeight: "31vh", time: 9.1 },
-        { maskTop: 57, height: "10vh", imgTop: 8, imgLeft: 22, imgWidth: "32vh", imgHeight: "23vh", time: 3.5 },
-        { maskTop: 67, height: "14vh", imgTop: 8, imgLeft: 54, imgWidth: "15vh", imgHeight: "20vh", time: 3 },
+        { maskTop: 0, height: "35vh", imgTop: 61, imgLeft: 1, imgWidth: "42vh", imgHeight: "21vh", time: 10.7 }, // 10.7
+        { maskTop: 37, height: "22vh", imgTop: 98, imgLeft: 52, imgWidth: "35vh", imgHeight: "25vh", time: 5.4 }, // 5.4
+        { maskTop: 61, height: "30vh", imgTop: 0, imgLeft: 48, imgWidth: "39vh", imgHeight: "28vh", time: 4.2 }, // 4.2
+        { maskTop: 93, height: "20vh", imgTop: 32, imgLeft: 46, imgWidth: "42vh", imgHeight: "34vh", time: 9.1 }, // 9.1
+        { maskTop: 115, height: "25vh", imgTop: 70, imgLeft: 50, imgWidth: "38vh", imgHeight: "26vh", time: 3 }, // 3.5
     ],
     [
-        { maskTop: 0, height: "17vh", imgTop: 0, imgLeft: 0, imgWidth: "99vh", imgHeight: "31vh", time: 6.1 },
-        { maskTop: 17, height: "22vh", imgTop: 31, imgLeft: 0, imgWidth: "99vh", imgHeight: "23vh", time: 4.2 },
-        { maskTop: 39, height: "23vh", imgTop: 54, imgLeft: 0, imgWidth: "99vh", imgHeight: "21vh", time: 3 },
+        { maskTop: 0, height: "28vh", imgTop: 0, imgLeft: 0, imgWidth: "111vh", imgHeight: "39vh", time: 3.1 }, // 6.1
+        { maskTop: 34, height: "44vh", imgTop: 39, imgLeft: 0, imgWidth: "111vh", imgHeight: "44vh", time: 4.2 }, // 4.2
+        { maskTop: 86, height: "39vh", imgTop: 83, imgLeft: 0, imgWidth: "111vh", imgHeight: "30vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "32vh", imgTop: 0, imgLeft: 0, imgWidth: "16vh", imgHeight: "55vh", time: 19.6 },
-        { maskTop: 32, height: "32vh", imgTop: 0, imgLeft: 16, imgWidth: "23vh", imgHeight: "55vh", time: 17 },
-        { maskTop: 64, height: "8vh", imgTop: 0, imgLeft: 39, imgWidth: "30vh", imgHeight: "55vh", time: 7.7 },
-        { maskTop: 72, height: "10vh", imgTop: 0, imgLeft: 69, imgWidth: "21.5vh", imgHeight: "55vh", time: 3 },
+        { maskTop: 0, height: "45vh", imgTop: 0, imgLeft: 0, imgWidth: "21vh", imgHeight: "106vh", time: 19.6 }, // 19.6
+        { maskTop: 45, height: "45vh", imgTop: 0, imgLeft: 21, imgWidth: "22vh", imgHeight: "106vh", time: 7 }, // 17
+        { maskTop: 90, height: "22vh", imgTop: 0, imgLeft: 43, imgWidth: "31vh", imgHeight: "106vh", time: 7.7 }, // 7.7
+        { maskTop: 116, height: "26vh", imgTop: 0, imgLeft: 74, imgWidth: "22vh", imgHeight: "106vh", time: 3 }, // 3
     ],
     [
         { maskTop: 0, height: "11vh", imgTop: 0, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 8.8 },
@@ -255,58 +254,58 @@ const readingData = [
 const offsets = [
     {
         textLeft: 0,
-        textTop: 24,
-        imgLeft: 50,
-        imgTop: 35
+        textTop: 4.5,
+        imgLeft: 50.5,
+        imgTop: 16.5
     },
     {
         textLeft: 0,
-        textTop: 36,
-        imgLeft: 69.5,
-        imgTop: 29
+        textTop: 6,
+        imgLeft: 52,
+        imgTop: 17
     },
     {
         textLeft: 0,
-        textTop: 34,
-        imgLeft: 68.5,
-        imgTop: 29
+        textTop: 6.5,
+        imgLeft: 59,
+        imgTop: 19
     },
     {
         textLeft: 0,
-        textTop: 30,
-        imgLeft: 64,
-        imgTop: 30.5
+        textTop: 4,
+        imgLeft: 66,
+        imgTop: 16.5
     },
     {
         textLeft: 0,
-        textTop: 25,
-        imgLeft: 55,
-        imgTop: 37
+        textTop: 4,
+        imgLeft: 53.5,
+        imgTop: 15.5
     },
     // Slides 6-10
     {
         textLeft: 0,
-        textTop: 27.5,
-        imgLeft: 69,
-        imgTop: 25.5
+        textTop: 4,
+        imgLeft: 67.5,
+        imgTop: 16.5
     },
     {
         textLeft: 0,
-        textTop: 28,
-        imgLeft: 65,
-        imgTop: 30
+        textTop: 6,
+        imgLeft: 68,
+        imgTop: 13.5
     },
     {
         textLeft: 0,
-        textTop: 33.5,
-        imgLeft: 60,
-        imgTop: 30
+        textTop: 12,
+        imgLeft: 55.5,
+        imgTop: 15
     },
     {
         textLeft: 0,
-        textTop: 28,
-        imgLeft: 60.5,
-        imgTop: 33.5
+        textTop: 4,
+        imgLeft: 65.5,
+        imgTop: 18
     },
     {
         textLeft: 0,
@@ -641,7 +640,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
             <audio ref={audioRef7} src={audio7} />
             <audio ref={audioRef8} src={audio8} />
             <audio ref={audioRef9} src={audio9} />
-            <audio ref={audioRef10} src={audio10} />
+            {/* <audio ref={audioRef10} src={audio10} />
             <audio ref={audioRef11} src={audio11} />
             <audio ref={audioRef12} src={audio12} />
             <audio ref={audioRef13} src={audio13} />
@@ -651,7 +650,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
             <audio ref={audioRef17} src={audio17} />
             <audio ref={audioRef18} src={audio18} />
             <audio ref={audioRef19} src={audio19} />
-            <audio ref={audioRef20} src={audio20} />
+            <audio ref={audioRef20} src={audio20} /> */}
             {
                 !finishTest &&
                 <div style={styles.subcontainer}>
@@ -895,75 +894,75 @@ const styles = {
     },
     textTarget: [{ // Slides 1-5
         position: "absolute",
-        left: "10vw",
-        top: "24vh",
-        width: "28.5vw",
-        height: "55vh",
+        left: "5vw",
+        top: "4.5vh",
+        width: "33vw",
+        height: "90.5vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
-        left: "10vw",
-        top: "36vh",
-        width: "40vw",
-        height: "32.7vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "10vw",
-        top: "34vh",
-        width: "41vw",
-        height: "43.6vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "7vw",
-        top: "30vh",
-        width: "40vw",
-        height: "49vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "10vw",
-        top: "25vh",
-        width: "31vw",
-        height: "54vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    // Slides 6-10
-    {
-        position: "absolute",
-        left: "10vw",
-        top: "27.5vh",
-        width: "40vw",
-        height: "50vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "8vw",
-        top: "28vh",
-        width: "40vw",
-        height: "50vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "6.5vw",
-        top: "33.5vh",
-        width: "34.5vw",
-        height: "40vh",
+        left: "5.5vw",
+        top: "6vh",
+        width: "33.5vw",
+        height: "87.5vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "6vw",
-        top: "28vh",
-        width: "39vw",
-        height: "50.5vh",
+        top: "6.5vh",
+        width: "38vw",
+        height: "89vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "5vw",
+        top: "4vh",
+        width: "44vw",
+        height: "91.5vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "5vw",
+        top: "4vh",
+        width: "35vw",
+        height: "90vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    // Slides 6-10
+    {
+        position: "absolute",
+        left: "5.5vw",
+        top: "4vh",
+        width: "45vw",
+        height: "90vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "5.5vw",
+        top: "6vh",
+        width: "43.5vw",
+        height: "89.5vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "7vw",
+        top: "12vh",
+        width: "34vw",
+        height: "80vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "5.5vw",
+        top: "4vh",
+        width: "43vw",
+        height: "91vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
@@ -1063,75 +1062,75 @@ const styles = {
 
     imageTarget: [{ // Slides 1-5
         position: "absolute",
-        left: "38.5vw",
-        top: "35vh",
-        width: "53vw",
-        height: "33.3vh",
+        left: "38vw",
+        top: "16.5vh",
+        width: "57vw",
+        height: "68vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
-        left: "52vw",
-        top: "29.5vh",
-        width: "38vw",
-        height: "48vh",
+        left: "39vw",
+        top: "17vh",
+        width: "56vw",
+        height: "66vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
-        left: "51.5vw",
-        top: "29vh",
-        width: "37vw",
-        height: "46vh",
+        left: "44vw",
+        top: "19vh",
+        width: "51vw",
+        height: "64vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
-        left: "48vw",
-        top: "30.5vh",
-        width: "45vw",
-        height: "46vh",
+        left: "49.5vw",
+        top: "16.5vh",
+        width: "46vw",
+        height: "72vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
-        left: "41vw",
-        top: "37vh",
-        width: "50vw",
-        height: "32vh",
+        left: "40vw",
+        top: "15.5vh",
+        width: "55vw",
+        height: "71vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     // Slides 6-10
     {
         position: "absolute",
-        left: "52vw",
-        top: "25.5vh",
-        width: "39vw",
-        height: "52vh",
+        left: "50.5vw",
+        top: "16.5vh",
+        width: "45vw",
+        height: "73vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "51vw",
+        top: "13.5vh",
+        width: "42vw",
+        height: "79vh",
+        backgroundColor: "rgba(0,0,0,0)"
+    },
+    {
+        position: "absolute",
+        left: "41.5vw",
+        top: "15vh",
+        width: "53.5vw",
+        height: "72vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
         position: "absolute",
         left: "49vw",
-        top: "30vh",
-        width: "42.5vw",
-        height: "48vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "45vw",
-        top: "30vh",
-        width: "47.5vw",
-        height: "48vh",
-        backgroundColor: "rgba(0,0,0,0)"
-    },
-    {
-        position: "absolute",
-        left: "45.5vw",
-        top: "33.5vh",
-        width: "43.5vw",
-        height: "35vh",
+        top: "18vh",
+        width: "46vw",
+        height: "68vh",
         backgroundColor: "rgba(0,0,0,0)"
     },
     {
