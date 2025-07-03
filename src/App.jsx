@@ -17,8 +17,8 @@ const trainingIds = {
   NarrativeNoFollow: 14
 }
 
-const skipTest1 = true;
-const skipTest2 = true;
+const skipTest1 = false;
+const skipTest2 = false;
 
 function App() {
   const { userId, setUserId } = useContext(UserContext);

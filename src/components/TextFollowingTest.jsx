@@ -44,7 +44,7 @@ import audio9 from '../assets/audios/slides/9_dynamic_cell_growth.mp3';
 
 import { UserContext } from "../context/UserContext";
 
-const isDebug = true;
+const isDebug = false;
 
 const intervals = {
     image: null,
