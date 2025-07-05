@@ -407,18 +407,18 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
                     />
                     {seeInfo && 
                     <p style={styles.textCount}>
-                        Target1: {(parseFloat(hovers.target1[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        Target2: {(parseFloat(hovers.target2[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Target3: {(parseFloat(hovers.target3[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Target4: {(parseFloat(hovers.target4[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Target5: {(parseFloat(hovers.target5[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        Target6: {(parseFloat(hovers.target6[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Target7: {(parseFloat(hovers.target7[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Target8: {(parseFloat(hovers.target8[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Target9: {(parseFloat(hovers.target9[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        Target10: {(parseFloat(hovers.target10[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Target11: {(parseFloat(hovers.target11[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Target12: {(parseFloat(hovers.target12[currentSlide]) * 0.1).toFixed(1)} 
+                        T1: {(parseFloat(hovers.target1[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        T2: {(parseFloat(hovers.target2[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        T3: {(parseFloat(hovers.target3[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        T4: {(parseFloat(hovers.target4[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        T5: {(parseFloat(hovers.target5[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        T6: {(parseFloat(hovers.target6[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        T7: {(parseFloat(hovers.target7[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        T8: {(parseFloat(hovers.target8[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        T9: {(parseFloat(hovers.target9[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        T10: {(parseFloat(hovers.target10[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        T11: {(parseFloat(hovers.target11[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        T12: {(parseFloat(hovers.target12[currentSlide]) * 0.1).toFixed(1)} 
                     </p>}
                     {/* {seeInfo && <p style={styles.imageCount}>Image count: {clicks.image[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time: {(parseFloat(hovers.target2[currentSlide]) * 0.1).toFixed(1)}</p>} */}
                 </div>
@@ -590,9 +590,10 @@ const styles = {
     },
     textCount: {
         position: "absolute",
-        left: "10vw",
+        left: "11vw",
         top: "0px",
         color: "#333",
+        fontSize: "12px"
     },
     imageCount: {
         position: "absolute",

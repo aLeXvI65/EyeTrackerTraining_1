@@ -42,6 +42,7 @@ export const TargetData = [{
     display: "none",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
+  // Slides 6-10
   {
     position: "absolute",
     left: "52vw",
@@ -53,11 +54,10 @@ export const TargetData = [{
   },
   {
     position: "absolute",
-    left: "49vw",
-    top: "18.5vh",
-    width: "42.5vw",
-    height: "75vh",
-    display: "none",
+    left: "48vw",
+    top: "25vh",
+    width: "10vw",
+    height: "9.5vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {

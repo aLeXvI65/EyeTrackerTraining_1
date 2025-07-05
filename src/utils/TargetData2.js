@@ -30,6 +30,7 @@ export const TargetData = [{
     top: "20vh",
     width: "45vw",
     height: "72vh",
+    display: "none",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
@@ -38,22 +39,25 @@ export const TargetData = [{
     top: "27vh",
     width: "48vw",
     height: "50vh",
+    display: "none",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
+  // Slides 6-10
   {
     position: "absolute",
     left: "52vw",
     top: "11vh",
     width: "39vw",
     height: "81vh",
+    display: "none",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "49vw",
-    top: "18.5vh",
-    width: "42.5vw",
-    height: "75vh",
+    left: "22.5vw",
+    top: "25vh",
+    width: "10.5vw",
+    height: "10vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
