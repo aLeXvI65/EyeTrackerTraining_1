@@ -10,15 +10,20 @@ import { UserContext } from './context/UserContext'
 import BioImagesNarrativeNoFollow from './components/BioImages/BioImagesNarrativeNoFollow'
 import TargetTest from './components/TargetTests/TargetTest'
 import TargetTest2 from './components/TargetTests/TargetTest2'
+import CustomProjectTest from './components/CustomProject/CustomProjectTest'
 
 const trainingIds = {
   Normal: 10,
   TextFollowing: 11,
-  NarrativeNoFollow: 14
+  NarrativeNoFollow: 14,
+  CustomProject: 15
 }
 
 const skipTest1 = false;
 const skipTest2 = false;
+const disableFullScreen = false;
+const autoFillLogin = false;
+const seeInfo = false;
 
 function App() {
   const { userId, setUserId } = useContext(UserContext);
@@ -53,13 +58,15 @@ function App() {
           setUserId(data);
           setHasLogin(true);
 
-          const elem = document.documentElement;
-          if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-          } else if (elem.webkitRequestFullscreen) {
-              elem.webkitRequestFullscreen(); // Safari
-          } else if (elem.msRequestFullscreen) {
-              elem.msRequestFullscreen(); // IE/Edge
+          if (!disableFullScreen) {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+              elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen(); // Safari
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen(); // IE/Edge
+            }
           }
           
         }
@@ -70,13 +77,15 @@ function App() {
   }
 
   const handleStart = (value) => {
-    const elem = document.documentElement;
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen(); // Safari
-    } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen(); // IE/Edge
+    if (!disableFullScreen) {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen(); // Safari
+      } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen(); // IE/Edge
+      }
     }
 
     setTimeout(() => {
@@ -100,10 +109,11 @@ function App() {
   let testComponent = <TextFollowingTest isTextFollowing={false} />;
   if (selectedTest === "TextFollowing") testComponent = <TextFollowingTest />;
   else if (selectedTest === "NarrativeNoFollow") testComponent = <BioImagesNarrativeNoFollow />;
+  else if (selectedTest === "CustomProject") testComponent = <CustomProjectTest trainingId={selectedTestId} enableSeeInfo={seeInfo} />;
 
   return (
     <>
-      {!hasLogin && startTest && hasFinishedTargetTest && hasFinishedTargetTest2 && <Login onLogin={handleLogin} error={loginError} />}
+      {!hasLogin && startTest && hasFinishedTargetTest && hasFinishedTargetTest2 && <Login onLogin={handleLogin} error={loginError} autoFill={autoFillLogin} />}
       {
         !startTest && !hasLogin  && !hasFinishedTargetTest && !hasFinishedTargetTest2 && <StartMenu onStart={handleStart} />
       }

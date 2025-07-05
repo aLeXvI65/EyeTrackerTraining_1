@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Login({ onLogin, error }) {
+export default function Login({ onLogin, error, autoFill = false }) {
   const username = useRef();
   const pass = useRef();
 
@@ -14,8 +14,18 @@ export default function Login({ onLogin, error }) {
     <div className="" style={styles.container}>
       <h1>LOGIN</h1>
       <div style={styles.startContainer}>
-        <input style={styles.input} ref={username} type="text" placeholder="Username" onKeyDown={(e) => keyHandle(e)} /><br />
-        <input style={styles.input} ref={pass} type="password" placeholder="Password" onKeyDown={(e) => keyHandle(e)} /><br />
+        {
+          autoFill ?
+          <>
+            <input style={styles.input} ref={username} type="text" placeholder="Username" onKeyDown={(e) => keyHandle(e)} value={"Sublime2"} /><br />
+            <input style={styles.input} ref={pass} type="password" placeholder="Password" onKeyDown={(e) => keyHandle(e)} value="H2025" /><br />        
+          </>
+          :
+          <>
+            <input style={styles.input} ref={username} type="text" placeholder="Username" onKeyDown={(e) => keyHandle(e)} /><br />
+            <input style={styles.input} ref={pass} type="password" placeholder="Password" onKeyDown={(e) => keyHandle(e)} /><br />
+          </>
+        }
         <button style={styles.startButton} onClick={() => onLogin(username, pass)}>Login</button>
         { error && <div style={styles.errorMessage}><span>{error}</span></div>}
       </div>

@@ -9,6 +9,7 @@ export default function StartMenu({ onStart }) {
           <button style={styles.startButton} onClick={() => onStart("Normal")}>Start Normal test</button>
           <button style={styles.startButton} onClick={() => onStart("TextFollowing")}>Start Test with text following</button>
           <button style={styles.startButton} onClick={() => onStart("NarrativeNoFollow")}>Start Test with narrative text</button>
+          {/* <button style={styles.startButton} onClick={() => onStart("CustomProject")}>Start Custom Project</button> */}
         </div>
     </div>
   );
