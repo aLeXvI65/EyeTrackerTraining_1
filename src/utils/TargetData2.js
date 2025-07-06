@@ -66,21 +66,23 @@ export const TargetData = [{
     top: "17vh",
     width: "47.5vw",
     height: "75vh",
+    display: "none",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "45.5vw",
-    top: "24vh",
-    width: "43.5vw",
-    height: "55vh",
+    left: "35vw",
+    top: "37vh",
+    width: "30vw",
+    height: "30vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "43.5vw",
-    top: "6vh",
-    width: "46.5vw",
-    height: "88vh",
+    left: "20vw",
+    top: "25vh",
+    width: "30vw",
+    height: "30vh",
+    display: "none",
     backgroundColor: "rgba(0,0,0,0.5)"
   }]

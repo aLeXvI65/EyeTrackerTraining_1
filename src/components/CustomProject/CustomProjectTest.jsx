@@ -17,10 +17,12 @@ import audio3 from '../../assets/audios/slides/tuti_fruti/audio 5.mp3';
 import audio4 from '../../assets/audios/slides/tuti_fruti/audio 6.mp3';
 import audio5 from '../../assets/audios/slides/tuti_fruti/audio 7.mp3';
 import audio6 from '../../assets/audios/slides/tuti_fruti/audio 8.mp3';
-import audio7 from '../../assets/audios/slides/tuti_fruti/audio 9.mp3';
-import audio8 from '../../assets/audios/slides/tuti_fruti/audio 10.mp3';
-import audio9 from '../../assets/audios/slides/tuti_fruti/audio 11.mp3';
-import audio10 from '../../assets/audios/slides/tuti_fruti/audio 12.mp3';
+import audio7 from '../../assets/audios/slides/tuti_fruti/audio 10.mp3';
+import audio8 from '../../assets/audios/slides/tuti_fruti/audio 11.mp3';
+import audio9 from '../../assets/audios/slides/tuti_fruti/audio 12.mp3';
+import audio10 from '../../assets/audios/slides/tuti_fruti/audio 13.mp3';
+
+import video1 from '../../assets/videos/tuti_fruti/Car_Crash_cut_optimized.mp4';
 
 import { TargetData as TARGET_DATA_1 } from '../../utils/TargetData1';
 import { TargetData as TARGET_DATA_2 } from '../../utils/TargetData2';
@@ -76,6 +78,19 @@ const audios = [
     null,
     null,
     null,
+];
+
+const videos = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
 ]
 
 const numSlides = 10;
@@ -119,6 +134,7 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
     const [finishTest, setFinishTest] = useState(false);
     const [seeInfo, setSeeInfo] = useState(enableSeeInfo);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
+    const [showVideo, setShowVideo] = useState(false);
 
     const audioRef1 = useRef(null);
     const audioRef2 = useRef(null);
@@ -130,6 +146,8 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
     const audioRef8 = useRef(null);
     const audioRef9 = useRef(null);
     const audioRef10 = useRef(null);
+
+    const videoRef1 = useRef(null);
 
 
     useEffect(() => {
@@ -143,6 +161,9 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
         audios[7] = audioRef8;
         audios[8] = audioRef9;
         audios[9] = audioRef10;
+
+        videos[8] = videoRef1;
+
         startTest();
     }, []);
 
@@ -214,7 +235,26 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
 
         if (currentSlide < slides.length - 1) {
             setTimeout(() => {
-                audios[currentSlide + 1].current.play().catch(error => console.log("Reproducción bloqueada:", error));
+                //audios[currentSlide + 1].current.play().catch(error => console.log("Reproducción bloqueada:", error));
+                const nextAudioRef = audios[currentSlide + 1];
+                if (nextAudioRef && nextAudioRef.current) {
+                    nextAudioRef.current.play().catch(error => {
+                        console.log("Playback blocked:", error);
+                    });
+                } else {
+                    console.warn("Audio ref no disponible en el slide:", currentSlide + 1);
+                }
+
+                const nextVideoRef = videos[currentSlide + 1];
+                if (nextVideoRef && nextVideoRef.current) {
+                    nextVideoRef.current.play().catch(error => {
+                        console.log("Playback blocked:", error);
+                    });
+                    setShowVideo(true);
+                } else {
+                    console.warn("Video ref no disponible en el slide:", currentSlide + 1);
+                    setShowVideo(false);
+                }
             }, 1000);
 
             setCurrentSlide(currentSlide + 1);
@@ -392,6 +432,15 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
             <audio ref={audioRef8} src={audio8} />
             <audio ref={audioRef9} src={audio9} />
             <audio ref={audioRef10} src={audio10} />
+            <video 
+                style={{
+                    ...styles.video,
+                    display: showVideo ? "block" : "none"
+                    }
+                } 
+                ref={videoRef1} 
+                src={video1} 
+            />
 
             {
                 !finishTest &&
@@ -557,6 +606,12 @@ const styles = {
         margin: "auto",
         textAlign: "center",
         maxHeight: "100vh",
+    },
+    video: {
+        position: "absolute",
+        left: "33vw",
+        top: "38vh",
+        width: "35vw"
     },
     slidesInfo: {
         position: "absolute",
