@@ -58,7 +58,7 @@ const audios = [
     null,
     null,
     null,
-]
+];
 
 const numSlides = 10;
 
