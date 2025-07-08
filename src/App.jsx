@@ -19,11 +19,13 @@ const trainingIds = {
   CustomProject: 15
 }
 
-const skipTest1 = false;
-const skipTest2 = false;
-const disableFullScreen = false;
-const autoFillLogin = false;
-const seeInfo = false;
+const isDebug = false;
+
+const skipTest1 = isDebug;
+const skipTest2 = isDebug;
+const disableFullScreen = isDebug;
+const autoFillLogin = isDebug;
+const seeInfo = isDebug;
 
 function App() {
   const { userId, setUserId } = useContext(UserContext);

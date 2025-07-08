@@ -21,15 +21,15 @@ import slide18 from '../../assets/slides/17_ion_distribution/ion_distribution_2.
 import slide19 from '../../assets/slides/19_systemic/systemic_pulmonary_circulation.jpg';
 import slide20 from '../../assets/slides/20_various/various_types_bone.jpg';
 
-import audio1 from '../../assets/audios/slides/Narrative/audio 1.mp3';
-import audio2 from '../../assets/audios/slides/Narrative/audio 2.mp3';
-import audio3 from '../../assets/audios/slides/Narrative/audio 3.mp3';
-import audio4 from '../../assets/audios/slides/Narrative/audio 4.mp3';
-import audio5 from '../../assets/audios/slides/Narrative/audio 5.mp3';
-import audio6 from '../../assets/audios/slides/Narrative/audio 6.mp3';
-import audio7 from '../../assets/audios/slides/Narrative/audio 7.mp3';
-import audio8 from '../../assets/audios/slides/Narrative/audio 8.mp3';
-import audio9 from '../../assets/audios/slides/Narrative/audio 9.mp3';
+import audio1 from '../../assets/audios/slides/Narrative/slide 1.mp3';
+import audio2 from '../../assets/audios/slides/Narrative/slide 2.mp3';
+import audio3 from '../../assets/audios/slides/Narrative/slide 3.mp3';
+import audio4 from '../../assets/audios/slides/Narrative/slide 4.mp3';
+import audio5 from '../../assets/audios/slides/Narrative/slide 5.mp3';
+import audio6 from '../../assets/audios/slides/Narrative/slide 6.mp3';
+import audio7 from '../../assets/audios/slides/Narrative/slide 7.mp3';
+import audio8 from '../../assets/audios/slides/Narrative/slide 8.mp3';
+import audio9 from '../../assets/audios/slides/Narrative/slide 9.mp3';
 import audio10 from '../../assets/audios/slides/10_nose_pharynx.mp3';
 import audio11 from '../../assets/audios/slides/11_larynx_epiglotis.mp3';
 import audio12 from '../../assets/audios/slides/12_trachea_bronchi.mp3';
@@ -425,74 +425,75 @@ const styles = {
   },
   textTarget: [{
     position: "absolute",
-    left: "10.5vw",
-    top: "22vh",
-    width: "28vw",
-    height: "58vh",
+    left: "5vw",
+    top: "15vh",
+    width: "33vw",
+    height: "73vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "13.5vw",
-    top: "35vh",
+    left: "5vw",
+    top: "21vh",
+    width: "34vw",
+    height: "57vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "5vw",
+    top: "13vh",
     width: "39vw",
-    height: "36vh",
+    height: "75vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "14vw",
-    top: "35vh",
-    width: "39vw",
-    height: "40vh",
+    left: "5vw",
+    top: "17vh",
+    width: "44vw",
+    height: "70vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "11vw",
-    top: "27.5vh",
-    width: "38vw",
-    height: "52vh",
+    left: "5vw",
+    top: "5vh",
+    width: "34.5vw",
+    height: "90vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  //---
+  {
+    position: "absolute",
+    left: "5vw",
+    top: "16vh",
+    width: "45vw",
+    height: "72vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "10vw",
-    top: "23.5vh",
-    width: "31vw",
-    height: "55vh",
+    left: "5vw",
+    top: "16vh",
+    width: "45vw",
+    height: "72vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "11.5vw",
-    top: "30vh",
-    width: "39vw",
-    height: "49vh",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "11vw",
-    top: "30vh",
-    width: "38vw",
-    height: "49vh",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "10vw",
-    top: "32vh",
+    left: "7vw",
+    top: "10vh",
     width: "33.5vw",
-    height: "41vh",
+    height: "84vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "12vw",
-    top: "26.5vh",
-    width: "36.5vw",
-    height: "54vh",
+    left: "5vw",
+    top: "16vh",
+    width: "44.5vw",
+    height: "72vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
@@ -592,73 +593,74 @@ const styles = {
   imageTarget: [{
     position: "absolute",
     left: "38.5vw",
-    top: "35vh",
-    width: "52vw",
-    height: "30vh",
+    top: "16vh",
+    width: "57vw",
+    height: "68vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
-    left: "53vw",
-    top: "28.5vh",
-    width: "36vw",
-    height: "45vh",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "53.5vw",
-    top: "31vh",
-    width: "35vw",
-    height: "44vh",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "50vw",
-    top: "29.5vh",
-    width: "38vw",
-    height: "40vh",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "41vw",
-    top: "37vh",
-    width: "49vw",
-    height: "34vh",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "52vw",
-    top: "30vh",
-    width: "37.5vw",
-    height: "50vh",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "50vw",
-    top: "33vh",
-    width: "40vw",
-    height: "45vh",
+    left: "40vw",
+    top: "18vh",
+    width: "55vw",
+    height: "65vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
     left: "44vw",
-    top: "32vh",
-    width: "44.5vw",
-    height: "42vh",
+    top: "18vh",
+    width: "51vw",
+    height: "65vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "50vw",
+    top: "16vh",
+    width: "45vw",
+    height: "72vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "39.5vw",
+    top: "16vh",
+    width: "55vw",
+    height: "70vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  //---
+  {
+    position: "absolute",
+    left: "50vw",
+    top: "17vh",
+    width: "45vw",
+    height: "72vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "51vw",
+    top: "15vh",
+    width: "42vw",
+    height: "78vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "42vw",
+    top: "15vh",
+    width: "53vw",
+    height: "72vh",
     backgroundColor: "rgba(3, 2, 2, 0.5)"
   },
   {
     position: "absolute",
-    left: "48.5vw",
-    top: "34vh",
-    width: "42vw",
-    height: "35vh",
+    left: "49.5vw",
+    top: "18vh",
+    width: "46vw",
+    height: "68vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
