@@ -19,7 +19,7 @@ const trainingIds = {
   CustomProject: 15
 }
 
-const isDebug = false;
+const isDebug = true;
 
 const skipTest1 = isDebug;
 const skipTest2 = isDebug;

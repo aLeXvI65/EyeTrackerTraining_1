@@ -37,6 +37,8 @@ import { TargetData as TARGET_DATA_10 } from '../../utils/TargetData10';
 import { TargetData as TARGET_DATA_11 } from '../../utils/TargetData11';
 import { TargetData as TARGET_DATA_12 } from '../../utils/TargetData12';
 
+import { questions, answers1, answers2, answers3, answers4 } from "../../utils/questions_answers";
+
 import { UserContext } from "../../context/UserContext";
 
 const intervals = {
@@ -91,7 +93,11 @@ const videos = [
     null,
     null,
     null,
-]
+];
+
+
+
+
 
 const numSlides = 10;
 
@@ -454,6 +460,21 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
                         className="cursor-pointer border-2 border-gray-300 rounded-lg"
 
                     />
+                    {questions.length > currentSlide && questions[currentSlide] && 
+                        <span style={styles.question}>{questions[currentSlide]}</span>
+                    }
+                    {answers1.length > currentSlide && answers1[currentSlide] && 
+                        <button style={{...styles.answers, ...styles.answer1}}>{answers1[currentSlide]}</button>
+                    }
+                    {answers2.length > currentSlide && answers2[currentSlide] && 
+                        <button style={{...styles.answers, ...styles.answer2}}>{answers2[currentSlide]}</button>
+                    }
+                    {answers3.length > currentSlide && answers3[currentSlide] && 
+                        <button style={{...styles.answers, ...styles.answer3}}>{answers3[currentSlide]}</button>
+                    }
+                    {answers4.length > currentSlide && answers4[currentSlide] && 
+                        <button style={{...styles.answers, ...styles.answer4}}>{answers4[currentSlide]}</button>
+                    }
                     {seeInfo && 
                     <p style={styles.textCount}>
                         T1: {(parseFloat(hovers.target1[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -606,6 +627,36 @@ const styles = {
         margin: "auto",
         textAlign: "center",
         maxHeight: "100vh",
+    },
+    question: {
+        position: "absolute",
+        left: "9vw",
+        top: "15vh",
+        fontSize: "35px",
+        color: "#111",
+        
+    },
+    answers: {
+        position: "absolute",
+        fontSize: "25px",
+        color: "#f2f2f2",
+        backgroundColor: "#4682b4",
+    },
+    answer1: {
+        left: "9vw",
+        top: "25vh",
+    },
+    answer2: {
+        left: "9vw",
+        top: "35vh",
+    },
+    answer3: {
+        left: "9vw",
+        top: "45vh",
+    },
+    answer4: {
+        left: "9vw",
+        top: "55vh",
     },
     video: {
         position: "absolute",
