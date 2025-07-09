@@ -18,7 +18,7 @@ export const TargetData = [{
   },
   {
     position: "absolute",
-    left: "8vw",
+    left: "22.5vw",
     top: "34vh",
     width: "14.5vw",
     height: "12vh",
@@ -54,7 +54,7 @@ export const TargetData = [{
   },
   {
     position: "absolute",
-    left: "12vw",
+    left: "22.5vw",
     top: "35vh",
     width: "10.5vw",
     height: "10vh",

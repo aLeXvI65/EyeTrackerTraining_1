@@ -772,5 +772,15 @@ const styles = {
     width: "90px",
     height: "30px",
     fontSize: "12px"
+  },
+  tableTH: {
+      border: "1px solid #ccc",
+      padding: "8px",
+      backgroundColor: "#434343",
+      color: "#f0f0f0"
+  },
+  tableTD: {
+      border: "1px solid #ccc",
+      padding: "0px",
   }
 };
