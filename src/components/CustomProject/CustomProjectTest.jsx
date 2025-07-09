@@ -70,16 +70,16 @@ const slides = [
 ];
 
 const audios = [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    audio1,
+    audio2,
+    audio3,
+    audio4,
+    audio5,
+    audio6,
+    audio7,
+    audio8,
+    audio9,
+    audio10,
 ];
 
 const videos = [
@@ -141,6 +141,7 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
     const [seeInfo, setSeeInfo] = useState(enableSeeInfo);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
     const [showVideo, setShowVideo] = useState(false);
+    const [answersList, setAnswersList] = useState(new Array(numSlides).fill("none"));
 
     const audioRef1 = useRef(null);
     const audioRef2 = useRef(null);
@@ -157,21 +158,30 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
 
 
     useEffect(() => {
-        audios[0] = audioRef1;
-        audios[1] = audioRef2;
-        audios[2] = audioRef3;
-        audios[3] = audioRef4;
-        audios[4] = audioRef5;
-        audios[5] = audioRef6;
-        audios[6] = audioRef7;
-        audios[7] = audioRef8;
-        audios[8] = audioRef9;
-        audios[9] = audioRef10;
+        // audios[0] = audioRef1;
+        // audios[1] = audioRef2;
+        // audios[2] = audioRef3;
+        // audios[3] = audioRef4;
+        // audios[4] = audioRef5;
+        // audios[5] = audioRef6;
+        // audios[6] = audioRef7;
+        // audios[7] = audioRef8;
+        // audios[8] = audioRef9;
+        // audios[9] = audioRef10;
 
         videos[8] = videoRef1;
 
         startTest();
     }, []);
+
+    const handleAnswerClick = (answer) => {
+        setAnswersList(prev => {
+            const updated = [...prev];
+            updated[currentSlide] = answer;
+            return updated;
+        });
+        handleNextClick();
+    }
 
     const handleClick = (element) => {
         if (element === "target1") {
@@ -237,13 +247,15 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
     };
 
     const handleNextClick = () => {
-        audios.forEach(x => { if (x && x.current !== null && x.current !== undefined) x.current.pause(); });
+        audioRef1.current.pause();
 
         if (currentSlide < slides.length - 1) {
             setTimeout(() => {
                 //audios[currentSlide + 1].current.play().catch(error => console.log("Reproducción bloqueada:", error));
-                const nextAudioRef = audios[currentSlide + 1];
+                //const nextAudioRef = audios[currentSlide + 1];
+                const nextAudioRef = audioRef1;
                 if (nextAudioRef && nextAudioRef.current) {
+                    nextAudioRef.current.src = audios[currentSlide + 1];
                     nextAudioRef.current.play().catch(error => {
                         console.log("Playback blocked:", error);
                     });
@@ -401,7 +413,7 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
             formData.append("data2_" + i, "[" + "0-" + (hovers.target1[i] * .1) + ",0-" + (hovers.target2[i] * 0.1) + ",0-" + (hovers.target3[i] * 0.1) + ",0-" + (hovers.target4[i] * 0.1) + "," + "0-" + (hovers.target5[i] * .1) + ",0-" + (hovers.target6[i] * 0.1) + ",0-" + (hovers.target7[i] * 0.1) + ",0-" + (hovers.target8[i] * 0.1) + "," + "0-" + (hovers.target9[i] * .1) + ",0-" + (hovers.target10[i] * 0.1) + ",0-" + (hovers.target11[i] * 0.1) + ",0-" + (hovers.target12[i] * 0.1) + "]");
             formData.append("data3_" + i, "" + (i + 1));
             formData.append("data4_" + i, "" + 0);
-            formData.append("data5_" + i, null);
+            formData.append("data5_" + i, answersList[i]);
             formData.append("percentage_" + i, "" + 50);
         }
         console.log(JSON.stringify(formData));
@@ -429,7 +441,7 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
     return (
         <div className="" style={styles.container}>
             <audio ref={audioRef1} src={audio1} />
-            <audio ref={audioRef2} src={audio2} />
+            {/* <audio ref={audioRef2} src={audio2} />
             <audio ref={audioRef3} src={audio3} />
             <audio ref={audioRef4} src={audio4} />
             <audio ref={audioRef5} src={audio5} />
@@ -437,7 +449,7 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
             <audio ref={audioRef7} src={audio7} />
             <audio ref={audioRef8} src={audio8} />
             <audio ref={audioRef9} src={audio9} />
-            <audio ref={audioRef10} src={audio10} />
+            <audio ref={audioRef10} src={audio10} /> */}
             <video 
                 style={{
                     ...styles.video,
@@ -464,16 +476,16 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
                         <span style={styles.question}>{questions[currentSlide]}</span>
                     }
                     {answers1.length > currentSlide && answers1[currentSlide] && 
-                        <button style={{...styles.answers, ...styles.answer1}}>{answers1[currentSlide]}</button>
+                        <button onClick={() => handleAnswerClick(answers1[currentSlide])} style={{...styles.answers, ...styles.answer1}}>{answers1[currentSlide]}</button>
                     }
                     {answers2.length > currentSlide && answers2[currentSlide] && 
-                        <button style={{...styles.answers, ...styles.answer2}}>{answers2[currentSlide]}</button>
+                        <button onClick={() => handleAnswerClick(answers2[currentSlide])} style={{...styles.answers, ...styles.answer2}}>{answers2[currentSlide]}</button>
                     }
                     {answers3.length > currentSlide && answers3[currentSlide] && 
-                        <button style={{...styles.answers, ...styles.answer3}}>{answers3[currentSlide]}</button>
+                        <button onClick={() => handleAnswerClick(answers3[currentSlide])} style={{...styles.answers, ...styles.answer3}}>{answers3[currentSlide]}</button>
                     }
                     {answers4.length > currentSlide && answers4[currentSlide] && 
-                        <button style={{...styles.answers, ...styles.answer4}}>{answers4[currentSlide]}</button>
+                        <button onClick={() => handleAnswerClick(answers4[currentSlide])} style={{...styles.answers, ...styles.answer4}}>{answers4[currentSlide]}</button>
                     }
                     {seeInfo && 
                     <p style={styles.textCount}>
@@ -745,5 +757,15 @@ const styles = {
         width: "90px",
         height: "30px",
         fontSize: "12px"
+    },
+    tableTH: {
+        border: "1px solid #ccc",
+        padding: "8px",
+        backgroundColor: "#434343",
+        color: "#f0f0f0"
+    },
+    tableTD: {
+        border: "1px solid #ccc",
+        padding: "0px",
     }
 };
