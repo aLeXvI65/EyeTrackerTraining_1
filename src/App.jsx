@@ -11,15 +11,17 @@ import BioImagesNarrativeNoFollow from './components/BioImages/BioImagesNarrativ
 import TargetTest from './components/TargetTests/TargetTest'
 import TargetTest2 from './components/TargetTests/TargetTest2'
 import CustomProjectTest from './components/CustomProject/CustomProjectTest'
+import BioImagesQuestions from './components/Projects/BioImagesQuestions'
 
 const trainingIds = {
   Normal: 10,
   TextFollowing: 11,
   NarrativeNoFollow: 14,
-  CustomProject: 15
+  CustomProject: 15,
+  BioImagesQuestions: 16
 }
 
-const isDebug = false;
+const isDebug = true;
 
 const skipTest1 = isDebug;
 const skipTest2 = isDebug;
@@ -112,6 +114,7 @@ function App() {
   if (selectedTest === "TextFollowing") testComponent = <TextFollowingTest />;
   else if (selectedTest === "NarrativeNoFollow") testComponent = <BioImagesNarrativeNoFollow />;
   else if (selectedTest === "CustomProject") testComponent = <CustomProjectTest trainingId={selectedTestId} enableSeeInfo={seeInfo} />;
+  else if (selectedTest === "BioImagesQuestions") testComponent = <BioImagesQuestions trainingId={selectedTestId} enableSeeInfo={seeInfo} />;
 
   return (
     <>

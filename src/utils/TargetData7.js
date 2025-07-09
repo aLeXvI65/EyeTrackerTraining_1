@@ -18,9 +18,9 @@ export const TargetData = [{
   },
   {
     position: "absolute",
-    left: "8vw",
+    left: "41vw",
     top: "34vh",
-    width: "14.5vw",
+    width: "7.5vw",
     height: "12vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
@@ -54,10 +54,10 @@ export const TargetData = [{
   },
   {
     position: "absolute",
-    left: "12vw",
-    top: "35vh",
-    width: "10.5vw",
-    height: "10vh",
+    left: "38vw",
+    top: "34.5vh",
+    width: "10vw",
+    height: "9.5vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
