@@ -23,7 +23,7 @@ const trainingIds = {
   PlantsBaseProject: 15
 }
 
-const isDebug = true;
+const isDebug = false;
 
 const skipTest1 = isDebug;
 const skipTest2 = isDebug;
