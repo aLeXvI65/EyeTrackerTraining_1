@@ -1,43 +1,43 @@
 import { useContext, useEffect, useRef, useState } from "react";
 
-import slide1 from '../../assets/slides/tuti_fruti/1.jpg';
-import slide2 from '../../assets/slides/tuti_fruti/4.jpg';
-import slide3 from '../../assets/slides/tuti_fruti/5.jpg';
-import slide4 from '../../assets/slides/tuti_fruti/6.jpg';
-import slide5 from '../../assets/slides/tuti_fruti/7.jpg';
-import slide6 from '../../assets/slides/tuti_fruti/8.jpg';
-import slide7 from '../../assets/slides/tuti_fruti/9.jpg';
-import slide8 from '../../assets/slides/tuti_fruti/10.jpg';
-import slide9 from '../../assets/slides/tuti_fruti/11.jpg';
-import slide10 from '../../assets/slides/tuti_fruti/12.jpg';
+import slide1 from '../../assets/projects/CustomProject/slides/1.jpg';
+import slide2 from '../../assets/projects/CustomProject/slides/2.jpg';
+import slide3 from '../../assets/projects/CustomProject/slides/3.jpg';
+import slide4 from '../../assets/projects/CustomProject/slides/4.jpg';
+import slide5 from '../../assets/projects/CustomProject/slides/5.jpg';
+import slide6 from '../../assets/projects/CustomProject/slides/6.jpg';
+import slide7 from '../../assets/projects/CustomProject/slides/7.jpg';
+import slide8 from '../../assets/projects/CustomProject/slides/8.jpg';
+import slide9 from '../../assets/projects/CustomProject/slides/9.jpg';
+import slide10 from '../../assets/projects/CustomProject/slides/10.jpg';
 
-import audio1 from '../../assets/audios/slides/tuti_fruti/audio 1.mp3';
-import audio2 from '../../assets/audios/slides/tuti_fruti/audio 4.mp3';
-import audio3 from '../../assets/audios/slides/tuti_fruti/audio 5.mp3';
-import audio4 from '../../assets/audios/slides/tuti_fruti/audio 6.mp3';
-import audio5 from '../../assets/audios/slides/tuti_fruti/audio 7.mp3';
-import audio6 from '../../assets/audios/slides/tuti_fruti/audio 8.mp3';
-import audio7 from '../../assets/audios/slides/tuti_fruti/audio 10.mp3';
-import audio8 from '../../assets/audios/slides/tuti_fruti/audio 11.mp3';
-import audio9 from '../../assets/audios/slides/tuti_fruti/audio 12.mp3';
-import audio10 from '../../assets/audios/slides/tuti_fruti/audio 13.mp3';
+import audio1 from '../../assets/projects/CustomProject/audios/audio 1.mp3';
+import audio2 from '../../assets/projects/CustomProject/audios/audio 4.mp3';
+import audio3 from '../../assets/projects/CustomProject/audios/audio 5.mp3';
+import audio4 from '../../assets/projects/CustomProject/audios/audio 6.mp3';
+import audio5 from '../../assets/projects/CustomProject/audios/audio 7.mp3';
+import audio6 from '../../assets/projects/CustomProject/audios/audio 8.mp3';
+import audio7 from '../../assets/projects/CustomProject/audios/audio 10.mp3';
+import audio8 from '../../assets/projects/CustomProject/audios/audio 11.mp3';
+import audio9 from '../../assets/projects/CustomProject/audios/audio 12.mp3';
+import audio10 from '../../assets/projects/CustomProject/audios/audio 13.mp3';
 
 import video1 from '../../assets/videos/tuti_fruti/Car_Crash_cut_optimized.mp4';
 
-import { TargetData as TARGET_DATA_1 } from '../../utils/TargetData1';
-import { TargetData as TARGET_DATA_2 } from '../../utils/TargetData2';
-import { TargetData as TARGET_DATA_3 } from '../../utils/TargetData3';
-import { TargetData as TARGET_DATA_4 } from '../../utils/TargetData4';
-import { TargetData as TARGET_DATA_5 } from '../../utils/TargetData5';
-import { TargetData as TARGET_DATA_6 } from '../../utils/TargetData6';
-import { TargetData as TARGET_DATA_7 } from '../../utils/TargetData7';
-import { TargetData as TARGET_DATA_8 } from '../../utils/TargetData8';
-import { TargetData as TARGET_DATA_9 } from '../../utils/TargetData9';
-import { TargetData as TARGET_DATA_10 } from '../../utils/TargetData10';
-import { TargetData as TARGET_DATA_11 } from '../../utils/TargetData11';
-import { TargetData as TARGET_DATA_12 } from '../../utils/TargetData12';
+import { TargetData as TARGET_DATA_1 } from '../../utils/projects/CustomProject/TargetData1';
+import { TargetData as TARGET_DATA_2 } from '../../utils/projects/CustomProject/TargetData2';
+import { TargetData as TARGET_DATA_3 } from '../../utils/projects/CustomProject/TargetData3';
+import { TargetData as TARGET_DATA_4 } from '../../utils/projects/CustomProject/TargetData4';
+import { TargetData as TARGET_DATA_5 } from '../../utils/projects/CustomProject/TargetData5';
+import { TargetData as TARGET_DATA_6 } from '../../utils/projects/CustomProject/TargetData6';
+import { TargetData as TARGET_DATA_7 } from '../../utils/projects/CustomProject/TargetData7';
+import { TargetData as TARGET_DATA_8 } from '../../utils/projects/CustomProject/TargetData8';
+import { TargetData as TARGET_DATA_9 } from '../../utils/projects/CustomProject/TargetData9';
+import { TargetData as TARGET_DATA_10 } from '../../utils/projects/CustomProject/TargetData10';
+import { TargetData as TARGET_DATA_11 } from '../../utils/projects/CustomProject/TargetData11';
+import { TargetData as TARGET_DATA_12 } from '../../utils/projects/CustomProject/TargetData12';
 
-import { questions, answers1, answers2, answers3, answers4 } from "../../utils/questions_answers";
+import { questions, answers1, answers2, answers3, answers4 } from "../../utils/projects/CustomProject/questions_answers";
 
 import { UserContext } from "../../context/UserContext";
 
@@ -95,7 +95,7 @@ const videos = [
     null,
 ];
 
-const numSlides = 10;
+const numSlides = 13;
 
 export default function CustomProjectTest({ trainingId, enableSeeInfo = false }) {
     const { userId, setUserId } = useContext(UserContext);
@@ -140,31 +140,11 @@ export default function CustomProjectTest({ trainingId, enableSeeInfo = false })
     const [answersList, setAnswersList] = useState(new Array(numSlides).fill("none"));
 
     const audioRef1 = useRef(null);
-    const audioRef2 = useRef(null);
-    const audioRef3 = useRef(null);
-    const audioRef4 = useRef(null);
-    const audioRef5 = useRef(null);
-    const audioRef6 = useRef(null);
-    const audioRef7 = useRef(null);
-    const audioRef8 = useRef(null);
-    const audioRef9 = useRef(null);
-    const audioRef10 = useRef(null);
 
     const videoRef1 = useRef(null);
 
 
     useEffect(() => {
-        // audios[0] = audioRef1;
-        // audios[1] = audioRef2;
-        // audios[2] = audioRef3;
-        // audios[3] = audioRef4;
-        // audios[4] = audioRef5;
-        // audios[5] = audioRef6;
-        // audios[6] = audioRef7;
-        // audios[7] = audioRef8;
-        // audios[8] = audioRef9;
-        // audios[9] = audioRef10;
-
         videos[8] = videoRef1;
 
         startTest();
@@ -649,6 +629,7 @@ const styles = {
         fontSize: "25px",
         color: "#f2f2f2",
         backgroundColor: "#4682b4",
+        zIndex: "1",
     },
     answer1: {
         left: "9vw",

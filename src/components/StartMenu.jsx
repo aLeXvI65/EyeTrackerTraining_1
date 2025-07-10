@@ -61,6 +61,12 @@ export default function StartMenu({ onStart }) {
             >
               Start Custom Project
             </button>
+            <button
+              style={styles.startButton}
+              onClick={() => onStart("PlantsBaseProject")}
+            >
+              Plants Base Project
+            </button>
           </div>
         )}
       </div>

@@ -12,13 +12,15 @@ import TargetTest from './components/TargetTests/TargetTest'
 import TargetTest2 from './components/TargetTests/TargetTest2'
 import CustomProjectTest from './components/CustomProject/CustomProjectTest'
 import BioImagesQuestions from './components/Projects/BioImagesQuestions'
+import PlantsBaseProject from './components/Projects/PlantsBaseProject'
 
 const trainingIds = {
   Normal: 10,
   TextFollowing: 11,
   NarrativeNoFollow: 14,
   CustomProject: 15,
-  BioImagesQuestions: 16
+  BioImagesQuestions: 16,
+  PlantsBaseProject: 15
 }
 
 const isDebug = true;
@@ -115,6 +117,8 @@ function App() {
   else if (selectedTest === "NarrativeNoFollow") testComponent = <BioImagesNarrativeNoFollow />;
   else if (selectedTest === "CustomProject") testComponent = <CustomProjectTest trainingId={selectedTestId} enableSeeInfo={seeInfo} />;
   else if (selectedTest === "BioImagesQuestions") testComponent = <BioImagesQuestions trainingId={selectedTestId} enableSeeInfo={seeInfo} />;
+  else if (selectedTest === "PlantsBaseProject") testComponent = <PlantsBaseProject trainingId={selectedTestId} enableSeeInfo={seeInfo} />;
+  
 
   return (
     <>
