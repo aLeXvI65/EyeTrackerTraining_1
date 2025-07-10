@@ -33,8 +33,8 @@ export const answers2 = [
     'The Golgi provides ATP to mitochondria to fuel their activity',
     'Mitochondrion',
     'Microtubules. Intermediate filaments. Actin filaments',
-    'Protons accumulate in the matrix, activating DNA replication to begin in the cristae',
-    'Exponential Phase. because cells are actively dividing. synthesizing proteins. enzymes, and DNA at peak levels',
+    'Protons accumulate in the matrix. activating DNA replication to begin in the cristae',
+    'Exponential Phase. because cells are actively dividing. synthesizing proteins. enzymes. and DNA at peak levels',
 ];
 
 export const answers3 = [
@@ -59,6 +59,6 @@ export const answers4 = [
     'The Golgi directs mitochondria to recycle damaged proteins',
     'Endoplasmic Reticulum',
     'Actin filaments. Microtubules. Intermediate filaments',
-    'Protons flow from the intermembrane space into the matrix through ATP synthase, generating ATP by converting the stored potential energy created from electrons originally extracted from food (glucose)',
+    'Protons flow from the intermembrane space into the matrix through ATP synthase. generating ATP by converting the stored potential energy created from electrons originally extracted from food (glucose)',
     'Death Phase. because cell membranes break down and metabolism accelerates to compensate',
 ];
