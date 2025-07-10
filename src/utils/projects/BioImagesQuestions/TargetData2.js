@@ -60,39 +60,33 @@ export const TargetData = [{
   },
   {
     position: "absolute",
-    left: "22.5vw",
-    top: "25vh",
-    width: "10.5vw",
-    height: "10vh",
-    display: "none",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "45vw",
-    top: "17vh",
-    width: "47.5vw",
-    height: "75vh",
-    display: "none",
-    display: "none",
-    backgroundColor: "rgba(0,0,0,0.5)"
-  },
-  {
-    position: "absolute",
-    left: "35vw",
-    top: "37vh",
-    width: "30vw",
-    height: "30vh",
-    display: "none",
+    left: "21vw",
+    top: "18vh",
+    width: "59vw",
+    height: "49vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   },
   {
     position: "absolute",
     left: "20vw",
-    top: "25vh",
-    width: "30vw",
-    height: "30vh",
-    display: "none",
-    display: "none",
+    top: "12vh",
+    width: "61vw",
+    height: "42vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "26vw",
+    top: "18vh",
+    width: "48vw",
+    height: "54vh",
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
+  {
+    position: "absolute",
+    left: "28vw",
+    top: "21vh",
+    width: "45vw",
+    height: "51vh",
     backgroundColor: "rgba(0,0,0,0.5)"
   }]
