@@ -393,10 +393,14 @@ export default function BioImagesQuestions({ trainingId, enableSeeInfo = false }
 
     const startTest = () => {
         audioRef1.current.loop = false;
-        console.log(audioRef1.current);
+        // console.log(audioRef1.current);
         setTimeout(() => {
-            //audioRef1.current.play();
-            playAudioOnce();
+            audioRef1.current.play();
+            audioRef1.current.src = audios[currentSlide];
+            audioRef1.current.play().catch(error => {
+                console.log("Playback blocked:", error);
+            });
+            // playAudioOnce();
             setNextEnabled(true);
         }, 1000);
 
@@ -674,19 +678,19 @@ const styles = {
     },
     answer1: {
         left: "7vw",
-        top: "80vh",
+        top: "74vh",
     },
     answer2: {
         left: "49vw",
-        top: "80vh",
+        top: "74vh",
     },
     answer3: {
         left: "7vw",
-        top: "90vh",
+        top: "84vh",
     },
     answer4: {
         left: "49vw",
-        top: "90vh",
+        top: "84vh",
     },
     video: {
         position: "absolute",
