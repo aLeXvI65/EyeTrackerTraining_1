@@ -21,15 +21,15 @@ import slide18 from '../../assets/slides/17_ion_distribution/ion_distribution_2.
 import slide19 from '../../assets/slides/19_systemic/systemic_pulmonary_circulation.jpg';
 import slide20 from '../../assets/slides/20_various/various_types_bone.jpg';
 
-import audio1 from '../../assets/audios/slides/Narrative/slide 1.mp3';
-import audio2 from '../../assets/audios/slides/Narrative/slide 2.mp3';
-import audio3 from '../../assets/audios/slides/Narrative/slide 3.mp3';
-import audio4 from '../../assets/audios/slides/Narrative/slide 4.mp3';
-import audio5 from '../../assets/audios/slides/Narrative/slide 5.mp3';
-import audio6 from '../../assets/audios/slides/Narrative/slide 6.mp3';
-import audio7 from '../../assets/audios/slides/Narrative/slide 7.mp3';
-import audio8 from '../../assets/audios/slides/Narrative/slide 8.mp3';
-import audio9 from '../../assets/audios/slides/Narrative/slide 9.mp3';
+import audio1 from '../../assets/audios/slides/Narrative/slowed/1.mp3';
+import audio2 from '../../assets/audios/slides/Narrative/slowed/2.mp3';
+import audio3 from '../../assets/audios/slides/Narrative/slowed/3.mp3';
+import audio4 from '../../assets/audios/slides/Narrative/slowed/4.mp3';
+import audio5 from '../../assets/audios/slides/Narrative/slowed/5.mp3';
+import audio6 from '../../assets/audios/slides/Narrative/slowed/6.mp3';
+import audio7 from '../../assets/audios/slides/Narrative/slowed/7.mp3';
+import audio8 from '../../assets/audios/slides/Narrative/slowed/8.mp3';
+import audio9 from '../../assets/audios/slides/Narrative/slowed/9.mp3';
 import audio10 from '../../assets/audios/slides/10_nose_pharynx.mp3';
 import audio11 from '../../assets/audios/slides/11_larynx_epiglotis.mp3';
 import audio12 from '../../assets/audios/slides/12_trachea_bronchi.mp3';

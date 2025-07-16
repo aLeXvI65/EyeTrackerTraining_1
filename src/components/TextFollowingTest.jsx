@@ -21,15 +21,15 @@ import slide9 from '../assets/slides/bioimages/slide9.jpg';
 // import slide19 from '../assets/slides/19_systemic/systemic_pulmonary_circulation.jpg';
 // import slide20 from '../assets/slides/20_various/various_types_bone.jpg';
 
-import audio1 from '../assets/audios/slides/1_cell3.mp3';
-import audio2 from '../assets/audios/slides/2_nucleus_1_2.mp3';
-import audio3 from '../assets/audios/slides/3_nucleus_2.mp3';
-import audio4 from '../assets/audios/slides/4_cytoskeleton2.mp3';
-import audio5 from '../assets/audios/slides/5_membraine.mp3';
-import audio6 from '../assets/audios/slides/6_endoplasmic_reticulum.mp3';
-import audio7 from '../assets/audios/slides/7_mitochondria.mp3';
-import audio8 from '../assets/audios/slides/8_energy_production.mp3';
-import audio9 from '../assets/audios/slides/9_dynamic_cell_growth.mp3';
+import audio1 from '../assets/audios/slides/slowed/slide1.mp3';
+import audio2 from '../assets/audios/slides/slowed/slide2.mp3';
+import audio3 from '../assets/audios/slides/slowed/slide3.mp3';
+import audio4 from '../assets/audios/slides/slowed/slide4.mp3';
+import audio5 from '../assets/audios/slides/slowed/slide5.mp3';
+import audio6 from '../assets/audios/slides/slowed/slide6_corrected.mp3';
+import audio7 from '../assets/audios/slides/slowed/slide7.mp3';
+import audio8 from '../assets/audios/slides/slowed/slide8.mp3';
+import audio9 from '../assets/audios/slides/slowed/slide9.mp3';
 // import audio10 from '../assets/audios/slides/10_nose_pharynx.mp3';
 // import audio11 from '../assets/audios/slides/11_larynx_epiglotis.mp3';
 // import audio12 from '../assets/audios/slides/12_trachea_bronchi.mp3';
@@ -108,61 +108,61 @@ const audios = [
 
 const readingData = [
     [
-        { maskTop: 0, height: "20vh", imgTop: 22, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 8.8 }, // 8.8
-        { maskTop: 20, height: "20vh", imgTop: 22, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 5.4 }, // 5.4
-        { maskTop: 40, height: "27vh", imgTop: 0, imgLeft: 43.5, imgWidth: "75vh", imgHeight: "40vh", time: 7.9 }, // 7.9
-        { maskTop: 67, height: "24vh", imgTop: 65, imgLeft: 55, imgWidth: "63.5vh", imgHeight: "18vh", time: 5.5 }, // 5.5
-        { maskTop: 91, height: "19vh", imgTop: 51, imgLeft: 0, imgWidth: "29vh", imgHeight: "30vh", time: 3.6 }, // 3.6
+        { maskTop: 0, height: "20vh", imgTop: 22, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 11.3 }, // 8.8
+        { maskTop: 20, height: "20vh", imgTop: 22, imgLeft: 0, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 7.7 }, // 5.4
+        { maskTop: 40, height: "27vh", imgTop: 0, imgLeft: 43.5, imgWidth: "75vh", imgHeight: "40vh", time: 9.4 }, // 7.9
+        { maskTop: 67, height: "24vh", imgTop: 65, imgLeft: 55, imgWidth: "63.5vh", imgHeight: "18vh", time: 6.5 }, // 5.5
+        { maskTop: 91, height: "19vh", imgTop: 51, imgLeft: 0, imgWidth: "29vh", imgHeight: "30vh", time: 5.1 }, // 3.6
         { maskTop: 110, height: "31vh", imgTop: 40, imgLeft: 25, imgWidth: "94vh", imgHeight: "30vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "30vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 4.3 }, // 10.2
-        { maskTop: 35, height: "34vh", imgTop: 0, imgLeft: 53, imgWidth: "64vh", imgHeight: "50vh", time: 3.8 }, // 3.2
+        { maskTop: 0, height: "30vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 4.8 }, // 10.2
+        { maskTop: 35, height: "34vh", imgTop: 0, imgLeft: 53, imgWidth: "64vh", imgHeight: "50vh", time: 5.2 }, // 3.2
         { maskTop: 75, height: "62vh", imgTop: 35, imgLeft: 0, imgWidth: "50vh", imgHeight: "68vh", time: 3 }, //  3
     ],
     [
-        { maskTop: 0, height: "45vh", imgTop: 0, imgLeft: 0, imgWidth: "106vh", imgHeight: "31vh", time: 15 }, // 15
-        { maskTop: 50, height: "38vh", imgTop: 31, imgLeft: 0, imgWidth: "106vh", imgHeight: "26vh", time: 8 }, // 8
+        { maskTop: 0, height: "45vh", imgTop: 0, imgLeft: 0, imgWidth: "106vh", imgHeight: "31vh", time: 18.8 }, // 15
+        { maskTop: 50, height: "38vh", imgTop: 31, imgLeft: 0, imgWidth: "106vh", imgHeight: "26vh", time: 9.9 }, // 8
         { maskTop: 92, height: "47vh", imgTop: 57, imgLeft: 0, imgWidth: "106vh", imgHeight: "43vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "35vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 16.6}, // 13.2
-        { maskTop: 37, height: "37vh", imgTop: 0, imgLeft: 0, imgWidth: "96vh", imgHeight: "31vh", time: 16.8 }, // 22.8
-        { maskTop: 76, height: "27vh", imgTop: 31, imgLeft: 0, imgWidth: "96vh", imgHeight: "36vh", time: 9.5 }, // 17.1
+        { maskTop: 0, height: "35vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 18.3}, // 13.2
+        { maskTop: 37, height: "37vh", imgTop: 0, imgLeft: 0, imgWidth: "96vh", imgHeight: "31vh", time: 20 }, // 22.8
+        { maskTop: 76, height: "27vh", imgTop: 31, imgLeft: 0, imgWidth: "96vh", imgHeight: "36vh", time: 10.5 }, // 17.1
         { maskTop: 105, height: "38vh", imgTop: 67, imgLeft: 0, imgWidth: "96vh", imgHeight: "45vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "34vh", imgTop: 0, imgLeft: 44, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 13.4 }, // 13.4
-        { maskTop: 36, height: "30vh", imgTop: 53, imgLeft: 82, imgWidth: "33vh", imgHeight: "58vh", time: 12.8 }, // 12.8
-        { maskTop: 66, height: "26vh", imgTop: 46, imgLeft: 4, imgWidth: "48vh", imgHeight: "56vh", time: 9 }, // 9
-        { maskTop: 92, height: "26vh", imgTop: 52, imgLeft: 48, imgWidth: "25vh", imgHeight: "42vh", time: 6 }, // 6
+        { maskTop: 0, height: "34vh", imgTop: 0, imgLeft: 44, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 15 }, // 13.4
+        { maskTop: 36, height: "30vh", imgTop: 53, imgLeft: 82, imgWidth: "33vh", imgHeight: "58vh", time: 15 }, // 12.8
+        { maskTop: 66, height: "26vh", imgTop: 46, imgLeft: 4, imgWidth: "48vh", imgHeight: "56vh", time: 11.4 }, // 9
+        { maskTop: 92, height: "26vh", imgTop: 52, imgLeft: 48, imgWidth: "25vh", imgHeight: "42vh", time: 7.6 }, // 6
         { maskTop: 118, height: "22.5vh", imgTop: 0, imgLeft: 44, imgWidth: "35vh", imgHeight: "46vh", time: 3 }, // 3
     ],
     // Slides 6-10
     [
-        { maskTop: 0, height: "26vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 11.7 }, // 11.7
-        { maskTop: 26, height: "21vh", imgTop: 0, imgLeft: 0, imgWidth: "50vh", imgHeight: "38vh", time: 7.7 }, //   7.7
-        { maskTop: 48, height: "22vh", imgTop: 58, imgLeft: 28, imgWidth: "42vh", imgHeight: "56vh", time: 5.9 }, //  5.9
-        { maskTop: 70, height: "22vh", imgTop: 0, imgLeft: 50, imgWidth: "44vh", imgHeight: "42vh", time: 9.5 }, //  9.5
-        { maskTop: 92, height: "22vh", imgTop: 58, imgLeft: 2, imgWidth: "54vh", imgHeight: "24vh", time: 7.4 }, //  7.4
+        { maskTop: 0, height: "26vh", imgTop: 5, imgLeft: 5, imgWidth: "0.1vh", imgHeight: "0.1vh", time: 14.5 }, // 11.7
+        { maskTop: 26, height: "21vh", imgTop: 0, imgLeft: 0, imgWidth: "50vh", imgHeight: "38vh", time: 8.4 }, //   7.7
+        { maskTop: 48, height: "22vh", imgTop: 58, imgLeft: 28, imgWidth: "42vh", imgHeight: "56vh", time: 7.2 }, //  5.9
+        { maskTop: 70, height: "22vh", imgTop: 0, imgLeft: 50, imgWidth: "44vh", imgHeight: "42vh", time: 11.5 }, //  9.5
+        { maskTop: 92, height: "22vh", imgTop: 58, imgLeft: 2, imgWidth: "54vh", imgHeight: "24vh", time: 10 }, //  7.4
         { maskTop: 114, height: "26vh", imgTop: 74, imgLeft: 64, imgWidth: "30vh", imgHeight: "40vh", time: 3 },  // 3
     ],
     [
-        { maskTop: 0, height: "35vh", imgTop: 61, imgLeft: 1, imgWidth: "42vh", imgHeight: "21vh", time: 16.1 }, // 10.7
-        { maskTop: 37, height: "22vh", imgTop: 98, imgLeft: 52, imgWidth: "35vh", imgHeight: "25vh", time: 4.2 }, // 5.4
-        { maskTop: 61, height: "30vh", imgTop: 0, imgLeft: 48, imgWidth: "39vh", imgHeight: "28vh", time: 9.1 }, // 4.2
-        { maskTop: 93, height: "20vh", imgTop: 32, imgLeft: 46, imgWidth: "42vh", imgHeight: "34vh", time: 3.2 }, // 9.1
+        { maskTop: 0, height: "35vh", imgTop: 61, imgLeft: 1, imgWidth: "42vh", imgHeight: "21vh", time: 19.3 }, // 10.7
+        { maskTop: 37, height: "22vh", imgTop: 98, imgLeft: 52, imgWidth: "35vh", imgHeight: "25vh", time: 4.7 }, // 5.4
+        { maskTop: 61, height: "30vh", imgTop: 0, imgLeft: 48, imgWidth: "39vh", imgHeight: "28vh", time: 11.2 }, // 4.2
+        { maskTop: 93, height: "20vh", imgTop: 32, imgLeft: 46, imgWidth: "42vh", imgHeight: "34vh", time: 4.4 }, // 9.1
         { maskTop: 115, height: "25vh", imgTop: 70, imgLeft: 50, imgWidth: "38vh", imgHeight: "26vh", time: 3 }, // 3.5
     ],
     [
-        { maskTop: 0, height: "28vh", imgTop: 0, imgLeft: 0, imgWidth: "111vh", imgHeight: "39vh", time: 6.1 }, // 6.1
+        { maskTop: 0, height: "28vh", imgTop: 0, imgLeft: 0, imgWidth: "111vh", imgHeight: "39vh", time: 7.1 }, // 6.1
         { maskTop: 34, height: "44vh", imgTop: 39, imgLeft: 0, imgWidth: "111vh", imgHeight: "44vh", time: 9.2 }, // 4.2
         { maskTop: 86, height: "39vh", imgTop: 83, imgLeft: 0, imgWidth: "111vh", imgHeight: "30vh", time: 3 }, // 3
     ],
     [
-        { maskTop: 0, height: "45vh", imgTop: 0, imgLeft: 0, imgWidth: "21vh", imgHeight: "106vh", time: 19.6 }, // 19.6
-        { maskTop: 45, height: "45vh", imgTop: 0, imgLeft: 21, imgWidth: "22vh", imgHeight: "106vh", time: 16.8 }, // 17
-        { maskTop: 90, height: "22vh", imgTop: 0, imgLeft: 43, imgWidth: "31vh", imgHeight: "106vh", time: 7.8 }, // 7.7
+        { maskTop: 0, height: "45vh", imgTop: 0, imgLeft: 0, imgWidth: "21vh", imgHeight: "106vh", time: 20.6 }, // 19.6
+        { maskTop: 45, height: "45vh", imgTop: 0, imgLeft: 21, imgWidth: "22vh", imgHeight: "106vh", time: 20.1 }, // 17
+        { maskTop: 90, height: "22vh", imgTop: 0, imgLeft: 43, imgWidth: "31vh", imgHeight: "106vh", time: 9.6 }, // 7.7
         { maskTop: 116, height: "26vh", imgTop: 0, imgLeft: 74, imgWidth: "22vh", imgHeight: "106vh", time: 3 }, // 3
     ],
     [

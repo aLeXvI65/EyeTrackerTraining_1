@@ -25,7 +25,7 @@ const trainingIds = {
 
 const isDebug = false;
 
-const skipTest1 = isDebug;
+const skipTest1 = true;
 const skipTest2 = isDebug;
 const disableFullScreen = isDebug;
 const autoFillLogin = isDebug;
@@ -122,7 +122,7 @@ function App() {
 
   return (
     <>
-      {!hasLogin && startTest && hasFinishedTargetTest && hasFinishedTargetTest2 && <Login onLogin={handleLogin} error={loginError} autoFill={autoFillLogin} />}
+      {!hasLogin && startTest && hasFinishedTargetTest && <Login onLogin={handleLogin} error={loginError} autoFill={autoFillLogin} />}
       {
         !startTest && !hasLogin  && !hasFinishedTargetTest && !hasFinishedTargetTest2 && <StartMenu onStart={handleStart} />
       }
@@ -130,10 +130,10 @@ function App() {
         startTest && !hasLogin  && !hasFinishedTargetTest && !hasFinishedTargetTest && <TargetTest onFinish={handleFinish} skip={skipTest1} />
       }
       {
-        startTest && !hasLogin  && hasFinishedTargetTest && !hasFinishedTargetTest2 && <TargetTest2 onFinish={handleFinish2} skip={skipTest2} />
+        startTest && hasLogin  && hasFinishedTargetTest && !hasFinishedTargetTest2 && <TargetTest2 onFinish={handleFinish2} skip={skipTest2} />
       }
       {
-        startTest && hasLogin && testComponent
+        startTest && hasLogin && hasFinishedTargetTest2 && testComponent
       }
     </>
   )
