@@ -1229,7 +1229,8 @@ const styles = {
         position: "absolute",
         right: "1vw",
         bottom: "1vh",
-        color: "white"
+        color: "white",
+        backgroundColor: "#1b983cff",
     },
     results: {
         color: "#333",
@@ -1244,7 +1245,8 @@ const styles = {
         width: "90px",
         height: "30px",
         fontSize: "12px",
-        color: "white"
+        color: "white",
+        backgroundColor: "#1b983cff",
     },
     slidesInfo: {
         position: "absolute",

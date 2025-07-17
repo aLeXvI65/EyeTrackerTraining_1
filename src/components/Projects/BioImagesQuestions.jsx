@@ -765,6 +765,7 @@ const styles = {
         position: "absolute",
         right: "1vw",
         bottom: "1vh",
+        backgroundColor: "#1b983cff",
     },
     results: {
         color: "#333",
@@ -778,7 +779,8 @@ const styles = {
         left: "5px",
         width: "90px",
         height: "30px",
-        fontSize: "12px"
+        fontSize: "12px",
+        backgroundColor: "#1b983cff",
     },
     tableTH: {
         border: "1px solid #ccc",

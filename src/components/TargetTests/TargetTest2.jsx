@@ -96,7 +96,7 @@ const TargetTest2 = ({ onFinish, skip }) => {
             padding: '10px 20px',
             fontSize: '16px',
             borderRadius: '8px',
-            backgroundColor: '#131313',
+            backgroundColor: "#1b983cff",
             color: 'white',
             border: 'none',
             cursor: 'pointer'

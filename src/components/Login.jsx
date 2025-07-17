@@ -50,7 +50,8 @@ const styles = {
     alignItems: 'center',      // centra vertical
   },
   startButton: {
-    color: "white"
+    color: "white",
+    backgroundColor: "#1b983cff",
   },
   input: {
     backgroundColor: "white",
