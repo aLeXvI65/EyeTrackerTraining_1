@@ -107,6 +107,8 @@ export default function BioImagesNarrativeNoFollow() {
   const [finishTest, setFinishTest] = useState(false);
   const [seeInfo, setSeeInfo] = useState(false);
   const [sendReportSuccess, setSendReportSuccess] = useState(false);
+  const [slideTimeCount, setSlideTimeCount] = useState(Array(numSlides).fill(0));
+  const [slideStartTime, setSlideStartTime] = useState(new Date());
 
   const audioRef1 = useRef(null);
   const audioRef2 = useRef(null);
@@ -169,6 +171,12 @@ export default function BioImagesNarrativeNoFollow() {
 
   const handleNextClick = () => {
     audios.forEach(x => { if (x && x.current !== null && x.current !== undefined) x.current.pause(); });
+
+    const currentTime = new Date();
+    const slideCount = slideTimeCount;
+    slideCount[currentSlide] = (currentTime - slideStartTime)/1000;
+    setSlideTimeCount(slideCount);
+    setSlideStartTime(new Date());
 
     if (currentSlide < slides.length - 1 && currentSlide < numSlides - 1) {
       setTimeout(() => {
@@ -245,6 +253,7 @@ export default function BioImagesNarrativeNoFollow() {
       formData.append("data4_" + i, "" + 0);
       formData.append("data5_" + i, null);
       formData.append("percentage_" + i, "" + 50);
+      formData.append("totalTime_" + i, "" + slideTimeCount[i]);
     }
     console.log(JSON.stringify(formData));
 
@@ -315,6 +324,7 @@ export default function BioImagesNarrativeNoFollow() {
               <th style={styles.tableTH}>Slide</th>
               <th style={styles.tableTH}>Time Seeing text</th>
               <th style={styles.tableTH}>Time Seeing image</th>
+              <th style={styles.tableTH}>Total Time</th>
             </thead>
             <tbody>
               {
@@ -323,6 +333,7 @@ export default function BioImagesNarrativeNoFollow() {
                     <td style={styles.tableTD}>{index + 1}</td>
                     <td style={styles.tableTD}>{(parseFloat(hovers.text[index]) * 0.1).toFixed(1)}</td>
                     <td style={styles.tableTD}>{(parseFloat(hovers.image[index]) * 0.1).toFixed(1)}</td>
+                    <td style={styles.tableTD}>{slideTimeCount[index]}</td>
                   </tr>
                 )
               }

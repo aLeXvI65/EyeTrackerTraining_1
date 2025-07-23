@@ -51,6 +51,18 @@ const intervals = {
     text: null,
 };
 
+const slideTimeIntervals = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+]
+
 const highLigtedIntervals = {
     image: null,
     text: null,
@@ -392,6 +404,8 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
     const [highLightedHovers, setHighlightedHovers] = useState({ button: 0, image: Array(numSlides).fill(0), text: Array(numSlides).fill(0), figure: [] });
     const [step, setStep] = useState(0);
     const [sendReportSuccess, setSendReportSuccess] = useState(false);
+    const [slideTimeCount, setSlideTimeCount] = useState(Array(numSlides).fill(0));
+    const [slideStartTime, setSlideStartTime] = useState(new Date());
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [finishTest, setFinishTest] = useState(false);
@@ -446,9 +460,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
     }, []);
 
     useEffect(() => {
-        console.log("step: " + step);
-
-        
+        // console.log("step: " + step);
 
         if (step > 0) {
             setNextButtonEnabled(true);
@@ -464,6 +476,11 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
             }
         }, readingData[currentSlide][step].time * 1000);
 
+        // slideTimeIntervals[currentSlide] = setInterval(() => {
+        //     const slideCount = slideTimeCount;
+        //     slideCount[currentSlide] += 0.1;
+        //     setSlideTimeCount(slideCount);
+        // },100);
 
         return () => {
             console.log("Clearing timeout: " + reading);
@@ -504,8 +521,15 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
 
     const handleNextClick = () => {
         audios.forEach(x => { if (x && x.current !== null && x.current !== undefined) x.current.pause(); });
+        // clearInterval(slideTimeIntervals[currentSlide]);
         // clearTimeout(readingTimeOut);
         // setReadingTimeOut(null);
+
+        const currentTime = new Date();
+        const slideCount = slideTimeCount;
+        slideCount[currentSlide] = (currentTime - slideStartTime)/1000;
+        setSlideTimeCount(slideCount);
+        setSlideStartTime(new Date());
 
         if (currentSlide < slides.length - 1 && currentSlide < numSlides - 1) {
             setTimeout(() => {
@@ -602,6 +626,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
             formData.append("data4_" + i, "" + 0);
             formData.append("data5_" + i, null);
             formData.append("percentage_" + i, "" + 50);
+            formData.append("totalTime_" + i, "" + slideTimeCount[i]);
         }
         console.log(JSON.stringify(formData));
 
@@ -670,6 +695,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
                             Time: {(parseFloat(hovers.text[currentSlide]) * 0.1).toFixed(1)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             Reading Text count: {highligtedClicks.text[currentSlide]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             Reading Text Time: {(parseFloat(highLightedHovers.text[currentSlide]) * 0.1).toFixed(1)}
+                            {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total Time: {slideTimeCount[currentSlide]} */}
                         </p>}
                     {seeInfo &&
                         <p style={styles.imageCount}>
@@ -691,6 +717,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
                             <th style={styles.tableTH}>Time Seeing highlighted image</th>
                             <th style={styles.tableTH}>Time Seeing background text</th>
                             <th style={styles.tableTH}>Time Seeing background image</th>
+                            <th style={styles.tableTH}>Total Time</th>
                         </thead>
                         <tbody>
                             {
@@ -701,6 +728,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
                                         <td style={styles.tableTD}>{(parseFloat(highLightedHovers.image[index]) * 0.1).toFixed(1)}</td>
                                         <td style={styles.tableTD}>{(parseFloat(hovers.text[index]) * 0.1).toFixed(1)}</td>
                                         <td style={styles.tableTD}>{(parseFloat(hovers.image[index]) * 0.1).toFixed(1)}</td>
+                                        <td style={styles.tableTD}>{slideTimeCount[index]}</td>
                                     </tr>
                                 )
                             }
