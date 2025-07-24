@@ -191,6 +191,7 @@ export default function BioImagesNarrativeNoFollow() {
   }
 
   const handleHover = (element) => {
+    handleClick(element);
     if (element === "image") {
       intervals.image = setInterval(() => {
         const newImage = hovers.image;
@@ -248,7 +249,7 @@ export default function BioImagesNarrativeNoFollow() {
 
     for (let i = 0; i < hovers.text.length; i++) {
       formData.append("data" + i, "[" + hovers.text[i] + "," + hovers.image[i] + "," + 0 + "," + 0 + "]");
-      formData.append("data2_" + i, "[0-" + (hovers.text[i] * .1) + ",0-" + (hovers.image[i] * 0.1) + ",0-" + (0) + ",0-" + (0) + "]");
+      formData.append("data2_" + i, "["+clicks.text[i]+"-" + (hovers.text[i] * .1) + ","+clicks.image[i]+"-" + (hovers.image[i] * 0.1) + ",0-" + (0) + ",0-" + (0) + "]");
       formData.append("data3_" + i, "" + (i + 1));
       formData.append("data4_" + i, "" + 0);
       formData.append("data5_" + i, null);

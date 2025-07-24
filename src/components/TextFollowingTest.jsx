@@ -466,7 +466,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
             setNextButtonEnabled(true);
         }
         else {
-            setNextButtonEnabled(true);
+            setNextButtonEnabled(false);
         }
         
         let reading = setTimeout(() => {
