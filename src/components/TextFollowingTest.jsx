@@ -546,6 +546,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
     }
 
     const handleHover = (element) => {
+        handleClick(element);
         if (element === "image") {
             intervals.image = setInterval(() => {
                 const newImage = hovers.image;
