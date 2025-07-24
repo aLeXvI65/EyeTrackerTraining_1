@@ -466,7 +466,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
             setNextButtonEnabled(true);
         }
         else {
-            setNextButtonEnabled(false);
+            setNextButtonEnabled(true);
         }
         
         let reading = setTimeout(() => {
@@ -621,7 +621,7 @@ export default function TextFollowingTest({ isTextFollowing = true, trainingId }
 
         for (let i = 0; i < hovers.text.length; i++) {
             formData.append("data" + i, "[" + highLightedHovers.text[i] + "," + highLightedHovers.image[i] + "," + hovers.text[i] + "," + hovers.image[i] + "]");
-            formData.append("data2_" + i, "[0-" + (highLightedHovers.text[i] * .1) + ",0-" + (highLightedHovers.image[i] * 0.1) + ",0-" + (hovers.text[i] * 0.1) + ",0-" + (hovers.image[i] * 0.1) + "]");
+            formData.append("data2_" + i, "["+highligtedClicks.text[i]+"-" + (highLightedHovers.text[i] * .1) + ","+highligtedClicks.image[i]+"-" + (highLightedHovers.image[i] * 0.1) + ","+clicks.text[i]+"-" + (hovers.text[i] * 0.1) + ","+clicks.image[i]+"-" + (hovers.image[i] * 0.1) + "]");
             formData.append("data3_" + i, "" + (i + 1));
             formData.append("data4_" + i, "" + 0);
             formData.append("data5_" + i, null);
